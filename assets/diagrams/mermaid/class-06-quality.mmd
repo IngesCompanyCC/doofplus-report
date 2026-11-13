@@ -5,19 +5,19 @@ classDiagram
   direction LR
   class QualityDocument {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Code
     +string Version
     +string Title
     +DocumentStatus Status
-    +long AuthorId
-    +long TechnicalReviewerId
-    +long ApproverId
+    +int AuthorId
+    +int TechnicalReviewerId
+    +int ApproverId
     +DateOnly ChangedAt
     +DocumentContent Content
     +int ReviewCycleMonths
     +SubmitForReview() void
-    +Approve(long signatureId) void
+    +Approve(int signatureId) void
     +PublishNewVersion(string version, DocumentContent content) QualityDocument
     +MarkAsObsolete() void
   }
@@ -30,7 +30,7 @@ classDiagram
   }
   class AnalyticalResult {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string BatchCode
     +string SampleCode
     +string ReportCode
@@ -38,7 +38,7 @@ classDiagram
     +string Protocol
     +string Result
     +string Specification
-    +long AnalystId
+    +int AnalystId
     +ResultStatus Status
     +ApprovalState Approval
     +Evaluate() void
@@ -46,19 +46,19 @@ classDiagram
   }
   class BatchRelease {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string BatchCode
-    +long RequestedBy
+    +int RequestedBy
     +ReleaseStatus Status
     +string Decision
-    +long SignatureId
+    +int SignatureId
     +DateTime SignedAt
-    +Release(long signatureId) void
+    +Release(int signatureId) void
     +Reject(string decision) void
   }
   class Evidence {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string RecordCode
     +string FileName
     +string Detail
@@ -67,7 +67,7 @@ classDiagram
   }
   class Deviation {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Code
     +string Title
     +string BatchCode
@@ -78,9 +78,9 @@ classDiagram
     +RiskScore Risk
     +DeviationStatus Status
     +string RootCause
-    +long ReportedBy
+    +int ReportedBy
     +DateTime ReportedAt
-    +long OwnerId
+    +int OwnerId
     +DateTime DueAt
     +Classify(Classification classification, RiskScore risk) void
     +RegisterRootCause(string rootCause) void
@@ -96,28 +96,28 @@ classDiagram
   }
   class CapaPlan {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Code
-    +long DeviationId
+    +int DeviationId
     +string Title
-    +long OwnerId
-    +long ReviewerId
+    +int OwnerId
+    +int ReviewerId
     +string RootCause
     +string AcceptanceCriterion
     +DateOnly EffectivenessCheckAt
     +CapaStatus Status
     +ICollection~CapaAction~ Actions
-    +AddAction(CapaType type, string title, long ownerId, DateOnly dueAt) CapaAction
+    +AddAction(CapaType type, string title, int ownerId, DateOnly dueAt) CapaAction
     +SubmitForApproval() void
     +Close() void
   }
   class CapaAction {
     <<Entity>>
-    +long Id
+    +int Id
     +string Code
     +CapaType Type
     +string Title
-    +long OwnerId
+    +int OwnerId
     +DateOnly DueAt
     +ActionStatus Status
     +string Evidence
@@ -127,7 +127,7 @@ classDiagram
   }
   class Audit {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Code
     +string Title
     +string Period
@@ -141,11 +141,11 @@ classDiagram
   }
   class AuditFinding {
     <<Entity>>
-    +long Id
+    +int Id
     +string Code
     +string Title
     +Classification Classification
-    +long OwnerId
+    +int OwnerId
     +DateOnly DueAt
     +FindingStatus Status
     +string Observation
@@ -156,10 +156,10 @@ classDiagram
   }
   class AuditEvent {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string EventCode
     +DateTime OccurredAt
-    +long ActorId
+    +int ActorId
     +string ActorRole
     +string Event
     +string RecordCode
@@ -171,11 +171,11 @@ classDiagram
   }
   class RegulatoryReport {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Code
     +ReportType Type
     +string Scope
-    +long OwnerId
+    +int OwnerId
     +ReportStatus Status
     +string Template
     +string Format
@@ -183,26 +183,26 @@ classDiagram
   }
   class CollaborationTask {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Title
     +string RecordCode
     +string Detail
-    +long OwnerId
+    +int OwnerId
     +DateTime DueAt
     +TaskStatus Status
     +ChangeStatus(TaskStatus status) void
   }
   class TaskComment {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string RecordCode
-    +long AuthorId
+    +int AuthorId
     +DateTime PostedAt
     +string Text
   }
   class TraceabilityGap {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string BatchCode
     +string MissingRecord
     +string Detail
@@ -337,7 +337,7 @@ classDiagram
     +NotifyCriticalDeviation(Deviation deviation) void
   }
   class ExternalIamService {
-    +SignRecord(long userId, string password, string entityType, long entityId) long?
+    +SignRecord(int userId, string password, string entityType, int entityId) int?
   }
   class ExternalManufacturingService {
     +FetchBatchStatus(string batchCode) string?

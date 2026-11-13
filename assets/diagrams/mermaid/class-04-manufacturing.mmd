@@ -5,29 +5,29 @@ classDiagram
   direction LR
   class Product {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Code
     +string Name
     +DosageForm DosageForm
   }
   class MasterFormula {
     <<Aggregate Root>>
-    +long Id
-    +long ProductId
+    +int Id
+    +int ProductId
     +string Version
     +FormulaStatus Status
     +int BatchSize
-    +long ApprovedBy
+    +int ApprovedBy
     +DateOnly ApprovedAt
     +ICollection~FormulaItem~ Items
     +AddItem(FormulaItemKind kind, string name, string target, string tolerance) void
     +SubmitForApproval() void
-    +Approve(long userId) void
+    +Approve(int userId) void
     +Lock() void
   }
   class FormulaItem {
     <<Entity>>
-    +long Id
+    +int Id
     +FormulaItemKind Kind
     +string Name
     +string Role
@@ -37,7 +37,7 @@ classDiagram
   }
   class RawMaterialLot {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Code
     +string ReceiptCode
     +string Material
@@ -60,10 +60,10 @@ classDiagram
   }
   class ProductionOrder {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string Code
-    +long MasterFormulaId
-    +long FacilityId
+    +int MasterFormulaId
+    +int FacilityId
     +string Line
     +Quantity PlannedQuantity
     +ProductionOrderStatus Status
@@ -77,7 +77,7 @@ classDiagram
   }
   class Operation {
     <<Entity>>
-    +long Id
+    +int Id
     +int Sequence
     +string Name
     +string Equipment
@@ -87,12 +87,12 @@ classDiagram
   }
   class ProductionBatch {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +BatchNumber BatchNumber
-    +long ProductionOrderId
+    +int ProductionOrderId
     +BatchStatus Status
     +string Line
-    +long OwnerId
+    +int OwnerId
     +int Progress
     +Quantity PlannedQuantity
     +Quantity ManufacturedQuantity
@@ -103,7 +103,7 @@ classDiagram
     +ICollection~Incident~ Incidents
     +ICollection~BatchEvent~ Events
     +ProductionBatch(CreateBatchCommand command)
-    +ConsumeMaterial(long rawMaterialLotId, Quantity quantity) void
+    +ConsumeMaterial(int rawMaterialLotId, Quantity quantity) void
     +RecordParameter(string name, decimal value, string unit) void
     +RegisterIncident(string description, IncidentSeverity severity) Incident
     +Hold(string reason) void
@@ -114,13 +114,14 @@ classDiagram
   }
   class MaterialConsumption {
     <<Entity>>
-    +long Id
-    +long RawMaterialLotId
-    +Quantity QuantityUsed
+    +int Id
+    +int RawMaterialLotId
+    +Quantity ConsumedQuantity
+    +DateTime ConsumedAt
   }
   class ProcessParameter {
     <<Entity>>
-    +long Id
+    +int Id
     +string Name
     +decimal Value
     +string Unit
@@ -128,20 +129,21 @@ classDiagram
   }
   class Incident {
     <<Entity>>
-    +long Id
+    +int Id
     +string Description
     +IncidentSeverity Severity
     +IncidentStatus Status
+    +DateTime RecordedAt
     +Escalate() void
     +Resolve() void
   }
   class BatchEvent {
     <<Entity>>
-    +long Id
+    +int Id
     +string Type
     +string Description
     +EventTone Tone
-    +long PerformedBy
+    +int PerformedBy
     +DateTime OccurredAt
   }
   class BatchNumber {
@@ -248,8 +250,8 @@ classDiagram
     +Handle(CloseBatchCommand command) Task~Result~ProductionBatch~~
   }
   class ExternalQualityService {
-    +RequestMaterialSampling(long rawMaterialLotId) long
-    +RequestBatchRelease(long batchId) long
+    +RequestMaterialSampling(int rawMaterialLotId) int
+    +RequestBatchRelease(int batchId) int
   }
   MasterFormula "0..*" --> "1" Product : defines
   MasterFormula "1" *-- "1..*" FormulaItem : contains

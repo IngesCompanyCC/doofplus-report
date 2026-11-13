@@ -5,7 +5,7 @@ classDiagram
   direction LR
   class Organization {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string LegalName
     +Ruc Ruc
     +string Region
@@ -19,7 +19,7 @@ classDiagram
   }
   class Facility {
     <<Entity>>
-    +long Id
+    +int Id
     +string Name
     +FacilityType Type
     +string Timezone
@@ -33,9 +33,9 @@ classDiagram
   }
   class Profile {
     <<Aggregate Root>>
-    +long Id
-    +long UserId
-    +long OrganizationId
+    +int Id
+    +int UserId
+    +int OrganizationId
     +PersonName Name
     +string Email
     +Area Area
@@ -58,15 +58,15 @@ classDiagram
   }
   class AdministrativeActivity {
     <<Aggregate Root>>
-    +long Id
-    +long OrganizationId
+    +int Id
+    +int OrganizationId
     +string Title
     +string Actor
     +DateTime OccurredAt
   }
   class ContactInquiry {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string FullName
     +string Email
     +string Message
@@ -109,7 +109,7 @@ classDiagram
   }
   class IProfileRepository {
     <<interface>>
-    +FindByUserIdAsync(long userId) Task~Profile?~
+    +FindByUserIdAsync(int userId) Task~Profile?~
   }
   class IOrganizationCommandService {
     <<interface>>
@@ -125,7 +125,7 @@ classDiagram
     +Handle(SendContactInquiryCommand command) Task~Result~ContactInquiry~~
   }
   class ExternalIamService {
-    +CreateAdministrator(long organizationId, string fullName, string email, string password) long?
+    +CreateAdministrator(int organizationId, string fullName, string email, string password) int?
   }
   Organization "1" *-- "1..*" Facility : operates
   Organization *-- Ruc : ruc
