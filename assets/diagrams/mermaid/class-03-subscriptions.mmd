@@ -6,33 +6,39 @@ classDiagram
   class Plan {
     <<Aggregate Root>>
     +long Id
+    +PlanKey PlanKey
     +string Name
     +Money MonthlyPrice
     +Money AnnualPrice
     +int IotDeviceLimit
     +int UserLimit
+    +Plan(CreatePlanCommand command)
     +GetPrice(BillingCycle cycle) Money
+    +AllowsOneMoreIotDevice(int registeredDevices) bool
   }
   class Subscription {
     <<Aggregate Root>>
     +long Id
-    +long OrganizationId
+    +OrganizationId OrganizationId
     +long PlanId
     +BillingCycle BillingCycle
     +SubscriptionStatus Status
     +DateOnly CurrentPeriodStart
     +DateOnly CurrentPeriodEnd
     +bool AutoRenew
+    +PaymentCard PaymentCard
+    +BillingEmail BillingEmail
     +ICollection~Payment~ Payments
-    +Subscription(long organizationId, long planId, BillingCycle cycle)
-    +Activate(Payment payment) void
-    +Renew(Payment payment) void
+    +Subscription(CreateSubscriptionCommand command)
+    +Activate() void
+    +Renew() void
     +Cancel() void
-    +IsWithinDeviceLimit(int registeredDevices, Plan plan) bool
+    +IsCurrent() bool
   }
   class Payment {
     <<Entity>>
     +long Id
+    +string InvoiceNumber
     +Money Amount
     +string GatewayTransactionId
     +PaymentStatus Status
@@ -44,6 +50,24 @@ classDiagram
     <<Value Object>>
     +decimal Amount
     +string Currency
+  }
+  class PlanKey {
+    <<Value Object>>
+    +string Value
+  }
+  class OrganizationId {
+    <<Value Object>>
+    +long Value
+  }
+  class PaymentCard {
+    <<Value Object>>
+    +string Brand
+    +string Last4
+    +string Expiry
+  }
+  class BillingEmail {
+    <<Value Object>>
+    +string Value
   }
   class BillingCycle {
     <<enumeration>>
@@ -71,24 +95,41 @@ classDiagram
     +RestClient RestClient
     +Authorize(Money amount, string cardToken) PaymentResult
   }
+  class IPlanRepository {
+    <<interface>>
+    +ExistsByPlanKey(PlanKey planKey) bool
+  }
   class ISubscriptionRepository {
     <<interface>>
-    +FindByOrganizationIdAndStatusAsync(long organizationId, SubscriptionStatus status) Task~Subscription?~
+    +FindAllByOrganizationIdAsync(OrganizationId organizationId) Task~IEnumerable~Subscription~~
+    +ExistsByOrganizationIdAndStatusIn(OrganizationId organizationId, ICollection~SubscriptionStatus~ statuses) bool
+  }
+  class IPlanCommandService {
+    <<interface>>
+    +Handle(CreatePlanCommand command) Task~Result~Plan~~
   }
   class ISubscriptionCommandService {
     <<interface>>
-    +Handle(SelectPlanCommand command) Task~Subscription?~
-    +Handle(PaySubscriptionCommand command) Task~Subscription?~
-    +Handle(RenewSubscriptionCommand command) Task~Subscription?~
-    +Handle(CancelSubscriptionCommand command) Task~Subscription?~
+    +Handle(CreateSubscriptionCommand command) Task~Result~Subscription~~
+    +Handle(PaySubscriptionCommand command) Task~Result~Subscription~~
+    +Handle(ActivateSubscriptionCommand command) Task~Result~Subscription~~
+    +Handle(RenewSubscriptionCommand command) Task~Result~Subscription~~
+    +Handle(CancelSubscriptionCommand command) Task~Result~Subscription~~
   }
   Subscription "0..*" --> "1" Plan : subscribesTo
   Subscription "1" *-- "0..*" Payment : records
   Subscription --> BillingCycle : billingCycle
   Subscription --> SubscriptionStatus : status
+  Subscription *-- OrganizationId : organizationId
+  Subscription *-- PaymentCard : paymentCard
+  Subscription *-- BillingEmail : billingEmail
   Payment --> PaymentStatus : status
   Payment *-- Money : amount
   Plan *-- Money : prices
+  Plan *-- PlanKey : planKey
   NiubizPaymentGateway ..|> IPaymentGateway
   ISubscriptionCommandService ..> IPaymentGateway : uses
+  IPlanCommandService ..> IPlanRepository : uses
+  ISubscriptionCommandService ..> ISubscriptionRepository : uses
+  IPlanRepository ..> Plan : persists
   ISubscriptionRepository ..> Subscription : persists
