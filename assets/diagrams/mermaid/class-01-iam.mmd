@@ -1,24 +1,25 @@
 ---
-title: "Class Diagram – Identity & Access Management (IAM) Bounded Context"
+title: "Class Diagram – IAM Bounded Context"
 ---
 classDiagram
   direction LR
-  class AuditableAbstractAggregateRoot~T~ {
+  class AggregateRoot {
     <<abstract>>
-    #long Id
-    #DateTime CreatedAt
-    #DateTime UpdatedAt
+    #AddDomainEvent(IEvent domainEvent) void
   }
   class User {
     <<Aggregate Root>>
+    +long Id
     +long OrganizationId
+    +long FacilityId
+    +string FullName
     +EmailAddress Email
     +string PasswordHash
     +string MfaSecret
     +UserStatus Status
     +int FailedSignInAttempts
     +ICollection~Role~ Roles
-    +User(long organizationId, EmailAddress email, string passwordHash)
+    +User(SignUpCommand command, string passwordHash, ICollection~Role~ roles)
     +Activate(string passwordHash, string mfaSecret) void
     +AssignRole(Role role) User
     +RegisterFailedSignIn() void
@@ -32,14 +33,30 @@ classDiagram
     +Roles Name
     +GetStringName() string
   }
+  class Invitation {
+    <<Aggregate Root>>
+    +long Id
+    +long OrganizationId
+    +long FacilityId
+    +Role Role
+    +string FullName
+    +EmailAddress Email
+    +string Note
+    +InvitationStatus Status
+    +DateTime SentAt
+    +Invitation(SendInvitationCommand command)
+    +Accept() void
+    +Expire() void
+  }
   class ElectronicSignature {
     <<Aggregate Root>>
+    +long Id
     +long UserId
     +string EntityType
     +long EntityId
     +SignatureMeaning Meaning
     +DateTime SignedAt
-    +ElectronicSignature(long userId, string entityType, long entityId, SignatureMeaning meaning)
+    +ElectronicSignature(SignRecordCommand command)
   }
   class EmailAddress {
     <<Value Object>>
@@ -60,6 +77,12 @@ classDiagram
     Locked
     Disabled
   }
+  class InvitationStatus {
+    <<enumeration>>
+    Pending
+    Accepted
+    Expired
+  }
   class SignatureMeaning {
     <<enumeration>>
     Authored
@@ -72,19 +95,28 @@ classDiagram
     +FindByEmailAsync(EmailAddress email) Task~User?~
     +ExistsByEmail(EmailAddress email) bool
   }
+  class IInvitationRepository {
+    <<interface>>
+    +FindAllByOrganizationIdAsync(long organizationId) Task~IEnumerable~Invitation~~
+  }
   class IElectronicSignatureRepository {
     <<interface>>
     +FindByEntityTypeAndEntityIdAsync(string entityType, long entityId) Task~IEnumerable~ElectronicSignature~~
   }
   class IUserCommandService {
     <<interface>>
-    +Handle(RegisterUserCommand command) Task~User?~
-    +Handle(SignInCommand command) Task~AuthenticatedUser?~
-    +Handle(AssignRoleCommand command) Task~User?~
+    +Handle(SignUpCommand command) Task~Result~User~~
+    +Handle(SignInCommand command) Task~Result~AuthenticatedUser~~
+    +Handle(AssignRoleCommand command) Task~Result~User~~
+  }
+  class IInvitationCommandService {
+    <<interface>>
+    +Handle(SendInvitationCommand command) Task~Result~Invitation~~
+    +Handle(AcceptInvitationCommand command) Task~Result~User~~
   }
   class ISignatureCommandService {
     <<interface>>
-    +Handle(SignRecordCommand command) Task~ElectronicSignature?~
+    +Handle(SignRecordCommand command) Task~Result~ElectronicSignature~~
   }
   class ITokenService {
     <<interface>>
@@ -101,22 +133,27 @@ classDiagram
     +VerifyCode(string secret, string code) bool
   }
   class IamContextFacade {
-    +CreateAdministrator(long organizationId, string email) long
+    +CreateAdministrator(long organizationId, string fullName, string email, string password) long
     +SignRecord(long userId, string password, string entityType, long entityId, string meaning) long
   }
-  AuditableAbstractAggregateRoot <|-- User
-  AuditableAbstractAggregateRoot <|-- ElectronicSignature
+  AggregateRoot <|-- User
+  AggregateRoot <|-- Invitation
+  AggregateRoot <|-- ElectronicSignature
   User "0..*" o-- "1..*" Role : has
   User *-- EmailAddress : email
   User --> UserStatus : status
+  Invitation "0..*" --> "1" Role : offers
+  Invitation --> InvitationStatus : status
   Role --> Roles : name
   ElectronicSignature "0..*" --> "1" User : signedBy
   ElectronicSignature --> SignatureMeaning : meaning
   IUserRepository ..> User : persists
+  IInvitationRepository ..> Invitation : persists
   IElectronicSignatureRepository ..> ElectronicSignature : persists
   IUserCommandService ..> ITokenService : uses
   IUserCommandService ..> IHashingService : uses
   IUserCommandService ..> ITotpService : uses
+  IInvitationCommandService ..> IUserCommandService : createsUser
   ISignatureCommandService ..> IHashingService : verifiesIdentity
   IamContextFacade ..> IUserCommandService : delegates
   IamContextFacade ..> ISignatureCommandService : delegates
