@@ -3,7 +3,7 @@ title: "Database Diagram – IoT Monitoring Bounded Context (MySQL 8)"
 ---
 erDiagram
   equipment {
-    bigint id PK
+    int id PK
     varchar(30) code UK "EQ-MIX-02"
     varchar(150) name
     varchar(150) model "brand, model and serial"
@@ -17,22 +17,22 @@ erDiagram
     varchar(255) health_note
   }
   calibration_records {
-    bigint id PK
-    bigint equipment_id FK
+    int id PK
+    int equipment_id FK
     date calibrated_at
     date valid_until
     varchar(50) certificate
   }
   maintenance_records {
-    bigint id PK
-    bigint equipment_id FK
+    int id PK
+    int equipment_id FK
     date performed_at
     varchar(30) work_order
     varchar(150) owner
     date next_due_date
   }
   sensors {
-    bigint id PK
+    int id PK
     varchar(30) code UK "T-204"
     varchar(128) device_id UK "ThingsBoard"
     varchar(20) type "Temperature, Humidity, Pressure"
@@ -44,7 +44,7 @@ erDiagram
     varchar(30) assigned_batch "ref manufacturing.production_batches"
   }
   readings {
-    bigint id PK
+    int id PK
     varchar(30) sensor_code FK
     varchar(30) batch_code "ref manufacturing.production_batches"
     decimal value "(12,4)"
@@ -52,7 +52,7 @@ erDiagram
     varchar(30) source "ThingsBoard"
   }
   alerts {
-    bigint id PK
+    int id PK
     varchar(30) code UK "ALT-26031"
     varchar(30) sensor_code FK
     varchar(30) equipment_code FK

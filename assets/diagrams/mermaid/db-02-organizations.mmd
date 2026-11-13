@@ -3,7 +3,7 @@ title: "Database Diagram – Organizations & Profiles Bounded Context (MySQL 8)"
 ---
 erDiagram
   organizations {
-    bigint id PK
+    int id PK
     varchar(255) legal_name
     char(11) ruc UK
     varchar(60) region "Peru"
@@ -11,8 +11,8 @@ erDiagram
     varchar(25) status "Active, Pending, PendingVerification, Inactive"
   }
   facilities {
-    bigint id PK
-    bigint organization_id FK
+    int id PK
+    int organization_id FK
     varchar(150) name
     varchar(20) type "Manufacturing, QcLaboratory"
     varchar(40) timezone "America/Lima"
@@ -20,9 +20,9 @@ erDiagram
     varchar(20) status "Active, Inactive"
   }
   profiles {
-    bigint id PK
-    bigint user_id UK "ref iam.users"
-    bigint organization_id FK
+    int id PK
+    int user_id UK "ref iam.users"
+    int organization_id FK
     varchar(100) first_name
     varchar(100) last_name
     varchar(255) email
@@ -33,14 +33,14 @@ erDiagram
     tinyint(1) in_app_notifications
   }
   administrative_activities {
-    bigint id PK
-    bigint organization_id FK
+    int id PK
+    int organization_id FK
     varchar(255) title
     varchar(150) actor
     datetime occurred_at
   }
   contact_inquiries {
-    bigint id PK
+    int id PK
     varchar(150) full_name
     varchar(255) email
     text message

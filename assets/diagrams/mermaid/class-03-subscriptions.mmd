@@ -5,7 +5,7 @@ classDiagram
   direction LR
   class Plan {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +PlanKey PlanKey
     +string Name
     +Money MonthlyPrice
@@ -18,9 +18,9 @@ classDiagram
   }
   class Subscription {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +OrganizationId OrganizationId
-    +long PlanId
+    +int PlanId
     +BillingCycle BillingCycle
     +SubscriptionStatus Status
     +DateOnly CurrentPeriodStart
@@ -37,7 +37,7 @@ classDiagram
   }
   class Payment {
     <<Entity>>
-    +long Id
+    +int Id
     +string InvoiceNumber
     +Money Amount
     +string GatewayTransactionId
@@ -57,7 +57,7 @@ classDiagram
   }
   class OrganizationId {
     <<Value Object>>
-    +long Value
+    +int Value
   }
   class PaymentCard {
     <<Value Object>>

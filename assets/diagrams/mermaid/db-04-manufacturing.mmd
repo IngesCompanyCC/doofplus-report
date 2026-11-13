@@ -3,23 +3,23 @@ title: "Database Diagram – Manufacturing & Batch Management Bounded Context (M
 ---
 erDiagram
   products {
-    bigint id PK
+    int id PK
     varchar(30) code UK "AC500"
     varchar(150) name
     varchar(20) dosage_form "Tablet, Capsule, Syrup, Injectable"
   }
   master_formulas {
-    bigint id PK
-    bigint product_id FK
+    int id PK
+    int product_id FK
     varchar(10) version "v3.2"
     varchar(20) status "Draft, Pending, Approved, Locked"
     int batch_size
-    bigint approved_by "ref iam.users, nullable"
+    int approved_by "ref iam.users, nullable"
     date approved_at "nullable"
   }
   formula_items {
-    bigint id PK
-    bigint master_formula_id FK
+    int id PK
+    int master_formula_id FK
     varchar(10) kind "Component, Parameter"
     varchar(150) name
     varchar(40) role "nullable"
@@ -28,7 +28,7 @@ erDiagram
     varchar(150) control
   }
   raw_material_lots {
-    bigint id PK
+    int id PK
     varchar(30) code UK "RM-26098"
     varchar(30) receipt_code "RCV-26098"
     varchar(150) material
@@ -47,10 +47,10 @@ erDiagram
     date expiry_date
   }
   production_orders {
-    bigint id PK
+    int id PK
     varchar(30) code UK "PO-26041"
-    bigint master_formula_id FK
-    bigint facility_id "ref organizations.facilities"
+    int master_formula_id FK
+    int facility_id "ref organizations.facilities"
     varchar(30) line "Line 02"
     decimal planned_quantity "(12,4)"
     varchar(20) status "Planned, Approved, InProgress, OnHold, Completed"
@@ -58,8 +58,8 @@ erDiagram
     datetime planned_end
   }
   operations {
-    bigint id PK
-    bigint production_order_id FK
+    int id PK
+    int production_order_id FK
     int sequence
     varchar(100) name
     varchar(150) equipment
@@ -68,12 +68,12 @@ erDiagram
     varchar(100) reference "nullable"
   }
   production_batches {
-    bigint id PK
+    int id PK
     varchar(30) batch_number UK "B-26041"
-    bigint production_order_id FK
+    int production_order_id FK
     varchar(20) status "Planned ... Released, Rejected"
     varchar(30) line
-    bigint owner_id "ref iam.users"
+    int owner_id "ref iam.users"
     int progress "0-100"
     decimal planned_quantity_value "(12,4)"
     varchar(10) planned_quantity_unit
@@ -83,34 +83,36 @@ erDiagram
     datetime finished_at "nullable"
   }
   material_consumptions {
-    bigint id PK
-    bigint production_batch_id FK
-    bigint raw_material_lot_id FK
-    decimal quantity_used "(12,4)"
-    varchar(10) unit
+    int id PK
+    int production_batch_id FK
+    int raw_material_lot_id FK
+    decimal consumed_quantity_value "(12,4)"
+    varchar(10) consumed_quantity_unit
+    datetime consumed_at
   }
   process_parameters {
-    bigint id PK
-    bigint production_batch_id FK
+    int id PK
+    int production_batch_id FK
     varchar(100) name
     decimal value "(12,4)"
     varchar(10) unit
     datetime recorded_at
   }
   incidents {
-    bigint id PK
-    bigint production_batch_id FK
+    int id PK
+    int production_batch_id FK
     varchar(500) description
     varchar(10) severity "Minor, Major, Critical"
     varchar(20) status "Open, Escalated, Resolved"
+    datetime recorded_at
   }
   batch_events {
-    bigint id PK
-    bigint production_batch_id FK
+    int id PK
+    int production_batch_id FK
     varchar(40) type "title"
     varchar(500) description "detail"
     varchar(10) tone "Normal, Warning, Critical"
-    bigint performed_by "ref iam.users"
+    int performed_by "ref iam.users"
     datetime occurred_at
   }
   products ||--o{ master_formulas : "defined by"

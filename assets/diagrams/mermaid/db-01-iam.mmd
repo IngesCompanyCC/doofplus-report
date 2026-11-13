@@ -3,9 +3,9 @@ title: "Database Diagram – IAM Bounded Context (MySQL 8)"
 ---
 erDiagram
   users {
-    bigint id PK
-    bigint organization_id "ref organizations.organizations"
-    bigint facility_id "ref organizations.facilities"
+    int id PK
+    int organization_id "ref organizations.organizations"
+    int facility_id "ref organizations.facilities"
     varchar(150) full_name
     varchar(255) email UK
     varchar(255) password_hash
@@ -15,18 +15,18 @@ erDiagram
     datetime locked_until "nullable"
   }
   roles {
-    bigint id PK
+    int id PK
     varchar(40) name UK "RoleAdministrator, RoleQaSpecialist, ..."
   }
   user_roles {
-    bigint user_id PK, FK
-    bigint role_id PK, FK
+    int user_id PK, FK
+    int role_id PK, FK
   }
   invitations {
-    bigint id PK
-    bigint organization_id "ref organizations.organizations"
-    bigint facility_id "ref organizations.facilities"
-    bigint role_id FK
+    int id PK
+    int organization_id "ref organizations.organizations"
+    int facility_id "ref organizations.facilities"
+    int role_id FK
     varchar(150) full_name
     varchar(255) email
     varchar(500) note "nullable"
@@ -34,10 +34,10 @@ erDiagram
     datetime sent_at
   }
   electronic_signatures {
-    bigint id PK
-    bigint user_id FK
+    int id PK
+    int user_id FK
     varchar(100) entity_type
-    bigint entity_id
+    int entity_id
     varchar(20) meaning "Authored, Reviewed, Approved, Released"
     datetime signed_at
   }

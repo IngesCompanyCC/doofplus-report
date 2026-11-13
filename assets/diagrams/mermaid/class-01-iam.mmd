@@ -9,9 +9,9 @@ classDiagram
   }
   class User {
     <<Aggregate Root>>
-    +long Id
-    +long OrganizationId
-    +long FacilityId
+    +int Id
+    +int OrganizationId
+    +int FacilityId
     +string FullName
     +EmailAddress Email
     +string PasswordHash
@@ -29,15 +29,15 @@ classDiagram
   }
   class Role {
     <<Entity>>
-    +long Id
+    +int Id
     +Roles Name
     +GetStringName() string
   }
   class Invitation {
     <<Aggregate Root>>
-    +long Id
-    +long OrganizationId
-    +long FacilityId
+    +int Id
+    +int OrganizationId
+    +int FacilityId
     +Role Role
     +string FullName
     +EmailAddress Email
@@ -50,10 +50,10 @@ classDiagram
   }
   class ElectronicSignature {
     <<Aggregate Root>>
-    +long Id
-    +long UserId
+    +int Id
+    +int UserId
     +string EntityType
-    +long EntityId
+    +int EntityId
     +SignatureMeaning Meaning
     +DateTime SignedAt
     +ElectronicSignature(SignRecordCommand command)
@@ -97,11 +97,11 @@ classDiagram
   }
   class IInvitationRepository {
     <<interface>>
-    +FindAllByOrganizationIdAsync(long organizationId) Task~IEnumerable~Invitation~~
+    +FindAllByOrganizationIdAsync(int organizationId) Task~IEnumerable~Invitation~~
   }
   class IElectronicSignatureRepository {
     <<interface>>
-    +FindByEntityTypeAndEntityIdAsync(string entityType, long entityId) Task~IEnumerable~ElectronicSignature~~
+    +FindByEntityTypeAndEntityIdAsync(string entityType, int entityId) Task~IEnumerable~ElectronicSignature~~
   }
   class IUserCommandService {
     <<interface>>
@@ -133,8 +133,8 @@ classDiagram
     +VerifyCode(string secret, string code) bool
   }
   class IamContextFacade {
-    +CreateAdministrator(long organizationId, string fullName, string email, string password) long
-    +SignRecord(long userId, string password, string entityType, long entityId, string meaning) long
+    +CreateAdministrator(int organizationId, string fullName, string email, string password) int
+    +SignRecord(int userId, string password, string entityType, int entityId, string meaning) int
   }
   AggregateRoot <|-- User
   AggregateRoot <|-- Invitation

@@ -5,7 +5,7 @@ classDiagram
   direction LR
   class Equipment {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +EquipmentCode Code
     +string Name
     +string Model
@@ -27,14 +27,14 @@ classDiagram
   }
   class CalibrationRecord {
     <<Entity>>
-    +long Id
+    +int Id
     +DateOnly CalibratedAt
     +DateOnly ValidUntil
     +string Certificate
   }
   class MaintenanceRecord {
     <<Entity>>
-    +long Id
+    +int Id
     +DateOnly PerformedAt
     +string WorkOrder
     +string Owner
@@ -42,7 +42,7 @@ classDiagram
   }
   class Sensor {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +SensorCode Code
     +DeviceId DeviceId
     +SensorType Type
@@ -59,7 +59,7 @@ classDiagram
   }
   class Reading {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +string SensorCode
     +string BatchCode
     +double Value
@@ -69,7 +69,7 @@ classDiagram
   }
   class Alert {
     <<Aggregate Root>>
-    +long Id
+    +int Id
     +AlertCode Code
     +string SensorCode
     +string EquipmentCode
