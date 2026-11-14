@@ -1264,7 +1264,7 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - Subscriptions & Payments](../assets/img/chapter4/diagram-class/class-03-subscriptions.png)
 
-**Manufacturing & Batch Management.** `ProductionBatch` es el aggregate central del dominio: concentra el ciclo de vida del lote (`Planned` a `Released` o `Rejected`), su línea, responsable y avance, sus consumos de insumos, incidencias y su línea de tiempo (`BatchEvent`, con el color de cada entrada). Las lecturas de proceso de cada lote vienen de los sensores de IoT Monitoring. `ProductionOrder` agrupa sus operaciones (`Operation`) con su avance; `MasterFormula` contiene los componentes y parámetros de la fórmula (`FormulaItem`); `RawMaterialLot` controla la recepción, el muestreo y el dictamen de cada lote de insumo, y `Product` completa el contexto.
+**Manufacturing & Batch Management.** `ProductionBatch` es el aggregate central del dominio: concentra el ciclo de vida del lote (`Planned`, `InProgress`, `OnHold`, `ReleaseRequested` y `Released`, como la Web Application), su línea, responsable y avance, sus consumos de insumos, incidencias y su línea de tiempo (`BatchEvent`, con el color de cada entrada). Las lecturas de proceso de cada lote vienen de los sensores de IoT Monitoring. `ProductionOrder` agrupa sus operaciones (`Operation`) con su avance; `MasterFormula` contiene los componentes y parámetros de la fórmula (`FormulaItem`); `RawMaterialLot` controla la recepción, el muestreo y el dictamen de cada lote de insumo, y `Product` completa el contexto.
 
 ![Class Diagram - Manufacturing & Batch Management](../assets/img/chapter4/diagram-class/class-04-manufacturing.png)
 

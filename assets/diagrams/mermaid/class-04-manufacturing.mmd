@@ -99,14 +99,13 @@ classDiagram
     +ICollection~Incident~ Incidents
     +ICollection~BatchEvent~ Events
     +ProductionBatch(CreateBatchCommand command)
+    +Start() void
     +ConsumeMaterial(int rawMaterialLotId, Quantity quantity) void
     +UpdateProgress(int progress) void
     +RegisterIncident(string description, IncidentSeverity severity) Incident
-    +Hold(string reason) void
+    +Resume() void
     +Close(Quantity manufactured) void
-    +RequestRelease() void
-    +MarkAsReleased() void
-    +MarkAsRejected(string reason) void
+    +Release(string releasedBy) void
   }
   class MaterialConsumption {
     <<Entity>>
@@ -148,11 +147,8 @@ classDiagram
     Planned
     InProgress
     OnHold
-    Finished
-    Closed
     ReleaseRequested
     Released
-    Rejected
   }
   class ProductionOrderStatus {
     <<enumeration>>
@@ -237,6 +233,9 @@ classDiagram
     +Handle(RegisterIncidentCommand command) Task~Result~Incident~~
     +Handle(CloseBatchCommand command) Task~Result~ProductionBatch~~
     +Handle(UpdateBatchProgressCommand command) Task~Result~ProductionBatch~~
+    +Handle(StartBatchCommand command) Task~Result~ProductionBatch~~
+    +Handle(ResumeBatchCommand command) Task~Result~ProductionBatch~~
+    +Handle(ReleaseBatchCommand command) Task~Result~ProductionBatch~~
   }
   class ExternalQualityService {
     +RequestMaterialSampling(int rawMaterialLotId) int
