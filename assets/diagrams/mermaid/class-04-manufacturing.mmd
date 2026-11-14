@@ -13,16 +13,15 @@ classDiagram
   class MasterFormula {
     <<Aggregate Root>>
     +int Id
-    +int ProductId
+    +string ProductCode
     +string Version
     +FormulaStatus Status
-    +int BatchSize
-    +int ApprovedBy
+    +decimal BatchSize
+    +string ApprovedBy
     +DateOnly ApprovedAt
     +ICollection~FormulaItem~ Items
     +AddItem(FormulaItemKind kind, string name, string target, string tolerance) void
-    +SubmitForApproval() void
-    +Approve(int userId) void
+    +Approve(string approvedBy) void
     +Lock() void
   }
   class FormulaItem {
@@ -44,8 +43,7 @@ classDiagram
     +MaterialCategory Category
     +string Supplier
     +string SupplierLot
-    +string RfidTag
-    +Quantity ReceivedQuantity
+    +string Quantity
     +string StorageLocation
     +string Certificate
     +MaterialLotStatus Status
@@ -53,27 +51,26 @@ classDiagram
     +bool PackagingVerified
     +bool IdentityVerified
     +DateOnly ExpiryDate
-    +RequestSampling() void
-    +MarkAsApproved() void
-    +MarkAsRejected() void
-    +IsApprovedForUse() bool
+    +string AllocatedBatch
+    +Inspect(InspectRawMaterialLotCommand command) void
+    +Approve() void
+    +Reject() void
+    +AllocateTo(string batchCode) void
   }
   class ProductionOrder {
     <<Aggregate Root>>
     +int Id
     +string Code
+    +string ProductCode
     +int MasterFormulaId
-    +int FacilityId
+    +string BatchCode
     +string Line
-    +Quantity PlannedQuantity
+    +decimal PlannedQuantity
     +ProductionOrderStatus Status
     +DateTime PlannedStart
     +DateTime PlannedEnd
     +ICollection~Operation~ Operations
-    +Approve() void
-    +Start() void
-    +Hold(string reason) void
-    +Complete() void
+    +ChangeStatus(ProductionOrderStatus status) void
   }
   class Operation {
     <<Entity>>
@@ -92,19 +89,18 @@ classDiagram
     +int ProductionOrderId
     +BatchStatus Status
     +string Line
-    +int OwnerId
+    +string Owner
     +int Progress
     +Quantity PlannedQuantity
     +Quantity ManufacturedQuantity
     +DateTime StartedAt
     +DateTime FinishedAt
     +ICollection~MaterialConsumption~ Consumptions
-    +ICollection~ProcessParameter~ Parameters
     +ICollection~Incident~ Incidents
     +ICollection~BatchEvent~ Events
     +ProductionBatch(CreateBatchCommand command)
     +ConsumeMaterial(int rawMaterialLotId, Quantity quantity) void
-    +RecordParameter(string name, decimal value, string unit) void
+    +UpdateProgress(int progress) void
     +RegisterIncident(string description, IncidentSeverity severity) Incident
     +Hold(string reason) void
     +Close(Quantity manufactured) void
@@ -118,14 +114,6 @@ classDiagram
     +int RawMaterialLotId
     +Quantity ConsumedQuantity
     +DateTime ConsumedAt
-  }
-  class ProcessParameter {
-    <<Entity>>
-    +int Id
-    +string Name
-    +decimal Value
-    +string Unit
-    +DateTime RecordedAt
   }
   class Incident {
     <<Entity>>
@@ -236,7 +224,7 @@ classDiagram
     <<enumeration>>
     Normal
     Warning
-    Critical
+    Danger
   }
   class IProductionBatchRepository {
     <<interface>>
@@ -248,6 +236,7 @@ classDiagram
     +Handle(CreateBatchCommand command) Task~Result~ProductionBatch~~
     +Handle(RegisterIncidentCommand command) Task~Result~Incident~~
     +Handle(CloseBatchCommand command) Task~Result~ProductionBatch~~
+    +Handle(UpdateBatchProgressCommand command) Task~Result~ProductionBatch~~
   }
   class ExternalQualityService {
     +RequestMaterialSampling(int rawMaterialLotId) int
@@ -259,7 +248,6 @@ classDiagram
   ProductionOrder "1" *-- "1..*" Operation : routedThrough
   ProductionBatch "0..*" --> "1" ProductionOrder : executes
   ProductionBatch "1" *-- "0..*" MaterialConsumption : consumes
-  ProductionBatch "1" *-- "0..*" ProcessParameter : records
   ProductionBatch "1" *-- "0..*" Incident : registers
   ProductionBatch "1" *-- "0..*" BatchEvent : timeline
   MaterialConsumption "0..*" --> "1" RawMaterialLot : uses
