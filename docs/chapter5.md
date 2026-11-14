@@ -936,6 +936,10 @@ Schwaber, K., & Sutherland, J. (2020). <em>The Scrum Guide</em>. Scrum.org.
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Tuesta, P. (2025, 9 de abril). <em>51 laboratorios extranjeros sin certificación de buenas prácticas aún venden medicinas en Perú</em>. Salud con Lupa. https://saludconlupa.com/noticias/51-laboratorios-extranjeros-sin-certificacion-de-buenas-practicas-aun-venden-medicinas-en-peru/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
 tuhub. (2025). <em>Más control en la operación. Menos pérdidas invisibles.</em>. https://tuhub.co
 </div>
 
