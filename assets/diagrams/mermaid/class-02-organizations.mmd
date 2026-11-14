@@ -31,7 +31,7 @@ classDiagram
     +string Value
     +Ruc(string value)
   }
-  class Profile {
+  class UserProfile {
     <<Aggregate Root>>
     +int Id
     +int UserId
@@ -107,18 +107,18 @@ classDiagram
     <<interface>>
     +ExistsByRuc(Ruc ruc) bool
   }
-  class IProfileRepository {
+  class IUserProfileRepository {
     <<interface>>
-    +FindByUserIdAsync(int userId) Task~Profile?~
+    +FindByUserIdAsync(int userId) Task~UserProfile?~
   }
   class IOrganizationCommandService {
     <<interface>>
     +Handle(RegisterOrganizationCommand command) Task~Result~Organization~~
     +Handle(AddFacilityCommand command) Task~Result~Facility~~
   }
-  class IProfileCommandService {
+  class IUserProfileCommandService {
     <<interface>>
-    +Handle(UpdateProfilePreferencesCommand command) Task~Result~Profile~~
+    +Handle(UpdateUserProfilePreferencesCommand command) Task~Result~UserProfile~~
   }
   class IContactInquiryCommandService {
     <<interface>>
@@ -132,13 +132,13 @@ classDiagram
   Organization --> OrganizationStatus : status
   Facility --> FacilityType : type
   Facility --> FacilityStatus : status
-  Profile "0..*" --> "1" Organization : belongsTo
-  Profile *-- PersonName : name
-  Profile *-- NotificationPreferences : preferences
-  Profile --> Area : area
+  UserProfile "0..*" --> "1" Organization : belongsTo
+  UserProfile *-- PersonName : name
+  UserProfile *-- NotificationPreferences : preferences
+  UserProfile --> Area : area
   AdministrativeActivity "0..*" --> "1" Organization : loggedFor
   ContactInquiry --> InquiryStatus : status
   IOrganizationRepository ..> Organization : persists
-  IProfileRepository ..> Profile : persists
+  IUserProfileRepository ..> UserProfile : persists
   IOrganizationCommandService ..> ExternalIamService : uses
-  IProfileCommandService ..> IProfileRepository : uses
+  IUserProfileCommandService ..> IUserProfileRepository : uses

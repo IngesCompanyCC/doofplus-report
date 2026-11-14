@@ -1256,7 +1256,7 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - IAM](../assets/img/chapter4/diagram-class/class-01-iam.png)
 
-**Organizations & Profiles.** `Organization` agrupa sus plantas (`Facility`, de manufactura o de laboratorio de control de calidad) y se identifica por el value object `Ruc`; `Profile` guarda los datos, el área, la sede y las preferencias de cada usuario; `AdministrativeActivity` registra la actividad reciente que muestra el resumen de administración; `ContactInquiry` registra las consultas enviadas desde el formulario "Contact us" de la Web Application y, mediante una policy, avisa al equipo de DoofPlus.
+**Organizations & Profiles.** `Organization` agrupa sus plantas (`Facility`, de manufactura o de laboratorio de control de calidad) y se identifica por el value object `Ruc`; `UserProfile` guarda los datos, el área, la sede y las preferencias de cada usuario; `AdministrativeActivity` registra la actividad reciente que muestra el resumen de administración; `ContactInquiry` registra las consultas enviadas desde el formulario "Contact us" de la Web Application y, mediante una policy, avisa al equipo de DoofPlus.
 
 ![Class Diagram - Organizations & Profiles](../assets/img/chapter4/diagram-class/class-02-organizations.png)
 
@@ -1291,7 +1291,7 @@ Los diagramas se elaboraron con Mermaid (Diagram-as-Code), uno por bounded conte
 | Bounded context | Tablas | Aggregates que persiste |
 | --- | --- | --- |
 | IAM | users, roles, user_roles, invitations, electronic_signatures | User, Invitation, ElectronicSignature |
-| Organizations & Profiles | organizations, facilities, profiles, administrative_activities, contact_inquiries | Organization, Profile, AdministrativeActivity, ContactInquiry |
+| Organizations & Profiles | organizations, facilities, user_profiles, administrative_activities, contact_inquiries | Organization, UserProfile, AdministrativeActivity, ContactInquiry |
 | Subscriptions & Payments | plans, subscriptions, payments | Plan, Subscription |
 | Manufacturing & Batch Management | products, master_formulas, formula_items, raw_material_lots, production_orders, operations, production_batches, material_consumptions, incidents, batch_events | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch |
 | IoT Monitoring | equipment, calibration_records, maintenance_records, sensors, readings, alerts | Equipment, Sensor, Reading, Alert |
