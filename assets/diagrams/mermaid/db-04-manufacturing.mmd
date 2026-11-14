@@ -10,11 +10,11 @@ erDiagram
   }
   master_formulas {
     int id PK
-    int product_id FK
+    varchar(30) product_code "ref products.code"
     varchar(10) version "v3.2"
     varchar(20) status "Draft, Pending, Approved, Locked"
-    int batch_size
-    int approved_by "ref iam.users, nullable"
+    decimal batch_size "(12,2)"
+    varchar(100) approved_by "name, empty until approved"
     date approved_at "nullable"
   }
   formula_items {
@@ -35,9 +35,7 @@ erDiagram
     varchar(20) category "Api, Excipient, Packaging"
     varchar(150) supplier
     varchar(50) supplier_lot
-    varchar(100) rfid_tag UK "nullable"
-    decimal received_quantity "(12,4)"
-    varchar(60) quantity_detail "20 sealed drums"
+    varchar(100) quantity "500 kg · 20 sealed drums"
     varchar(100) storage_location
     varchar(255) certificate "CoA file"
     varchar(20) status "Quarantine, Sampling, Inspection, Approved, Rejected"
@@ -45,12 +43,14 @@ erDiagram
     tinyint(1) packaging_verified
     tinyint(1) identity_verified
     date expiry_date
+    varchar(30) allocated_batch "B-26041, empty until allocated"
   }
   production_orders {
     int id PK
     varchar(30) code UK "PO-26041"
     int master_formula_id FK
-    int facility_id "ref organizations.facilities"
+    varchar(30) product_code "ref products.code"
+    varchar(30) batch_code "B-26041"
     varchar(30) line "Line 02"
     decimal planned_quantity "(12,4)"
     varchar(20) status "Planned, Approved, InProgress, OnHold, Completed"
@@ -73,7 +73,7 @@ erDiagram
     int production_order_id FK
     varchar(20) status "Planned ... Released, Rejected"
     varchar(30) line
-    int owner_id "ref iam.users"
+    varchar(100) owner "Alberto Valle"
     int progress "0-100"
     decimal planned_quantity_value "(12,4)"
     varchar(10) planned_quantity_unit
@@ -90,14 +90,6 @@ erDiagram
     varchar(10) consumed_quantity_unit
     datetime consumed_at
   }
-  process_parameters {
-    int id PK
-    int production_batch_id FK
-    varchar(100) name
-    decimal value "(12,4)"
-    varchar(10) unit
-    datetime recorded_at
-  }
   incidents {
     int id PK
     int production_batch_id FK
@@ -111,7 +103,7 @@ erDiagram
     int production_batch_id FK
     varchar(40) type "title"
     varchar(500) description "detail"
-    varchar(10) tone "Normal, Warning, Critical"
+    varchar(10) tone "Normal, Warning, Danger"
     int performed_by "ref iam.users"
     datetime occurred_at
   }
@@ -122,6 +114,5 @@ erDiagram
   production_orders ||--o{ production_batches : "executed as"
   production_batches ||--o{ material_consumptions : "consumes"
   raw_material_lots ||--o{ material_consumptions : "consumed in"
-  production_batches ||--o{ process_parameters : "records"
   production_batches ||--o{ incidents : "registers"
   production_batches ||--o{ batch_events : "timeline"

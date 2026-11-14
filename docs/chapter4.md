@@ -1264,7 +1264,7 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - Subscriptions & Payments](../assets/img/chapter4/diagram-class/class-03-subscriptions.png)
 
-**Manufacturing & Batch Management.** `ProductionBatch` es el aggregate central del dominio: concentra el ciclo de vida del lote (`Planned` a `Released` o `Rejected`), sus consumos de insumos, parámetros de proceso, incidencias y su línea de tiempo (`BatchEvent`). `ProductionOrder` agrupa sus operaciones (`Operation`) con su avance; `MasterFormula` contiene los componentes y parámetros de la fórmula (`FormulaItem`); `RawMaterialLot` controla la recepción, el muestreo y el dictamen de cada lote de insumo, y `Product` completa el contexto.
+**Manufacturing & Batch Management.** `ProductionBatch` es el aggregate central del dominio: concentra el ciclo de vida del lote (`Planned` a `Released` o `Rejected`), su línea, responsable y avance, sus consumos de insumos, incidencias y su línea de tiempo (`BatchEvent`, con el color de cada entrada). Las lecturas de proceso de cada lote vienen de los sensores de IoT Monitoring. `ProductionOrder` agrupa sus operaciones (`Operation`) con su avance; `MasterFormula` contiene los componentes y parámetros de la fórmula (`FormulaItem`); `RawMaterialLot` controla la recepción, el muestreo y el dictamen de cada lote de insumo, y `Product` completa el contexto.
 
 ![Class Diagram - Manufacturing & Batch Management](../assets/img/chapter4/diagram-class/class-04-manufacturing.png)
 
@@ -1293,7 +1293,7 @@ Los diagramas se elaboraron con Mermaid (Diagram-as-Code), uno por bounded conte
 | IAM | users, roles, user_roles, invitations, electronic_signatures | User, Invitation, ElectronicSignature |
 | Organizations & Profiles | organizations, facilities, profiles, administrative_activities, contact_inquiries | Organization, Profile, AdministrativeActivity, ContactInquiry |
 | Subscriptions & Payments | plans, subscriptions, payments | Plan, Subscription |
-| Manufacturing & Batch Management | products, master_formulas, formula_items, raw_material_lots, production_orders, operations, production_batches, material_consumptions, process_parameters, incidents, batch_events | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch |
+| Manufacturing & Batch Management | products, master_formulas, formula_items, raw_material_lots, production_orders, operations, production_batches, material_consumptions, incidents, batch_events | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch |
 | IoT Monitoring | equipment, calibration_records, maintenance_records, sensors, readings, alerts | Equipment, Sensor, Reading, Alert |
 | Quality & Compliance | quality_documents, analytical_results, batch_releases, evidence, deviations, capa_plans, capa_actions, audits, audit_findings, audit_events, regulatory_reports, collaboration_tasks, task_comments, traceability_gaps | QualityDocument, AnalyticalResult, BatchRelease, Evidence, Deviation, CapaPlan, Audit, AuditEvent, RegulatoryReport, CollaborationTask, TaskComment, TraceabilityGap |
 
