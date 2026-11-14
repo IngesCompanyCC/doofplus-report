@@ -71,7 +71,7 @@ erDiagram
     int id PK
     varchar(30) batch_number UK "B-26041"
     int production_order_id FK
-    varchar(20) status "Planned ... Released, Rejected"
+    varchar(20) status "Planned, InProgress, OnHold, ReleaseRequested, Released"
     varchar(30) line
     varchar(100) owner "Alberto Valle"
     int progress "0-100"
