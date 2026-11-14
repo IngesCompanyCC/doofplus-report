@@ -110,7 +110,7 @@ erDiagram
   products ||--o{ master_formulas : "defined by"
   master_formulas ||--|{ formula_items : "contains"
   master_formulas ||--o{ production_orders : "followed by"
-  production_orders ||--|{ operations : "routed through"
+  production_orders ||--o{ operations : "routed through"
   production_orders ||--o{ production_batches : "executed as"
   production_batches ||--o{ material_consumptions : "consumes"
   raw_material_lots ||--o{ material_consumptions : "consumed in"
