@@ -184,6 +184,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.4 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo I y Bibliografía: el dato de los 385 laboratorios extranjeros pendientes de certificación BPM cita su fuente (Tuesta, 2025, Salud con Lupa), que se agrega a la bibliografía. |
 | 4.8.5 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo III: US04 y US05 indican que el formulario de contacto está en la zona pública de la Web Application; US48 suma el escenario de registro de un laboratorio nuevo; corrección de concordancia en TS01 y del escenario 2 de TS12. |
 | 4.8.6 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo IV: la sección Our Team del Website menciona el enlace alternativo a YouTube del Video About-the-Team. |
+| 4.8.7 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: sección 5.2.3 Sprint 3: Sprint Planning, Aspect Leaders, Sprint Backlog (T137 a T165, T184 a T201), commits de `main` del Sprint, evidencia de ejecución, documentación de los Web Services en Scalar, despliegue e insights. |
 
 ---
 
@@ -354,6 +355,15 @@ A partir de la retroalimentación del docente sobre el TB1, el equipo revisó el
       - [5.2.2.6. Services Documentation Evidence for Sprint Review](docs/chapter5.md#5226-services-documentation-evidence-for-sprint-review)
       - [5.2.2.7. Software Deployment Evidence for Sprint Review](docs/chapter5.md#5227-software-deployment-evidence-for-sprint-review)
       - [5.2.2.8. Team Collaboration Insights during Sprint](docs/chapter5.md#5228-team-collaboration-insights-during-sprint)
+    - [5.2.3. Sprint 3](docs/chapter5.md#523-sprint-3)
+      - [5.2.3.1. Sprint Planning 3](docs/chapter5.md#5231-sprint-planning-3)
+      - [5.2.3.2. Aspect Leaders and Collaborators](docs/chapter5.md#5232-aspect-leaders-and-collaborators)
+      - [5.2.3.3. Sprint Backlog 3](docs/chapter5.md#5233-sprint-backlog-3)
+      - [5.2.3.4. Development Evidence for Sprint Review](docs/chapter5.md#5234-development-evidence-for-sprint-review)
+      - [5.2.3.5. Execution Evidence for Sprint Review](docs/chapter5.md#5235-execution-evidence-for-sprint-review)
+      - [5.2.3.6. Services Documentation Evidence for Sprint Review](docs/chapter5.md#5236-services-documentation-evidence-for-sprint-review)
+      - [5.2.3.7. Software Deployment Evidence for Sprint Review](docs/chapter5.md#5237-software-deployment-evidence-for-sprint-review)
+      - [5.2.3.8. Team Collaboration Insights during Sprint](docs/chapter5.md#5238-team-collaboration-insights-during-sprint)
   - [5.3. Validation Interviews](docs/chapter5.md#53-validation-interviews)
     - [5.3.1. Diseño de Entrevistas](docs/chapter5.md#531-diseño-de-entrevistas)
     - [5.3.2. Registro de Entrevistas](docs/chapter5.md#532-registro-de-entrevistas)
