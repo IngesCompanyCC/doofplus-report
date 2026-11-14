@@ -1,0 +1,159 @@
+---
+title: "Class Diagram – IAM Bounded Context"
+---
+classDiagram
+  direction LR
+  class AggregateRoot {
+    <<abstract>>
+    #AddDomainEvent(IEvent domainEvent) void
+  }
+  class User {
+    <<Aggregate Root>>
+    +int Id
+    +int OrganizationId
+    +int FacilityId
+    +string FullName
+    +EmailAddress Email
+    +string PasswordHash
+    +string MfaSecret
+    +UserStatus Status
+    +int FailedSignInAttempts
+    +ICollection~Role~ Roles
+    +User(SignUpCommand command, string passwordHash, ICollection~Role~ roles)
+    +Activate(string passwordHash, string mfaSecret) void
+    +AssignRole(Role role) User
+    +RegisterFailedSignIn() void
+    +ResetFailedSignIns() void
+    +Lock() void
+    +IsLocked() bool
+  }
+  class Role {
+    <<Entity>>
+    +int Id
+    +Roles Name
+    +GetStringName() string
+  }
+  class Invitation {
+    <<Aggregate Root>>
+    +int Id
+    +int OrganizationId
+    +int FacilityId
+    +Role Role
+    +string FullName
+    +EmailAddress Email
+    +string Note
+    +InvitationStatus Status
+    +DateTime SentAt
+    +Invitation(SendInvitationCommand command)
+    +Accept() void
+    +Expire() void
+  }
+  class ElectronicSignature {
+    <<Aggregate Root>>
+    +int Id
+    +int UserId
+    +string EntityType
+    +int EntityId
+    +SignatureMeaning Meaning
+    +DateTime SignedAt
+    +ElectronicSignature(SignRecordCommand command)
+  }
+  class EmailAddress {
+    <<Value Object>>
+    +string Address
+  }
+  class Roles {
+    <<enumeration>>
+    RoleAdministrator
+    RoleQaSpecialist
+    RoleQualityManager
+    RoleProductionSupervisor
+    RoleInternalAuditor
+  }
+  class UserStatus {
+    <<enumeration>>
+    Invited
+    Active
+    Locked
+    Disabled
+  }
+  class InvitationStatus {
+    <<enumeration>>
+    Pending
+    Accepted
+    Expired
+  }
+  class SignatureMeaning {
+    <<enumeration>>
+    Authored
+    Reviewed
+    Approved
+    Released
+  }
+  class IUserRepository {
+    <<interface>>
+    +FindByEmailAsync(EmailAddress email) Task~User?~
+    +ExistsByEmail(EmailAddress email) bool
+  }
+  class IInvitationRepository {
+    <<interface>>
+    +FindAllByOrganizationIdAsync(int organizationId) Task~IEnumerable~Invitation~~
+  }
+  class IElectronicSignatureRepository {
+    <<interface>>
+    +FindByEntityTypeAndEntityIdAsync(string entityType, int entityId) Task~IEnumerable~ElectronicSignature~~
+  }
+  class IUserCommandService {
+    <<interface>>
+    +Handle(SignUpCommand command) Task~Result~User~~
+    +Handle(SignInCommand command) Task~Result~AuthenticatedUser~~
+    +Handle(AssignRoleCommand command) Task~Result~User~~
+  }
+  class IInvitationCommandService {
+    <<interface>>
+    +Handle(SendInvitationCommand command) Task~Result~Invitation~~
+    +Handle(AcceptInvitationCommand command) Task~Result~User~~
+  }
+  class ISignatureCommandService {
+    <<interface>>
+    +Handle(SignRecordCommand command) Task~Result~ElectronicSignature~~
+  }
+  class ITokenService {
+    <<interface>>
+    +GenerateToken(string username) string
+    +ValidateToken(string token) bool
+  }
+  class IHashingService {
+    <<interface>>
+    +Encode(string rawPassword) string
+    +Matches(string rawPassword, string encodedPassword) bool
+  }
+  class ITotpService {
+    <<interface>>
+    +VerifyCode(string secret, string code) bool
+  }
+  class IamContextFacade {
+    +CreateAdministrator(int organizationId, string fullName, string email, string password) int
+    +SignRecord(int userId, string password, string entityType, int entityId, string meaning) int
+  }
+  AggregateRoot <|-- User
+  AggregateRoot <|-- Invitation
+  AggregateRoot <|-- ElectronicSignature
+  User "0..*" o-- "1..*" Role : has
+  User *-- EmailAddress : email
+  User --> UserStatus : status
+  Invitation "0..*" --> "1" Role : offers
+  Invitation --> InvitationStatus : status
+  Role --> Roles : name
+  ElectronicSignature "0..*" --> "1" User : signedBy
+  ElectronicSignature --> SignatureMeaning : meaning
+  IUserRepository ..> User : persists
+  IInvitationRepository ..> Invitation : persists
+  IElectronicSignatureRepository ..> ElectronicSignature : persists
+  IUserCommandService ..> ITokenService : uses
+  IUserCommandService ..> IHashingService : uses
+  IUserCommandService ..> ITotpService : uses
+  IInvitationCommandService ..> IUserCommandService : createsUser
+  ISignatureCommandService ..> IHashingService : verifiesIdentity
+  IamContextFacade ..> IUserCommandService : delegates
+  IamContextFacade ..> ISignatureCommandService : delegates

@@ -1,0 +1,52 @@
+---
+title: "Database Diagram – Organizations & Profiles Bounded Context (MySQL 8)"
+---
+erDiagram
+  organizations {
+    int id PK
+    varchar(255) legal_name
+    char(11) ruc UK
+    varchar(60) region "Peru"
+    varchar(150) owner_name
+    varchar(25) status "Active, Pending, PendingVerification, Inactive"
+  }
+  facilities {
+    int id PK
+    int organization_id FK
+    varchar(150) name
+    varchar(20) type "Manufacturing, QcLaboratory"
+    varchar(40) timezone "America/Lima"
+    varchar(150) owner_name
+    varchar(20) status "Active, Inactive"
+  }
+  user_profiles {
+    int id PK
+    int user_id UK "ref iam.users"
+    int organization_id FK
+    varchar(100) first_name
+    varchar(100) last_name
+    varchar(255) email
+    varchar(20) area "Quality, Production, Administration"
+    varchar(150) site
+    varchar(5) language "en, es"
+    tinyint(1) email_notifications
+    tinyint(1) in_app_notifications
+  }
+  administrative_activities {
+    int id PK
+    int organization_id FK
+    varchar(255) title
+    varchar(150) actor
+    datetime occurred_at
+  }
+  contact_inquiries {
+    int id PK
+    varchar(150) full_name
+    varchar(255) email
+    text message
+    varchar(20) status "Received, Answered"
+    datetime received_at
+  }
+  organizations ||--|{ facilities : "operates"
+  organizations ||--o{ user_profiles : "employs"
+  organizations ||--o{ administrative_activities : "logs"

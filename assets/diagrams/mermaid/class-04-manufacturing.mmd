@@ -1,0 +1,267 @@
+---
+title: "Class Diagram – Manufacturing & Batch Management Bounded Context"
+---
+classDiagram
+  direction LR
+  class Product {
+    <<Aggregate Root>>
+    +int Id
+    +string Code
+    +string Name
+    +DosageForm DosageForm
+  }
+  class MasterFormula {
+    <<Aggregate Root>>
+    +int Id
+    +string ProductCode
+    +string Version
+    +FormulaStatus Status
+    +decimal BatchSize
+    +string ApprovedBy
+    +DateOnly ApprovedAt
+    +ICollection~FormulaItem~ Items
+    +AddItem(FormulaItemKind kind, string name, string target, string tolerance) void
+    +Approve(string approvedBy) void
+    +Lock() void
+  }
+  class FormulaItem {
+    <<Entity>>
+    +int Id
+    +FormulaItemKind Kind
+    +string Name
+    +string Role
+    +string Target
+    +string Tolerance
+    +string Control
+  }
+  class RawMaterialLot {
+    <<Aggregate Root>>
+    +int Id
+    +string Code
+    +string ReceiptCode
+    +string Material
+    +MaterialCategory Category
+    +string Supplier
+    +string SupplierLot
+    +string Quantity
+    +string StorageLocation
+    +string Certificate
+    +MaterialLotStatus Status
+    +SamplingStatus SamplingStatus
+    +bool PackagingVerified
+    +bool IdentityVerified
+    +DateOnly ExpiryDate
+    +string AllocatedBatch
+    +Inspect(InspectRawMaterialLotCommand command) void
+    +Approve() void
+    +Reject() void
+    +AllocateTo(string batchCode) void
+  }
+  class ProductionOrder {
+    <<Aggregate Root>>
+    +int Id
+    +string Code
+    +string ProductCode
+    +int MasterFormulaId
+    +string BatchCode
+    +string Line
+    +decimal PlannedQuantity
+    +ProductionOrderStatus Status
+    +DateTime PlannedStart
+    +DateTime PlannedEnd
+    +ICollection~Operation~ Operations
+    +ChangeStatus(ProductionOrderStatus status) void
+  }
+  class Operation {
+    <<Entity>>
+    +int Id
+    +int Sequence
+    +string Name
+    +string Equipment
+    +int Progress
+    +OperationStatus Status
+    +string Reference
+  }
+  class ProductionBatch {
+    <<Aggregate Root>>
+    +int Id
+    +BatchNumber BatchNumber
+    +int ProductionOrderId
+    +BatchStatus Status
+    +string Line
+    +string Owner
+    +int Progress
+    +Quantity PlannedQuantity
+    +Quantity ManufacturedQuantity
+    +DateTime StartedAt
+    +DateTime FinishedAt
+    +ICollection~MaterialConsumption~ Consumptions
+    +ICollection~Incident~ Incidents
+    +ICollection~BatchEvent~ Events
+    +ProductionBatch(CreateBatchCommand command)
+    +Start() void
+    +ConsumeMaterial(int rawMaterialLotId, Quantity quantity) void
+    +UpdateProgress(int progress) void
+    +RegisterIncident(string description, IncidentSeverity severity) Incident
+    +Resume() void
+    +Close(Quantity manufactured) void
+    +Release(string releasedBy) void
+  }
+  class MaterialConsumption {
+    <<Entity>>
+    +int Id
+    +int RawMaterialLotId
+    +Quantity ConsumedQuantity
+    +DateTime ConsumedAt
+  }
+  class Incident {
+    <<Entity>>
+    +int Id
+    +string Description
+    +IncidentSeverity Severity
+    +IncidentStatus Status
+    +DateTime RecordedAt
+    +Escalate() void
+    +Resolve() void
+  }
+  class BatchEvent {
+    <<Entity>>
+    +int Id
+    +string Type
+    +string Description
+    +EventTone Tone
+    +int PerformedBy
+    +DateTime OccurredAt
+  }
+  class BatchNumber {
+    <<Value Object>>
+    +string Value
+  }
+  class Quantity {
+    <<Value Object>>
+    +decimal Value
+    +string Unit
+  }
+  class BatchStatus {
+    <<enumeration>>
+    Planned
+    InProgress
+    OnHold
+    ReleaseRequested
+    Released
+  }
+  class ProductionOrderStatus {
+    <<enumeration>>
+    Planned
+    Approved
+    InProgress
+    OnHold
+    Completed
+  }
+  class OperationStatus {
+    <<enumeration>>
+    NotStarted
+    InProgress
+    OnHold
+    Complete
+  }
+  class MaterialLotStatus {
+    <<enumeration>>
+    Quarantine
+    Sampling
+    Inspection
+    Approved
+    Rejected
+  }
+  class SamplingStatus {
+    <<enumeration>>
+    Pending
+    Requested
+    Done
+  }
+  class MaterialCategory {
+    <<enumeration>>
+    Api
+    Excipient
+    Packaging
+  }
+  class DosageForm {
+    <<enumeration>>
+    Tablet
+    Capsule
+    Syrup
+    Injectable
+  }
+  class FormulaStatus {
+    <<enumeration>>
+    Draft
+    Pending
+    Approved
+    Locked
+  }
+  class FormulaItemKind {
+    <<enumeration>>
+    Component
+    Parameter
+  }
+  class IncidentSeverity {
+    <<enumeration>>
+    Minor
+    Major
+    Critical
+  }
+  class IncidentStatus {
+    <<enumeration>>
+    Open
+    Escalated
+    Resolved
+  }
+  class EventTone {
+    <<enumeration>>
+    Normal
+    Warning
+    Danger
+  }
+  class IProductionBatchRepository {
+    <<interface>>
+    +FindByBatchNumberAsync(BatchNumber batchNumber) Task~ProductionBatch?~
+    +ExistsByBatchNumber(BatchNumber batchNumber) bool
+  }
+  class IProductionBatchCommandService {
+    <<interface>>
+    +Handle(CreateBatchCommand command) Task~Result~ProductionBatch~~
+    +Handle(RegisterIncidentCommand command) Task~Result~Incident~~
+    +Handle(CloseBatchCommand command) Task~Result~ProductionBatch~~
+    +Handle(UpdateBatchProgressCommand command) Task~Result~ProductionBatch~~
+    +Handle(StartBatchCommand command) Task~Result~ProductionBatch~~
+    +Handle(ResumeBatchCommand command) Task~Result~ProductionBatch~~
+    +Handle(ReleaseBatchCommand command) Task~Result~ProductionBatch~~
+  }
+  class ExternalQualityService {
+    +RequestMaterialSampling(int rawMaterialLotId) int
+    +RequestBatchRelease(int batchId) int
+  }
+  MasterFormula "0..*" --> "1" Product : defines
+  MasterFormula "1" *-- "1..*" FormulaItem : contains
+  ProductionOrder "0..*" --> "1" MasterFormula : follows
+  ProductionOrder "1" *-- "1..*" Operation : routedThrough
+  ProductionBatch "0..*" --> "1" ProductionOrder : executes
+  ProductionBatch "1" *-- "0..*" MaterialConsumption : consumes
+  ProductionBatch "1" *-- "0..*" Incident : registers
+  ProductionBatch "1" *-- "0..*" BatchEvent : timeline
+  MaterialConsumption "0..*" --> "1" RawMaterialLot : uses
+  ProductionBatch *-- BatchNumber : batchNumber
+  ProductionBatch --> BatchStatus : status
+  ProductionOrder --> ProductionOrderStatus : status
+  Operation --> OperationStatus : status
+  RawMaterialLot --> MaterialLotStatus : status
+  RawMaterialLot --> SamplingStatus : samplingStatus
+  RawMaterialLot --> MaterialCategory : category
+  Product --> DosageForm : dosageForm
+  MasterFormula --> FormulaStatus : status
+  FormulaItem --> FormulaItemKind : kind
+  Incident --> IncidentSeverity : severity
+  Incident --> IncidentStatus : status
+  BatchEvent --> EventTone : tone
+  IProductionBatchRepository ..> ProductionBatch : persists
+  IProductionBatchCommandService ..> ExternalQualityService : uses

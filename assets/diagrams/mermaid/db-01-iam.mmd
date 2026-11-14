@@ -1,0 +1,47 @@
+---
+title: "Database Diagram – IAM Bounded Context (MySQL 8)"
+---
+erDiagram
+  users {
+    int id PK
+    int organization_id "ref organizations.organizations"
+    int facility_id "ref organizations.facilities"
+    varchar(150) full_name
+    varchar(255) email UK
+    varchar(255) password_hash
+    varchar(64) mfa_secret "encrypted (TOTP)"
+    varchar(20) status "Invited, Active, Locked, Disabled"
+    int failed_sign_in_attempts
+    datetime locked_until "nullable"
+  }
+  roles {
+    int id PK
+    varchar(40) name UK "RoleAdministrator, RoleQaSpecialist, ..."
+  }
+  user_roles {
+    int user_id PK, FK
+    int role_id PK, FK
+  }
+  invitations {
+    int id PK
+    int organization_id "ref organizations.organizations"
+    int facility_id "ref organizations.facilities"
+    int role_id FK
+    varchar(150) full_name
+    varchar(255) email
+    varchar(500) note "nullable"
+    varchar(20) status "Pending, Accepted, Expired"
+    datetime sent_at
+  }
+  electronic_signatures {
+    int id PK
+    int user_id FK
+    varchar(100) entity_type
+    int entity_id
+    varchar(20) meaning "Authored, Reviewed, Approved, Released"
+    datetime signed_at
+  }
+  users ||--o{ user_roles : "has"
+  roles ||--o{ user_roles : "grants"
+  roles ||--o{ invitations : "offered in"
+  users ||--o{ electronic_signatures : "signs"

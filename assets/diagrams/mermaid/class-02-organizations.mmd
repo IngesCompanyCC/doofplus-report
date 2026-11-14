@@ -1,0 +1,144 @@
+---
+title: "Class Diagram – Organizations & Profiles Bounded Context"
+---
+classDiagram
+  direction LR
+  class Organization {
+    <<Aggregate Root>>
+    +int Id
+    +string LegalName
+    +Ruc Ruc
+    +string Region
+    +string OwnerName
+    +OrganizationStatus Status
+    +ICollection~Facility~ Facilities
+    +Organization(RegisterOrganizationCommand command)
+    +AddFacility(string name, FacilityType type, string timezone) Facility
+    +Verify() void
+    +Deactivate() void
+  }
+  class Facility {
+    <<Entity>>
+    +int Id
+    +string Name
+    +FacilityType Type
+    +string Timezone
+    +string OwnerName
+    +FacilityStatus Status
+  }
+  class Ruc {
+    <<Value Object>>
+    +string Value
+    +Ruc(string value)
+  }
+  class UserProfile {
+    <<Aggregate Root>>
+    +int Id
+    +int UserId
+    +int OrganizationId
+    +PersonName Name
+    +string Email
+    +Area Area
+    +string Site
+    +string Language
+    +NotificationPreferences Preferences
+    +UpdatePreferences(NotificationPreferences preferences) void
+    +ChangeLanguage(string language) void
+  }
+  class PersonName {
+    <<Value Object>>
+    +string FirstName
+    +string LastName
+    +GetFullName() string
+  }
+  class NotificationPreferences {
+    <<Value Object>>
+    +bool EmailEnabled
+    +bool InAppEnabled
+  }
+  class AdministrativeActivity {
+    <<Aggregate Root>>
+    +int Id
+    +int OrganizationId
+    +string Title
+    +string Actor
+    +DateTime OccurredAt
+  }
+  class ContactInquiry {
+    <<Aggregate Root>>
+    +int Id
+    +string FullName
+    +string Email
+    +string Message
+    +InquiryStatus Status
+    +DateTime ReceivedAt
+    +ContactInquiry(SendContactInquiryCommand command)
+    +MarkAsAnswered() void
+  }
+  class OrganizationStatus {
+    <<enumeration>>
+    Active
+    Pending
+    PendingVerification
+    Inactive
+  }
+  class FacilityType {
+    <<enumeration>>
+    Manufacturing
+    QcLaboratory
+  }
+  class FacilityStatus {
+    <<enumeration>>
+    Active
+    Inactive
+  }
+  class Area {
+    <<enumeration>>
+    Quality
+    Production
+    Administration
+  }
+  class InquiryStatus {
+    <<enumeration>>
+    Received
+    Answered
+  }
+  class IOrganizationRepository {
+    <<interface>>
+    +ExistsByRuc(Ruc ruc) bool
+  }
+  class IUserProfileRepository {
+    <<interface>>
+    +FindByUserIdAsync(int userId) Task~UserProfile?~
+  }
+  class IOrganizationCommandService {
+    <<interface>>
+    +Handle(RegisterOrganizationCommand command) Task~Result~Organization~~
+    +Handle(AddFacilityCommand command) Task~Result~Facility~~
+  }
+  class IUserProfileCommandService {
+    <<interface>>
+    +Handle(UpdateUserProfilePreferencesCommand command) Task~Result~UserProfile~~
+  }
+  class IContactInquiryCommandService {
+    <<interface>>
+    +Handle(SendContactInquiryCommand command) Task~Result~ContactInquiry~~
+  }
+  class ExternalIamService {
+    +CreateAdministrator(int organizationId, string fullName, string email, string password) int?
+  }
+  Organization "1" *-- "1..*" Facility : operates
+  Organization *-- Ruc : ruc
+  Organization --> OrganizationStatus : status
+  Facility --> FacilityType : type
+  Facility --> FacilityStatus : status
+  UserProfile "0..*" --> "1" Organization : belongsTo
+  UserProfile *-- PersonName : name
+  UserProfile *-- NotificationPreferences : preferences
+  UserProfile --> Area : area
+  AdministrativeActivity "0..*" --> "1" Organization : loggedFor
+  ContactInquiry --> InquiryStatus : status
+  IOrganizationRepository ..> Organization : persists
+  IUserProfileRepository ..> UserProfile : persists
+  IOrganizationCommandService ..> ExternalIamService : uses
+  IUserProfileCommandService ..> IUserProfileRepository : uses

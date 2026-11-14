@@ -1,0 +1,165 @@
+---
+title: "Database Diagram – Quality & Compliance Bounded Context (MySQL 8)"
+---
+erDiagram
+  direction LR
+  quality_documents {
+    int id PK
+    varchar(30) code "UK with version"
+    varchar(10) version "2.4"
+    varchar(255) title
+    varchar(20) status "Draft, InReview, Approved, Obsolete"
+    int author_id "ref iam.users"
+    int technical_reviewer_id "ref iam.users"
+    int approver_id "ref iam.users"
+    date changed_at
+    text purpose
+    text scope
+    text procedure
+    text revision_summary
+    int review_cycle_months "12, 24"
+  }
+  analytical_results {
+    int id PK
+    varchar(30) batch_code "ref manufacturing.production_batches"
+    varchar(30) sample_code
+    varchar(30) report_code
+    varchar(100) test_name
+    varchar(50) protocol
+    varchar(30) result "98.7 %"
+    varchar(50) specification "95.0–105.0 %"
+    int analyst_id "ref iam.users"
+    varchar(10) status "Within, Oos, Pending"
+    varchar(20) approval "Requested, Approved"
+  }
+  batch_releases {
+    int id PK
+    varchar(30) batch_code UK "ref manufacturing.production_batches"
+    int requested_by "ref iam.users"
+    varchar(20) status "Pending, Released, Rejected"
+    varchar(500) decision "nullable"
+    int signature_id "ref iam.electronic_signatures"
+    datetime signed_at "nullable"
+  }
+  evidence {
+    int id PK
+    varchar(30) record_code "DEV-26017, B-26041"
+    varchar(255) file_name
+    varchar(255) detail
+    varchar(20) status "Attached, PendingReview, Reviewed"
+  }
+  deviations {
+    int id PK
+    varchar(30) code UK "DEV-26017"
+    varchar(255) title
+    varchar(30) batch_code "ref manufacturing.production_batches"
+    varchar(30) order_code "ref manufacturing.production_orders"
+    text summary
+    varchar(10) classification "Minor, Major, Critical"
+    text containment
+    int severity "1-5"
+    int likelihood "1-5"
+    int detectability "1-5"
+    varchar(20) status "Open, Submitted, Dispositioned, Closed"
+    varchar(150) root_cause "nullable"
+    int reported_by "ref iam.users"
+    datetime reported_at
+    int owner_id "ref iam.users"
+    datetime due_at
+  }
+  capa_plans {
+    int id PK
+    varchar(30) code UK "CAPA-26009"
+    int deviation_id FK
+    varchar(255) title
+    int owner_id "ref iam.users"
+    int reviewer_id "ref iam.users"
+    varchar(150) root_cause "nullable"
+    varchar(500) acceptance_criterion
+    date effectiveness_check_at
+    varchar(20) status "Draft, InProgress, InApproval, Closed"
+  }
+  capa_actions {
+    int id PK
+    int capa_plan_id FK
+    varchar(10) code "CA-01, PA-01"
+    varchar(12) type "Corrective, Preventive"
+    varchar(255) title
+    int owner_id "ref iam.users"
+    date due_at
+    varchar(20) status "Open, Planned, InReview, Complete"
+    varchar(150) evidence
+    tinyint(1) evidence_attached
+  }
+  audits {
+    int id PK
+    varchar(30) code UK "AUD-26004"
+    varchar(255) title
+    varchar(40) period
+    int areas_reviewed
+    int areas_total
+    varchar(20) status "Scheduled, InProgress, Closed"
+  }
+  audit_findings {
+    int id PK
+    int audit_id FK
+    varchar(10) code "F-01"
+    varchar(255) title
+    varchar(10) classification "Minor, Major, Critical"
+    int owner_id "ref iam.users"
+    date due_at
+    varchar(20) status "EvidencePending, InReview, Closed"
+    text observation
+    text response "nullable"
+    text closure_requirement
+  }
+  audit_events {
+    int id PK
+    varchar(30) event_code UK "EVT-89416"
+    datetime occurred_at
+    int actor_id "ref iam.users"
+    varchar(40) actor_role
+    varchar(100) event
+    varchar(30) record_code
+    varchar(20) result "Recorded, Blocked, OnHold, Acknowledged"
+    varchar(100) field
+    varchar(255) before_value "nullable"
+    varchar(255) after_value "nullable"
+    varchar(255) reason "nullable"
+  }
+  regulatory_reports {
+    int id PK
+    varchar(30) code UK "RPT-26012"
+    varchar(20) type "BatchDossier, QualityReview, CapaSummary, AuditEvidence"
+    varchar(100) scope
+    int owner_id "ref iam.users"
+    varchar(10) status "Draft, Blocked, Approved"
+    varchar(100) template
+    varchar(100) format
+  }
+  collaboration_tasks {
+    int id PK
+    varchar(255) title
+    varchar(60) record_code
+    varchar(255) detail
+    int owner_id "ref iam.users"
+    datetime due_at
+    varchar(10) status "ToDo, Open, Pending, InReview, Ready, Done"
+  }
+  task_comments {
+    int id PK
+    varchar(30) record_code
+    int author_id "ref iam.users"
+    datetime posted_at
+    text text
+  }
+  traceability_gaps {
+    int id PK
+    varchar(30) batch_code "ref manufacturing.production_batches"
+    varchar(150) missing_record
+    varchar(500) detail
+    varchar(20) status "Open, UnderReview, Resolved"
+  }
+  deviations ||--o| capa_plans : "addressed by"
+  capa_plans ||--|{ capa_actions : "contains"
+  audits ||--o{ audit_findings : "records"

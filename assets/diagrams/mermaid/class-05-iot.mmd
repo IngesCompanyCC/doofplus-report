@@ -1,0 +1,184 @@
+---
+title: "Class Diagram – IoT Monitoring Bounded Context"
+---
+classDiagram
+  direction LR
+  class Equipment {
+    <<Aggregate Root>>
+    +int Id
+    +EquipmentCode Code
+    +string Name
+    +string Model
+    +Facility Location
+    +CalibrationStatus CalibrationStatus
+    +DateOnly CalibrationDue
+    +string Certificate
+    +DateOnly NextMaintenance
+    +string MaintenanceOwner
+    +string WorkOrder
+    +string HealthNote
+    +ICollection~CalibrationRecord~ Calibrations
+    +ICollection~MaintenanceRecord~ Maintenances
+    +Equipment(CreateEquipmentCommand command)
+    +Update(UpdateEquipmentCommand command) Equipment
+    +RegisterCalibration(DateOnly validUntil, string certificate) void
+    +RegisterMaintenance(string workOrder, DateOnly nextDueDate) void
+    +IsFitForUse() bool
+  }
+  class CalibrationRecord {
+    <<Entity>>
+    +int Id
+    +DateOnly CalibratedAt
+    +DateOnly ValidUntil
+    +string Certificate
+  }
+  class MaintenanceRecord {
+    <<Entity>>
+    +int Id
+    +DateOnly PerformedAt
+    +string WorkOrder
+    +string Owner
+    +DateOnly NextDueDate
+  }
+  class Sensor {
+    <<Aggregate Root>>
+    +int Id
+    +SensorCode Code
+    +DeviceId DeviceId
+    +SensorType Type
+    +string Unit
+    +string EquipmentCode
+    +double LowerLimit
+    +double UpperLimit
+    +SensorStatus Status
+    +string AssignedBatch
+    +Sensor(CreateSensorCommand command)
+    +Update(UpdateSensorCommand command) Sensor
+    +AssignBatch(string batchCode) void
+    +IsOutOfRange(double value) bool
+  }
+  class Reading {
+    <<Aggregate Root>>
+    +int Id
+    +string SensorCode
+    +string BatchCode
+    +double Value
+    +DateTime RecordedAt
+    +string Source
+    +Reading(CreateReadingCommand command)
+  }
+  class Alert {
+    <<Aggregate Root>>
+    +int Id
+    +AlertCode Code
+    +string SensorCode
+    +string EquipmentCode
+    +string BatchCode
+    +AlertSeverity Severity
+    +AlertStatus Status
+    +string Title
+    +string Detail
+    +string AcknowledgedBy
+    +DateTime AcknowledgedAt
+    +string ResponseNote
+    +string LinkedRecord
+    +Alert(CreateAlertCommand command)
+    +Acknowledge(string user, string responseNote) void
+    +LinkRecord(string recordCode) void
+    +Close() void
+  }
+  class EquipmentCode {
+    <<Value Object>>
+    +string Value
+  }
+  class SensorCode {
+    <<Value Object>>
+    +string Value
+  }
+  class DeviceId {
+    <<Value Object>>
+    +string Value
+  }
+  class AlertCode {
+    <<Value Object>>
+    +string Value
+  }
+  class Facility {
+    <<Value Object>>
+    +string Value
+  }
+  class CalibrationStatus {
+    <<enumeration>>
+    Fit
+    Due
+    NotFit
+  }
+  class SensorType {
+    <<enumeration>>
+    Temperature
+    Humidity
+    Pressure
+  }
+  class SensorStatus {
+    <<enumeration>>
+    Active
+    Offline
+  }
+  class AlertSeverity {
+    <<enumeration>>
+    Warning
+    Critical
+  }
+  class AlertStatus {
+    <<enumeration>>
+    Open
+    Acknowledged
+    UnderInvestigation
+    Closed
+  }
+  class IReadingCommandService {
+    <<interface>>
+    +Handle(CreateReadingCommand command) Task~Result~Reading~~
+  }
+  class ISensorCommandService {
+    <<interface>>
+    +Handle(CreateSensorCommand command) Task~Result~Sensor~~
+    +Handle(UpdateSensorCommand command) Task~Result~Sensor~~
+  }
+  class IAlertCommandService {
+    <<interface>>
+    +Handle(CreateAlertCommand command) Task~Result~Alert~~
+    +Handle(UpdateAlertCommand command) Task~Result~Alert~~
+  }
+  class ISensorRepository {
+    <<interface>>
+    +FindByCodeAsync(SensorCode code) Task~Sensor?~
+    +FindByDeviceIdAsync(DeviceId deviceId) Task~Sensor?~
+    +FindAllByEquipmentCodeAsync(string equipmentCode) Task~IEnumerable~Sensor~~
+  }
+  class ExternalManufacturingService {
+    +IsBatchInProgress(string batchCode) bool
+  }
+  class INotificationService {
+    <<interface>>
+    +PublishAlert(Alert alert) void
+  }
+  Equipment "1" *-- "0..*" CalibrationRecord : calibrations
+  Equipment "1" *-- "0..*" MaintenanceRecord : maintenances
+  Equipment *-- EquipmentCode : code
+  Equipment *-- Facility : location
+  Equipment --> CalibrationStatus : calibrationStatus
+  Sensor "0..*" --> "1" Equipment : installedOn
+  Sensor *-- SensorCode : code
+  Sensor *-- DeviceId : deviceId
+  Sensor --> SensorType : type
+  Sensor --> SensorStatus : status
+  Reading "0..*" --> "1" Sensor : emittedBy
+  Alert "0..*" --> "1" Sensor : raisedBy
+  Alert *-- AlertCode : code
+  Alert --> AlertSeverity : severity
+  Alert --> AlertStatus : status
+  IReadingCommandService ..> IAlertCommandService : raisesAlert
+  IReadingCommandService ..> ExternalManufacturingService : uses
+  IAlertCommandService ..> INotificationService : uses
+  ISensorRepository ..> Sensor : persists

@@ -1,0 +1,135 @@
+---
+title: "Class Diagram – Subscriptions & Payments Bounded Context"
+---
+classDiagram
+  direction LR
+  class Plan {
+    <<Aggregate Root>>
+    +int Id
+    +PlanKey PlanKey
+    +string Name
+    +Money MonthlyPrice
+    +Money AnnualPrice
+    +int IotDeviceLimit
+    +int UserLimit
+    +Plan(CreatePlanCommand command)
+    +GetPrice(BillingCycle cycle) Money
+    +AllowsOneMoreIotDevice(int registeredDevices) bool
+  }
+  class Subscription {
+    <<Aggregate Root>>
+    +int Id
+    +OrganizationId OrganizationId
+    +int PlanId
+    +BillingCycle BillingCycle
+    +SubscriptionStatus Status
+    +DateOnly CurrentPeriodStart
+    +DateOnly CurrentPeriodEnd
+    +bool AutoRenew
+    +PaymentCard PaymentCard
+    +BillingEmail BillingEmail
+    +ICollection~Payment~ Payments
+    +Subscription(CreateSubscriptionCommand command)
+    +Activate() void
+    +Renew() void
+    +Cancel() void
+    +IsCurrent() bool
+  }
+  class Payment {
+    <<Entity>>
+    +int Id
+    +string InvoiceNumber
+    +Money Amount
+    +string GatewayTransactionId
+    +PaymentStatus Status
+    +DateTime ProcessedAt
+    +Approve(string transactionId) void
+    +Reject(string reason) void
+  }
+  class Money {
+    <<Value Object>>
+    +decimal Amount
+    +string Currency
+  }
+  class PlanKey {
+    <<Value Object>>
+    +string Value
+  }
+  class OrganizationId {
+    <<Value Object>>
+    +int Value
+  }
+  class PaymentCard {
+    <<Value Object>>
+    +string Brand
+    +string Last4
+    +string Expiry
+  }
+  class BillingEmail {
+    <<Value Object>>
+    +string Value
+  }
+  class BillingCycle {
+    <<enumeration>>
+    Monthly
+    Annual
+  }
+  class SubscriptionStatus {
+    <<enumeration>>
+    Pending
+    Active
+    Cancelled
+    Expired
+  }
+  class PaymentStatus {
+    <<enumeration>>
+    Pending
+    Approved
+    Rejected
+  }
+  class IPaymentGateway {
+    <<interface>>
+    +Authorize(Money amount, string cardToken) PaymentResult
+  }
+  class NiubizPaymentGateway {
+    +RestClient RestClient
+    +Authorize(Money amount, string cardToken) PaymentResult
+  }
+  class IPlanRepository {
+    <<interface>>
+    +ExistsByPlanKey(PlanKey planKey) bool
+  }
+  class ISubscriptionRepository {
+    <<interface>>
+    +FindAllByOrganizationIdAsync(OrganizationId organizationId) Task~IEnumerable~Subscription~~
+    +ExistsByOrganizationIdAndStatusIn(OrganizationId organizationId, ICollection~SubscriptionStatus~ statuses) bool
+  }
+  class IPlanCommandService {
+    <<interface>>
+    +Handle(CreatePlanCommand command) Task~Result~Plan~~
+  }
+  class ISubscriptionCommandService {
+    <<interface>>
+    +Handle(CreateSubscriptionCommand command) Task~Result~Subscription~~
+    +Handle(PaySubscriptionCommand command) Task~Result~Subscription~~
+    +Handle(ActivateSubscriptionCommand command) Task~Result~Subscription~~
+    +Handle(RenewSubscriptionCommand command) Task~Result~Subscription~~
+    +Handle(CancelSubscriptionCommand command) Task~Result~Subscription~~
+  }
+  Subscription "0..*" --> "1" Plan : subscribesTo
+  Subscription "1" *-- "0..*" Payment : records
+  Subscription --> BillingCycle : billingCycle
+  Subscription --> SubscriptionStatus : status
+  Subscription *-- OrganizationId : organizationId
+  Subscription *-- PaymentCard : paymentCard
+  Subscription *-- BillingEmail : billingEmail
+  Payment --> PaymentStatus : status
+  Payment *-- Money : amount
+  Plan *-- Money : prices
+  Plan *-- PlanKey : planKey
+  NiubizPaymentGateway ..|> IPaymentGateway
+  ISubscriptionCommandService ..> IPaymentGateway : uses
+  IPlanCommandService ..> IPlanRepository : uses
+  ISubscriptionCommandService ..> ISubscriptionRepository : uses
+  IPlanRepository ..> Plan : persists
+  ISubscriptionRepository ..> Subscription : persists

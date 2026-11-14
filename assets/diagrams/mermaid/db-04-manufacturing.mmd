@@ -1,0 +1,118 @@
+---
+title: "Database Diagram – Manufacturing & Batch Management Bounded Context (MySQL 8)"
+---
+erDiagram
+  products {
+    int id PK
+    varchar(30) code UK "AC500"
+    varchar(150) name
+    varchar(20) dosage_form "Tablet, Capsule, Syrup, Injectable"
+  }
+  master_formulas {
+    int id PK
+    varchar(30) product_code "ref products.code"
+    varchar(10) version "v3.2"
+    varchar(20) status "Draft, Pending, Approved, Locked"
+    decimal batch_size "(12,2)"
+    varchar(100) approved_by "name, empty until approved"
+    date approved_at "nullable"
+  }
+  formula_items {
+    int id PK
+    int master_formula_id FK
+    varchar(10) kind "Component, Parameter"
+    varchar(150) name
+    varchar(40) role "nullable"
+    varchar(40) target "60.0 kg"
+    varchar(40) tolerance
+    varchar(150) control
+  }
+  raw_material_lots {
+    int id PK
+    varchar(30) code UK "RM-26098"
+    varchar(30) receipt_code "RCV-26098"
+    varchar(150) material
+    varchar(20) category "Api, Excipient, Packaging"
+    varchar(150) supplier
+    varchar(50) supplier_lot
+    varchar(100) quantity "500 kg · 20 sealed drums"
+    varchar(100) storage_location
+    varchar(255) certificate "CoA file"
+    varchar(20) status "Quarantine, Sampling, Inspection, Approved, Rejected"
+    varchar(20) sampling_status "Pending, Requested, Done"
+    tinyint(1) packaging_verified
+    tinyint(1) identity_verified
+    date expiry_date
+    varchar(30) allocated_batch "B-26041, empty until allocated"
+  }
+  production_orders {
+    int id PK
+    varchar(30) code UK "PO-26041"
+    int master_formula_id FK
+    varchar(30) product_code "ref products.code"
+    varchar(30) batch_code "B-26041"
+    varchar(30) line "Line 02"
+    decimal planned_quantity "(12,4)"
+    varchar(20) status "Planned, Approved, InProgress, OnHold, Completed"
+    datetime planned_start
+    datetime planned_end
+  }
+  operations {
+    int id PK
+    int production_order_id FK
+    int sequence
+    varchar(100) name
+    varchar(150) equipment
+    int progress "0-100"
+    varchar(20) status "NotStarted, InProgress, OnHold, Complete"
+    varchar(100) reference "nullable"
+  }
+  production_batches {
+    int id PK
+    varchar(30) batch_number UK "B-26041"
+    int production_order_id FK
+    varchar(20) status "Planned, InProgress, OnHold, ReleaseRequested, Released"
+    varchar(30) line
+    varchar(100) owner "Alberto Valle"
+    int progress "0-100"
+    decimal planned_quantity_value "(12,4)"
+    varchar(10) planned_quantity_unit
+    decimal manufactured_quantity_value "(12,4) nullable"
+    varchar(10) manufactured_quantity_unit "nullable"
+    datetime started_at "nullable"
+    datetime finished_at "nullable"
+  }
+  material_consumptions {
+    int id PK
+    int production_batch_id FK
+    int raw_material_lot_id FK
+    decimal consumed_quantity_value "(12,4)"
+    varchar(10) consumed_quantity_unit
+    datetime consumed_at
+  }
+  incidents {
+    int id PK
+    int production_batch_id FK
+    varchar(500) description
+    varchar(10) severity "Minor, Major, Critical"
+    varchar(20) status "Open, Escalated, Resolved"
+    datetime recorded_at
+  }
+  batch_events {
+    int id PK
+    int production_batch_id FK
+    varchar(40) type "title"
+    varchar(500) description "detail"
+    varchar(10) tone "Normal, Warning, Danger"
+    int performed_by "ref iam.users"
+    datetime occurred_at
+  }
+  products ||--o{ master_formulas : "defined by"
+  master_formulas ||--|{ formula_items : "contains"
+  master_formulas ||--o{ production_orders : "followed by"
+  production_orders ||--|{ operations : "routed through"
+  production_orders ||--o{ production_batches : "executed as"
+  production_batches ||--o{ material_consumptions : "consumes"
+  raw_material_lots ||--o{ material_consumptions : "consumed in"
+  production_batches ||--o{ incidents : "registers"
+  production_batches ||--o{ batch_events : "timeline"

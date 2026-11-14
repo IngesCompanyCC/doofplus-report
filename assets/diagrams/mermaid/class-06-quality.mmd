@@ -1,0 +1,372 @@
+---
+title: "Class Diagram – Quality & Compliance Bounded Context"
+---
+classDiagram
+  direction LR
+  class QualityDocument {
+    <<Aggregate Root>>
+    +int Id
+    +string Code
+    +string Version
+    +string Title
+    +DocumentStatus Status
+    +int AuthorId
+    +int TechnicalReviewerId
+    +int ApproverId
+    +DateOnly ChangedAt
+    +DocumentContent Content
+    +int ReviewCycleMonths
+    +SubmitForReview() void
+    +Approve(int signatureId) void
+    +PublishNewVersion(string version, DocumentContent content) QualityDocument
+    +MarkAsObsolete() void
+  }
+  class DocumentContent {
+    <<Value Object>>
+    +string Purpose
+    +string Scope
+    +string Procedure
+    +string RevisionSummary
+  }
+  class AnalyticalResult {
+    <<Aggregate Root>>
+    +int Id
+    +string BatchCode
+    +string SampleCode
+    +string ReportCode
+    +string TestName
+    +string Protocol
+    +string Result
+    +string Specification
+    +int AnalystId
+    +ResultStatus Status
+    +ApprovalState Approval
+    +Evaluate() void
+    +Approve() void
+  }
+  class BatchRelease {
+    <<Aggregate Root>>
+    +int Id
+    +string BatchCode
+    +int RequestedBy
+    +ReleaseStatus Status
+    +string Decision
+    +int SignatureId
+    +DateTime SignedAt
+    +Release(int signatureId) void
+    +Reject(string decision) void
+  }
+  class Evidence {
+    <<Aggregate Root>>
+    +int Id
+    +string RecordCode
+    +string FileName
+    +string Detail
+    +EvidenceStatus Status
+    +MarkAsReviewed() void
+  }
+  class Deviation {
+    <<Aggregate Root>>
+    +int Id
+    +string Code
+    +string Title
+    +string BatchCode
+    +string OrderCode
+    +string Summary
+    +Classification Classification
+    +string Containment
+    +RiskScore Risk
+    +DeviationStatus Status
+    +string RootCause
+    +int ReportedBy
+    +DateTime ReportedAt
+    +int OwnerId
+    +DateTime DueAt
+    +Classify(Classification classification, RiskScore risk) void
+    +RegisterRootCause(string rootCause) void
+    +Submit() void
+    +Disposition() void
+    +Close() void
+  }
+  class RiskScore {
+    <<Value Object>>
+    +int Severity
+    +int Likelihood
+    +int Detectability
+  }
+  class CapaPlan {
+    <<Aggregate Root>>
+    +int Id
+    +string Code
+    +int DeviationId
+    +string Title
+    +int OwnerId
+    +int ReviewerId
+    +string RootCause
+    +string AcceptanceCriterion
+    +DateOnly EffectivenessCheckAt
+    +CapaStatus Status
+    +ICollection~CapaAction~ Actions
+    +AddAction(CapaType type, string title, int ownerId, DateOnly dueAt) CapaAction
+    +SubmitForApproval() void
+    +Close() void
+  }
+  class CapaAction {
+    <<Entity>>
+    +int Id
+    +string Code
+    +CapaType Type
+    +string Title
+    +int OwnerId
+    +DateOnly DueAt
+    +ActionStatus Status
+    +string Evidence
+    +bool EvidenceAttached
+    +AttachEvidence() void
+    +Complete() void
+  }
+  class Audit {
+    <<Aggregate Root>>
+    +int Id
+    +string Code
+    +string Title
+    +string Period
+    +int AreasReviewed
+    +int AreasTotal
+    +AuditStatus Status
+    +ICollection~AuditFinding~ Findings
+    +Start() void
+    +RegisterFinding(string title, Classification classification) AuditFinding
+    +Close() void
+  }
+  class AuditFinding {
+    <<Entity>>
+    +int Id
+    +string Code
+    +string Title
+    +Classification Classification
+    +int OwnerId
+    +DateOnly DueAt
+    +FindingStatus Status
+    +string Observation
+    +string Response
+    +string ClosureRequirement
+    +Respond(string response) void
+    +Close() void
+  }
+  class AuditEvent {
+    <<Aggregate Root>>
+    +int Id
+    +string EventCode
+    +DateTime OccurredAt
+    +int ActorId
+    +string ActorRole
+    +string Event
+    +string RecordCode
+    +EventResult Result
+    +string Field
+    +string BeforeValue
+    +string AfterValue
+    +string Reason
+  }
+  class RegulatoryReport {
+    <<Aggregate Root>>
+    +int Id
+    +string Code
+    +ReportType Type
+    +string Scope
+    +int OwnerId
+    +ReportStatus Status
+    +string Template
+    +string Format
+    +Approve() void
+  }
+  class CollaborationTask {
+    <<Aggregate Root>>
+    +int Id
+    +string Title
+    +string RecordCode
+    +string Detail
+    +int OwnerId
+    +DateTime DueAt
+    +TaskStatus Status
+    +ChangeStatus(TaskStatus status) void
+  }
+  class TaskComment {
+    <<Aggregate Root>>
+    +int Id
+    +string RecordCode
+    +int AuthorId
+    +DateTime PostedAt
+    +string Text
+  }
+  class TraceabilityGap {
+    <<Aggregate Root>>
+    +int Id
+    +string BatchCode
+    +string MissingRecord
+    +string Detail
+    +GapStatus Status
+    +Resolve() void
+  }
+  class DocumentStatus {
+    <<enumeration>>
+    Draft
+    InReview
+    Approved
+    Obsolete
+  }
+  class ResultStatus {
+    <<enumeration>>
+    Within
+    Oos
+    Pending
+  }
+  class ApprovalState {
+    <<enumeration>>
+    Requested
+    Approved
+  }
+  class ReleaseStatus {
+    <<enumeration>>
+    Pending
+    Released
+    Rejected
+  }
+  class EvidenceStatus {
+    <<enumeration>>
+    Attached
+    PendingReview
+    Reviewed
+  }
+  class Classification {
+    <<enumeration>>
+    Minor
+    Major
+    Critical
+  }
+  class DeviationStatus {
+    <<enumeration>>
+    Open
+    Submitted
+    Dispositioned
+    Closed
+  }
+  class CapaStatus {
+    <<enumeration>>
+    Draft
+    InProgress
+    InApproval
+    Closed
+  }
+  class CapaType {
+    <<enumeration>>
+    Corrective
+    Preventive
+  }
+  class ActionStatus {
+    <<enumeration>>
+    Open
+    Planned
+    InReview
+    Complete
+  }
+  class AuditStatus {
+    <<enumeration>>
+    Scheduled
+    InProgress
+    Closed
+  }
+  class FindingStatus {
+    <<enumeration>>
+    EvidencePending
+    InReview
+    Closed
+  }
+  class EventResult {
+    <<enumeration>>
+    Recorded
+    Blocked
+    OnHold
+    Acknowledged
+  }
+  class ReportType {
+    <<enumeration>>
+    BatchDossier
+    QualityReview
+    CapaSummary
+    AuditEvidence
+  }
+  class ReportStatus {
+    <<enumeration>>
+    Draft
+    Blocked
+    Approved
+  }
+  class TaskStatus {
+    <<enumeration>>
+    ToDo
+    Open
+    Pending
+    InReview
+    Ready
+    Done
+  }
+  class GapStatus {
+    <<enumeration>>
+    Open
+    UnderReview
+    Resolved
+  }
+  class IDeviationCommandService {
+    <<interface>>
+    +Handle(RegisterDeviationCommand command) Task~Result~Deviation~~
+    +Handle(CloseDeviationCommand command) Task~Result~Deviation~~
+  }
+  class IBatchReleaseCommandService {
+    <<interface>>
+    +Handle(RequestBatchReleaseCommand command) Task~Result~BatchRelease~~
+    +Handle(ReleaseBatchCommand command) Task~Result~BatchRelease~~
+  }
+  class IReportGenerationService {
+    <<interface>>
+    +GenerateReportAsync(RegulatoryReport report) Task~byte[]~
+  }
+  class INotificationService {
+    <<interface>>
+    +NotifyCriticalDeviation(Deviation deviation) void
+  }
+  class ExternalIamService {
+    +SignRecord(int userId, string password, string entityType, int entityId) int?
+  }
+  class ExternalManufacturingService {
+    +FetchBatchStatus(string batchCode) string?
+  }
+  QualityDocument *-- DocumentContent : content
+  QualityDocument --> DocumentStatus : status
+  AnalyticalResult --> ResultStatus : status
+  AnalyticalResult --> ApprovalState : approval
+  BatchRelease ..> AnalyticalResult : checks
+  BatchRelease --> ReleaseStatus : status
+  Evidence --> EvidenceStatus : status
+  Deviation *-- RiskScore : risk
+  Deviation --> Classification : classification
+  Deviation --> DeviationStatus : status
+  CapaPlan "0..1" --> "1" Deviation : addresses
+  CapaPlan "1" *-- "1..*" CapaAction : actions
+  CapaPlan --> CapaStatus : status
+  CapaAction --> CapaType : type
+  CapaAction --> ActionStatus : status
+  Audit "1" *-- "0..*" AuditFinding : findings
+  Audit --> AuditStatus : status
+  AuditFinding --> FindingStatus : status
+  AuditEvent --> EventResult : result
+  RegulatoryReport --> ReportType : type
+  RegulatoryReport --> ReportStatus : status
+  CollaborationTask --> TaskStatus : status
+  TraceabilityGap --> GapStatus : status
+  IDeviationCommandService ..> INotificationService : uses
+  IBatchReleaseCommandService ..> ExternalIamService : uses
+  IBatchReleaseCommandService ..> ExternalManufacturingService : uses
+  IReportGenerationService ..> AuditEvent : reads
+  IReportGenerationService ..> RegulatoryReport : creates
