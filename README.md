@@ -185,6 +185,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.5 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo III: US04 y US05 indican que el formulario de contacto está en la zona pública de la Web Application; US48 suma el escenario de registro de un laboratorio nuevo; corrección de concordancia en TS01 y del escenario 2 de TS12. |
 | 4.8.6 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo IV: la sección Our Team del Website menciona el enlace alternativo a YouTube del Video About-the-Team. |
 | 4.8.7 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: sección 5.2.3 Sprint 3: Sprint Planning, Aspect Leaders, Sprint Backlog (T137 a T165, T184 a T201), commits de `main` del Sprint, evidencia de ejecución, documentación de los Web Services en Scalar, despliegue e insights. |
+| 4.8.8 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: en el Sprint Backlog 3, las tareas de Quality & Compliance (T158, T159 y T161 a T163) quedan a cargo de Cobades Zamora, Yhoshua Hebert. |
 
 ---
 
