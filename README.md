@@ -181,6 +181,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.1 | 13/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo IV: los diagramas de clases y de base de datos de los seis bounded contexts se alinean con la Web Application y el backend. |
 | 4.8.2 | 13/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo IV: los diagramas usan identificadores `int`, como el backend; Manufacturing sigue a la Web Application (catálogo enlazado por código, línea, responsable y avance del lote, color de los eventos y estados del lote) y la tabla de perfiles pasa a `user_profiles`. |
 | 4.8.3 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Student Outcome: acciones del AV2 de Rojas Ambicho, Nestor Daniel. |
+| 4.8.4 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo I y Bibliografía: el dato de los 385 laboratorios extranjeros pendientes de certificación BPM cita su fuente (Tuesta, 2025, Salud con Lupa), que se agrega a la bibliografía. |
 
 ---
 
