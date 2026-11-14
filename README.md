@@ -183,6 +183,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.3 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Student Outcome: acciones del AV2 de Rojas Ambicho, Nestor Daniel. |
 | 4.8.4 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo I y Bibliografía: el dato de los 385 laboratorios extranjeros pendientes de certificación BPM cita su fuente (Tuesta, 2025, Salud con Lupa), que se agrega a la bibliografía. |
 | 4.8.5 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo III: US04 y US05 indican que el formulario de contacto está en la zona pública de la Web Application; US48 suma el escenario de registro de un laboratorio nuevo; corrección de concordancia en TS01 y del escenario 2 de TS12. |
+| 4.8.6 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo IV: la sección Our Team del Website menciona el enlace alternativo a YouTube del Video About-the-Team. |
 
 ---
 

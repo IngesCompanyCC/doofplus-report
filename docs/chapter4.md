@@ -317,7 +317,7 @@ Los mock-ups aplican sobre los wireframes el Design System de la sección 4.1 y 
 
 ![Landing Page Mock-up · About Us](../assets/img/chapter4/landing-page/mockups/desktop/08-about-us.png)
 
-**Our Team:** presenta a los integrantes de IngesCompanyCC: Marcelo Angulo, Yhoshua Cobades, Cristina Yarleque, Nestor Rojas y Rodolfo Zavaleta, con su foto, nombre, rol y descripción. Debajo se incrusta el Video About-the-Team, que resume el proceso de trabajo del equipo, la retrospectiva y el testimonio de cada integrante.
+**Our Team:** presenta a los integrantes de IngesCompanyCC: Marcelo Angulo, Yhoshua Cobades, Cristina Yarleque, Nestor Rojas y Rodolfo Zavaleta, con su foto, nombre, rol y descripción. Debajo se incrusta el Video About-the-Team, que resume el proceso de trabajo del equipo, la retrospectiva y el testimonio de cada integrante, con un enlace alternativo a YouTube.
 
 ![Landing Page Mock-up · Our Team](../assets/img/chapter4/landing-page/mockups/desktop/09-our-team.png)
 
