@@ -892,7 +892,7 @@ En el Sprint 3 se consideraron el Website y la Web Application y, en los RESTful
 
 #### 5.2.3.3. Sprint Backlog 3
 
-El objetivo del Sprint fue entregar la primera versión desplegada de los RESTful Web Services. El Sprint Backlog 3 junta tres bloques: las mejoras del Website y de la Web Application hechas desde el 18/10 (T184 a T198), las tareas de los Web Services por Technical Story (T137 a T165) y la autenticación con JWT (TS02, T199 a T201). Una tarea está en *Done* solo cuando su rama se unió a `develop`; lo que no se termine pasa al Sprint 4. Al cierre del Sprint hay 29 tareas en *Done*, 6 en *In-Process* y 12 en *To-do*, con 177 horas estimadas en total.
+El objetivo del Sprint fue entregar la primera versión desplegada de los RESTful Web Services. El Sprint Backlog 3 junta tres bloques: las mejoras del Website y de la Web Application hechas desde el 18/10 (T184 a T198), las tareas de los Web Services por Technical Story (T137 a T165) y la autenticación con JWT (TS02, T199 a T201). Una tarea está en *Done* solo cuando su rama se unió a `develop`; lo que no se termine pasa al Sprint 4. Al cierre del Sprint hay 30 tareas en *Done*, 5 en *In-Process* y 12 en *To-do*, con 177 horas estimadas en total.
 
 **Enlace al board en Jira:** https://inges-company-cc.atlassian.net/jira/software/projects/UPC/boards/1
 
@@ -921,8 +921,8 @@ El objetivo del Sprint fue entregar la primera versión desplegada de los RESTfu
 | TS03 | API de trazabilidad de lotes | T155 | Manufacturing: incidencias y escalamiento a Calidad | Registrar incidencias de un lote (POST /api/v1/production-batches/{id}/incidents) y publicar el domain event que Quality usa para abrir una desviación (US56). Falta el evento hacia Quality. | 3 | Angulo Ramírez, Marcelo Martín | In-Process |
 | TS03 | API de trazabilidad de lotes | T156 | Manufacturing: fachada ACL | Implementar la fachada de Manufacturing para que Quality e IoT Monitoring consulten lotes y equipos. | 2 | Cobades Zamora, Yhoshua Hebert | To-do |
 | TS03 | API de trazabilidad de lotes | T157 | Web App: trazabilidad de lotes contra el API | Reemplazar la Fake API en el módulo manufacturing (órdenes, lotes, materias primas e incidencias). | 4 | Cobades Zamora, Yhoshua Hebert | To-do |
-| TS10 | API de documentación de calidad | T158 | Quality: servicios de documentación | Implementar los command y query services de QualityDocument: registro, nuevas versiones y aprobación (US09, US10, US12, US13). Avance en la rama feature/Quality, sin unir a develop. | 4 | Cobades Zamora, Yhoshua Hebert | In-Process |
-| TS10 | API de documentación de calidad | T159 | Quality: endpoints de documentación | Implementar el controller de QualityDocument: POST /api/v1/quality-documents responde 201 con la versión 1.0 y GET /{id} inexistente responde 404; documentación OpenAPI. | 3 | Cobades Zamora, Yhoshua Hebert | In-Process |
+| TS10 | API de documentación de calidad | T158 | Quality: servicios de documentación | Implementar los command y query services de QualityDocument: registro, nuevas versiones y aprobación (US09, US10, US12, US13). | 4 | Cobades Zamora, Yhoshua Hebert | In-Process |
+| TS10 | API de documentación de calidad | T159 | Quality: endpoints de documentación | Implementar el controller de QualityDocument: POST /api/v1/quality-documents responde 201 con la versión 1.0 y GET /{id} inexistente responde 404; documentación OpenAPI. | 3 | Cobades Zamora, Yhoshua Hebert | Done |
 | TS10 | API de documentación de calidad | T160 | Web App: documentación de calidad contra el API | Reemplazar la Fake API en las vistas de protocolos, SOP y versiones del módulo quality. | 3 | Cobades Zamora, Yhoshua Hebert | To-do |
 | TS11 | API de desviaciones y CAPA | T161 | Quality: servicios de desviaciones y CAPA | Implementar los servicios de Deviation, CapaPlan y CapaAction: registro, causa raíz, acciones y cierre (US18, US19, US20, US21). | 5 | Cobades Zamora, Yhoshua Hebert | In-Process |
 | TS11 | API de desviaciones y CAPA | T162 | Quality: endpoints de desviaciones y CAPA | Implementar los controllers de desviaciones y CAPA; cerrar una desviación sin causa raíz responde 422. | 4 | Cobades Zamora, Yhoshua Hebert | In-Process |
@@ -1330,7 +1330,7 @@ En el Sprint 3 se trabajó en cuatro repositorios siguiendo GitFlow: una feature
 
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
-En este Sprint el Website lleva a cada segmento a su entorno con un call to action propio, muestra los datos de contacto y las redes sociales y se publica en GitHub Pages. La Web Application recibe las consultas de Contact us en su zona pública, traduce los permisos de cada rol, busca por código desde la barra superior y enlaza con el Website. Los RESTful Web Services quedaron desplegados con los bounded contexts Organizations, Subscriptions (con el pago por Niubiz), Manufacturing e IoT Monitoring; Quality & Compliance e IAM continúan en el Sprint 4. La Web Application todavía usa la Fake API y se conecta al API real en el Sprint 4.
+En este Sprint el Website lleva a cada segmento a su entorno con un call to action propio, muestra los datos de contacto y las redes sociales y se publica en GitHub Pages. La Web Application recibe las consultas de Contact us en su zona pública, traduce los permisos de cada rol, busca por código desde la barra superior y enlaza con el Website. Los RESTful Web Services quedaron desplegados con los bounded contexts Organizations, Subscriptions (con el pago por Niubiz), Manufacturing, IoT Monitoring y Quality & Compliance; IAM continúa en el Sprint 4. La Web Application todavía usa la Fake API y se conecta al API real en el Sprint 4.
 
 - **Website:** https://ingescompanycc.github.io/doofplus-website/
 - **Web Application:** https://ingescompanycc-frontend.web.app

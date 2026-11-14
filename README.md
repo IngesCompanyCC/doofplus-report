@@ -187,6 +187,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.7 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: sección 5.2.3 Sprint 3: Sprint Planning, Aspect Leaders, Sprint Backlog (T137 a T165, T184 a T201), commits de `main` del Sprint, evidencia de ejecución, documentación de los Web Services en Scalar, despliegue e insights. |
 | 4.8.8 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: en el Sprint Backlog 3, las tareas de Quality & Compliance (T158, T159 y T161 a T163) quedan a cargo de Cobades Zamora, Yhoshua Hebert. |
 | 4.8.9 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: en el Sprint Backlog 3, T146 (pruebas de Subscriptions) pasa a *Done* con las pruebas xUnit de los RESTful Web Services. |
+| 4.8.10 | 14/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: en el Sprint Backlog 3, T159 (endpoints de documentación de calidad) pasa a *Done* con Quality & Compliance en los RESTful Web Services. |
 
 ---
 
