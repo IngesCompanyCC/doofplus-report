@@ -203,6 +203,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.23 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Anexo A: tabla de videos de exposición con el enlace del video de la TB1. |
 | 4.8.24 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Anexo A: enlace correcto del video de exposición de la TB1. |
 | 4.8.25 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Student Outcome: acciones del AV2 de Angulo Ramírez, Marcelo Martín; Yarleque Ruiz, Cristina Marcela; y Zavaleta Gutierrez, Rodolfo Martin, según sus commits del Sprint 3. |
+| 4.8.26 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: descripción y duración del video About-the-Product en 5.4. |
 
 ---
 

@@ -1762,9 +1762,15 @@ Recomendación: dejar en cada pantalla solo lo que el rol necesita para su tarea
 **Aspectos que cumplen las heurísticas:** cada entorno de la pantalla de inicio de sesión explica qué módulos tiene antes de elegirlo; el formulario marca cada campo obligatorio vacío con un mensaje claro («Enter a valid work email.», «Enter your password.»), permite mostrar la contraseña, explica antes de empezar que se pedirá un código de dos pasos y desactiva «Verify» hasta que el código tiene 6 dígitos; las dos aplicaciones tienen enlaces a los términos y la privacidad en el pie de página.
 
 ## 5.4. Video About-the-Product
-(![Video About-the-Product](../assets/img/chapter5/screenshots/about-the-product.png))
-Enlace del video en Microsoft Stream: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231h117_upc_edu_pe/IQD67i89t5nPQbnN8YPxIrulAX0VVWMwZsYa9bOdPo2Yu3o?e=3U79az
-Enlace del video en Youtube: https://youtu.be/m5nkEdCl6PY
+
+El video About-the-Product está dirigido a los visitantes del Website que quieren conocer el modelo de negocio de DoofPlus y a los usuarios de la Web Application de los laboratorios farmacéuticos. Resume el modelo de negocio de DoofPlus y las características principales del producto para los especialistas QA/QC y los supervisores de producción, y se reproduce en la sección del producto del Website.
+
+**Duración:** 00:02:41
+
+![Video About-the-Product](../assets/img/chapter5/screenshots/about-the-product.png)
+
+- **Microsoft Stream:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231h117_upc_edu_pe/IQD67i89t5nPQbnN8YPxIrulAX0VVWMwZsYa9bOdPo2Yu3o?e=3U79az
+- **YouTube:** https://youtu.be/m5nkEdCl6PY
 
 # Conclusiones
 
