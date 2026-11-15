@@ -1577,10 +1577,10 @@ Además, el video incluye el testimonio ante cámara de cada participante, quien
 
 ### Enlaces del video
 
-| Plataforma | URL                                                                                                                                                                                                                                                                                                                   | Uso |
-|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| Microsoft Stream |                                                                                                                                                                                                                                                                                                                  | Versión publicada |
-| YouTube | https://www.youtube.com/watch?v=pE0AvoDX4XY                                                                                                                                                                                                                                                                                          | Versión incrustada en el Landing Page |
+| Plataforma | URL                                                                                                                                                                                                                                                                                                                      | Uso |
+|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
+| Microsoft Stream | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241f733_upc_edu_pe/IQBeNDq299hNSpRA02HN5jW1AbcEics4_MkcHq4V26kerIA?e=cSbY1Q&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D  | Versión publicada |
+| YouTube | https://www.youtube.com/watch?v=pE0AvoDX4XY                                                                                                                                                                                                                                                                              | Versión incrustada en el Landing Page |
 
 
 # Bibliografía
