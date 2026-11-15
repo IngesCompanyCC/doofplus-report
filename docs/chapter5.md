@@ -1439,6 +1439,68 @@ Los cinco integrantes participaron en el Sprint. La siguiente tabla resume los c
 
 ### 5.3.1. Diseño de Entrevistas
 
+El diseño de las entrevistas de validación se centró en evaluar la usabilidad, funcionalidad y aceptación de **DoofPlus**, mediante la interacción de representantes de los dos segmentos objetivo con la versión implementada de la plataforma. El propósito fue identificar si las funcionalidades desarrolladas responden a las necesidades de los especialistas de Aseguramiento y Control de Calidad (QA/QC) y de los Jefes o Supervisores de Producción Farmacéutica, así como reconocer posibles dificultades durante la navegación y ejecución de sus actividades.
+
+Para obtener información relevante sobre la experiencia de los usuarios, las entrevistas se estructuraron en cuatro bloques principales: perfil y contexto, expectativas del producto, evaluación del prototipo y cierre. Asimismo, se combinaron preguntas abiertas con actividades de exploración guiada y libre, permitiendo observar el comportamiento de los participantes, conocer sus percepciones y recopilar oportunidades de mejora para la solución.
+
+Las preguntas se organizaron de acuerdo con las responsabilidades y necesidades de cada segmento objetivo, considerando los perfiles de usuario definidos previamente en la sección 2.3.1.
+
+### Preguntas para el Segmento: Especialista de Aseguramiento y Control de Calidad (QA/QC)
+
+**Perfil y contexto**
+
+1. ¿Cuál es su cargo actual, qué edad tiene y cuántos años de experiencia posee en el área de aseguramiento o control de calidad farmacéutica?
+2. ¿En qué distrito reside y cuáles son las principales responsabilidades que desempeña dentro de su organización?
+3. ¿Qué herramientas, dispositivos y sistemas digitales utiliza habitualmente para gestionar documentación, registros y procesos de calidad?
+4. ¿Qué tan familiarizado se encuentra con el uso de plataformas digitales para la gestión de calidad farmacéutica?
+
+**Expectativas del producto**
+
+5. ¿Qué funcionalidades considera más importantes en una plataforma destinada a centralizar la gestión de calidad farmacéutica?
+6. ¿De qué manera espera que una plataforma como DoofPlus facilite la gestión documental y la trazabilidad de los lotes farmacéuticos?
+7. ¿Qué aspectos considera indispensables para confiar en la integridad, disponibilidad y seguimiento de los registros digitales?
+
+**Evaluación del prototipo**
+
+8. Después de explorar DoofPlus, ¿qué tan fácil le resultó localizar la información relacionada con un lote farmacéutico?
+9. ¿Cómo describiría su experiencia al consultar protocolos, procedimientos operativos estándar (SOP) y registros de calidad?
+10. ¿Considera que las funcionalidades de registro y seguimiento de desviaciones y acciones correctivas y preventivas (CAPA) permiten comprender adecuadamente el proceso de gestión?
+11. ¿Qué dificultades encontró al navegar por las funcionalidades de la plataforma o realizar las actividades presentadas?
+12. ¿De qué manera considera que DoofPlus podría mejorar la recopilación de evidencias y la preparación de auditorías e inspecciones regulatorias?
+
+**Cierre**
+
+13. En una escala del 1 al 10, ¿qué tan probable sería que recomendara DoofPlus a otros profesionales del área de aseguramiento y control de calidad? ¿Por qué?
+14. ¿Qué funcionalidades o mejoras considera necesarias antes de utilizar la plataforma en su organización?
+
+### Preguntas para el Segmento: Jefe o Supervisor de Producción Farmacéutica
+
+**Perfil y contexto**
+
+1. ¿Cuál es su cargo actual, qué edad tiene y cuántos años de experiencia posee supervisando procesos de producción farmacéutica?
+2. ¿En qué distrito reside y cuáles son las principales responsabilidades que desempeña dentro de los procesos de fabricación?
+3. ¿Qué herramientas, dispositivos y sistemas digitales utiliza habitualmente para supervisar la fabricación y consultar información de los lotes?
+4. ¿Qué tan familiarizado se encuentra con el uso de plataformas digitales para el seguimiento y control de procesos productivos?
+
+**Expectativas del producto**
+
+5. ¿Qué información considera indispensable para supervisar el estado de los lotes y tomar decisiones durante la fabricación?
+6. ¿De qué manera espera que una plataforma como DoofPlus facilite la coordinación entre las áreas de Producción y Calidad?
+7. ¿Qué beneficios esperaría obtener al contar con información centralizada sobre órdenes de producción, materias primas e incidencias operativas?
+
+**Evaluación del prototipo**
+
+8. Después de explorar DoofPlus, ¿qué tan fácil le resultó consultar el estado y el historial de los lotes de producción?
+9. ¿Cómo describiría su experiencia al consultar la información relacionada con las órdenes de producción, las fórmulas maestras y las materias primas?
+10. ¿Considera que las funcionalidades de registro y seguimiento de incidencias facilitan la comunicación y coordinación con el área de Calidad?
+11. ¿Qué tan útil considera la visualización de información procedente de dispositivos IoT para supervisar los procesos de fabricación y detectar posibles incidencias?
+12. ¿Qué dificultades encontró al navegar por la plataforma o realizar las actividades relacionadas con la supervisión de producción?
+
+**Cierre**
+
+13. En una escala del 1 al 10, ¿qué tan probable sería que recomendara DoofPlus a otros responsables de producción farmacéutica? ¿Por qué?
+14. ¿Qué funcionalidades o mejoras considera necesarias antes de utilizar la plataforma en su organización?
+
 ### 5.3.2. Registro de Entrevistas
 
 ### 5.3.3. Evaluaciones según heurísticas
