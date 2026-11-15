@@ -1656,21 +1656,22 @@ Primera sesión de validación del Sprint 3, con un usuario del segmento de prod
 
 **Segmento: Jefe o Supervisor de Producción Farmacéutica**
 
-| Campo | Detalle |
-|---|---|
-| Entrevistado | Jorge Cruz, supervisor de producción |
-| Entrevistador | Zavaleta Gutierrez, Rodolfo Martin |
-| Fecha y modalidad | 15/11/2026, videollamada con pantalla compartida |
-| Duración | 9 min 31 s (inicio de la entrevista: 0:00) |
-| Video | https://youtu.be/inIPauYigW0 |
-
-![Entrevista de validación con Jorge Cruz](../assets/img/chapter5/validation/entrevista-jorge-cruz.jpg)
-
-En la sesión se recorrió la Web Application publicada en el entorno de Producción, entre otras pantallas la recepción de materias primas y el monitoreo IoT. Las cámaras de los participantes solo se ven al inicio del video; el resto muestra la pantalla compartida.
+| Numero | 1 |
+|---------|--------|
+| **Campo** | **Información** |
+| Nombre | Jorge |
+| Apellido | Cruz |
+| Edad | Por confirmar con el entrevistado |
+| Distrito | Por confirmar con el entrevistado |
+| Evidencia | ![Entrevista 1 - Segmento 2](../assets/img/chapter5/validation/entrevista-jorge-cruz.jpg) |
+| Link | https://youtu.be/inIPauYigW0 |
+| Inicio | 00:00 min |
+| Duración | 09:31 min |
+| Resumen | Jorge Cruz es supervisor de producción. La entrevista la realizó Zavaleta Gutierrez, Rodolfo Martin el 15/11/2026 por videollamada, con la Web Application publicada en pantalla compartida; las cámaras solo se ven al inicio del video. Se recorrió el entorno de Producción, entre otras pantallas la recepción de materias primas y el monitoreo IoT. Jorge consideró que DoofPlus es muy útil para su trabajo y que lo empezará a utilizar, pero sintió la interfaz saturada: cada pantalla muestra mucha información a la vez. |
 
 ### 5.3.3. Evaluaciones según heurísticas
 
-Para el AV2 el equipo hizo una primera evaluación heurística interna sobre los productos publicados, con el formato del curso (Anexo D). Las sesiones de validación con usuarios de los segmentos objetivo (5.3.1 y 5.3.2) se hacen en la TB2, y esta evaluación se repetirá sobre ellas.
+Para el AV2 el equipo hizo una primera evaluación heurística sobre los productos publicados, con el formato del curso (Anexo D): una revisión interna del equipo y la primera entrevista de validación registrada en 5.3.2. Las demás sesiones de validación con usuarios de los dos segmentos se hacen en la TB2, y esta evaluación se actualizará con ellas.
 
 **UX Heuristics & Principles Evaluation**
 **Usability – Inclusive Design – Information Architecture**
@@ -1682,7 +1683,7 @@ Para el AV2 el equipo hizo una primera evaluación heurística interna sobre los
 | **SECCIÓN** | 8130 |
 | **PROFESORES** | Todos |
 | **AUDITOR** | IngesCompanyCC |
-| **CLIENTE(S)** | Evaluación interna del equipo, sin usuarios externos (15/11/2026) |
+| **CLIENTE(S)** | Evaluación interna del equipo y entrevista de validación con Jorge Cruz, supervisor de producción (15/11/2026) |
 
 **SITE o APP A EVALUAR:** DoofPlus: Website (https://ingescompanycc.github.io/doofplus-website/) y Web Application (https://ingescompanycc-frontend.web.app).
 
@@ -1718,6 +1719,7 @@ No están incluidas en esta versión de la evaluación las siguientes tareas, po
 | 1 | La primera petición al API, después de un rato sin uso, puede tardar hasta un minuto | 3 | Usability: Visibilidad del estado del sistema |
 | 2 | El Website y la Web Application se abren en inglés aunque el navegador esté en español | 2 | Inclusive Design: Considera la situación |
 | 3 | La documentación en Scalar indica el servidor con `http://` y la versión 1.0.0 | 2 | Usability: Consistencia y estándares |
+| 4 | Las pantallas del entorno de Producción se perciben saturadas de información | 2 | Usability: Estética y diseño minimalista |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
@@ -1747,6 +1749,15 @@ Heurística violada: Usability - Consistencia y estándares
 Problema: la especificación OpenAPI publicada (https://doofplus-platform-aw.onrender.com/openapi/v1.json) declara el servidor como `http://doofplus-platform-aw.onrender.com/` y la versión `1.0.0`, aunque el API se publica con HTTPS y la versión desplegada es `v1.1.0`. Scalar se abre en HTTPS, así que el navegador bloquea por contenido mixto las peticiones de «Test Request» hacia la dirección `http://`, y quien integra el API no puede saber por la documentación qué versión está usando.
 
 Recomendación: declarar el servidor con `https://` (o tomar el esquema de la petición detrás del proxy de Render) y leer la versión del documento OpenAPI desde la versión del proyecto.
+
+**PROBLEMA #4: Las pantallas del entorno de Producción se perciben saturadas de información**
+
+Severidad: 2
+Heurística violada: Usability - Estética y diseño minimalista
+
+Problema: en la entrevista de validación (5.3.2), el supervisor de producción consideró útil la Web Application, pero sintió la interfaz saturada, con mucha información a la vez en cada pantalla.
+
+Recomendación: dejar en cada pantalla solo lo que el rol necesita para su tarea principal, agrupar el resto en secciones plegables o pestañas y validar el cambio con más usuarios del segmento en la TB2.
 
 **Aspectos que cumplen las heurísticas:** cada entorno de la pantalla de inicio de sesión explica qué módulos tiene antes de elegirlo; el formulario marca cada campo obligatorio vacío con un mensaje claro («Enter a valid work email.», «Enter your password.»), permite mostrar la contraseña, explica antes de empezar que se pedirá un código de dos pasos y desactiva «Verify» hasta que el código tiene 6 dígitos; las dos aplicaciones tienen enlaces a los términos y la privacidad en el pie de página.
 
