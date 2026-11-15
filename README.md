@@ -193,6 +193,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.13 | 15/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo IV: diagramas de clases y de base de datos de Quality & Compliance y de IAM alineados con el RESTful API: personas por nombre, registros relacionados por código, `CapaAction` y `AuditFinding` como aggregates, y la invitación con la sede por nombre. |
 | 4.8.14 | 15/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: captura del Sprint 3 en Jira Software en el Sprint Backlog 3. |
 | 4.8.15 | 15/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: 5.1.4 sin la Fake API; 5.2.3.5 con los seis bounded contexts en el API desde la Web Application `v1.2.0`; 5.2.3.6 con la tabla de la versión `v1.1.0` publicada (90 rutas y 134 operaciones); y 5.2.3.7 con las versiones publicadas. |
+| 4.8.16 | 15/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: en 5.2.3.7, el Website `v1.2.0` con los videos About-the-Product y About-the-Team. |
 
 ---
 
