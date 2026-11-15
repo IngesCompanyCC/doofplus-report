@@ -199,6 +199,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.19 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: videos de navegación del Sprint 3 (Website, Web Application y RESTful Web Services) en 5.2.3.5, grabados por Angulo Ramírez, Marcelo Martín. |
 | 4.8.20 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: registro en 5.3.2 de la entrevista de validación de Zavaleta Gutierrez, Rodolfo Martin con un supervisor de producción. |
 | 4.8.21 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: la entrevista de 5.3.2 con el formato del Registro de Entrevistas y su resumen; problema 4 de 5.3.3 a partir de esa entrevista. |
+| 4.8.22 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: edad, distrito y enlace de Microsoft Stream de la entrevista de validación en 5.3.2. |
 
 ---
 

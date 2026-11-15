@@ -1661,10 +1661,10 @@ Primera sesión de validación del Sprint 3, con un usuario del segmento de prod
 | **Campo** | **Información** |
 | Nombre | Jorge |
 | Apellido | Cruz |
-| Edad | Por confirmar con el entrevistado |
-| Distrito | Por confirmar con el entrevistado |
+| Edad | 23 |
+| Distrito | Chorrillos |
 | Evidencia | ![Entrevista 1 - Segmento 2](../assets/img/chapter5/validation/entrevista-jorge-cruz.jpg) |
-| Link | https://youtu.be/inIPauYigW0 |
+| Link | Microsoft Stream: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231h117_upc_edu_pe/IQDJAfIdWoNbSriTZiPR585zAY1BmbEPbGyUv3jFS-vgPYU<br>YouTube: https://youtu.be/inIPauYigW0 |
 | Inicio | 00:00 min |
 | Duración | 09:31 min |
 | Resumen | Jorge Cruz es supervisor de producción. La entrevista la realizó Zavaleta Gutierrez, Rodolfo Martin el 15/11/2026 por videollamada, con la Web Application publicada en pantalla compartida; las cámaras solo se ven al inicio del video. Se recorrió el entorno de Producción, entre otras pantallas la recepción de materias primas y el monitoreo IoT. Jorge consideró que DoofPlus es muy útil para su trabajo y que lo empezará a utilizar, pero sintió la interfaz saturada: cada pantalla muestra mucha información a la vez. |
