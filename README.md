@@ -196,6 +196,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.16 | 15/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: en 5.2.3.7, el Website `v1.2.0` con los videos About-the-Product y About-the-Team. |
 | 4.8.17 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Student Outcome: acciones del AV2 de Cobades Zamora, Yhoshua Hebert. Capítulo V: commits del 15/11/2026 en 5.2.3.4 y conteo de commits por integrante en 5.2.3.8. Project Report Collaboration Insights: sección de la entrega AV2. |
 | 4.8.18 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: evaluación heurística de los productos publicados en 5.3.3. |
+| 4.8.19 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: videos de navegación del Sprint 3 (Website, Web Application y RESTful Web Services) en 5.2.3.5, grabados por Angulo Ramírez, Marcelo Martín. |
 
 ---
 

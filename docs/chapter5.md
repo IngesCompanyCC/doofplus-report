@@ -1391,6 +1391,12 @@ En este Sprint el Website lleva a cada segmento a su entorno con un call to acti
 - **Web Application:** https://ingescompanycc-frontend.web.app
 - **RESTful Web Services (Scalar):** https://doofplus-platform-aw.onrender.com/scalar
 
+Videos de navegación del Sprint 3 (Microsoft Stream), uno por producto:
+
+- **Website:** https://shorturl.at/7EdcN
+- **Web Application:** https://shorturl.at/MVuYL
+- **RESTful Web Services:** https://shorturl.at/8YRuB
+
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
 Los RESTful Web Services se documentan con OpenAPI (Microsoft.AspNetCore.OpenApi) y Scalar. La versión `v1.1.0`, desplegada en Render, expone 90 rutas y 134 operaciones bajo el prefijo `/api/v1`; la especificación se puede descargar en https://doofplus-platform-aw.onrender.com/openapi/v1.json. La URL base publicada es `https://doofplus-platform-aw.onrender.com/api/v1`. La siguiente tabla documenta cada operación, con su enlace a Scalar. El servicio usa el plan gratuito de Render, que lo suspende cuando no recibe peticiones, por lo que la primera petición puede tardar cerca de un minuto.
