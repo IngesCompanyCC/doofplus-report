@@ -1501,6 +1501,28 @@ Las preguntas se organizaron de acuerdo con las responsabilidades y necesidades 
 13. En una escala del 1 al 10, ¿qué tan probable sería que recomendara DoofPlus a otros responsables de producción farmacéutica? ¿Por qué?
 14. ¿Qué funcionalidades o mejoras considera necesarias antes de utilizar la plataforma en su organización?
 
+### Actividades de evaluación del prototipo
+
+Además de las preguntas planteadas, se propone realizar una evaluación práctica para observar cómo los participantes interactúan con las funcionalidades de DoofPlus. Para ello, se combinará una demostración guiada de las principales características de la plataforma con un periodo de exploración libre, durante el cual cada entrevistado podrá navegar por las funcionalidades relacionadas con sus responsabilidades.
+
+Las actividades se diferenciarán según el segmento objetivo:
+
+**Especialista de Aseguramiento y Control de Calidad (QA/QC)**
+
+- Consultar el historial y los estados de un lote farmacéutico.
+- Localizar un procedimiento operativo estándar (SOP) y revisar su versión vigente.
+- Consultar el registro de una desviación y revisar el seguimiento de las acciones CAPA.
+- Revisar las evidencias y registros asociados a la trazabilidad de un lote.
+
+**Jefe o Supervisor de Producción Farmacéutica**
+
+- Consultar las órdenes de producción y la información de las fórmulas maestras.
+- Revisar el estado y el historial de un lote de producción.
+- Consultar la información relacionada con la recepción y asignación de materias primas.
+- Revisar los datos de monitoreo IoT y las incidencias asociadas a los equipos y procesos productivos.
+
+Durante estas actividades se observará la facilidad con la que los participantes localizan la información, comprenden las opciones disponibles y completan las tareas propuestas. En la exploración libre también se registrarán las funcionalidades que generan mayor interés, las dificultades encontradas y las acciones que los usuarios realizan de manera espontánea.
+
 ### 5.3.2. Registro de Entrevistas
 
 ### 5.3.3. Evaluaciones según heurísticas
