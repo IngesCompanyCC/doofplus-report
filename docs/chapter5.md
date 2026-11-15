@@ -1652,6 +1652,22 @@ Durante estas actividades se observará la facilidad con la que los participante
 
 ### 5.3.2. Registro de Entrevistas
 
+Primera sesión de validación del Sprint 3, con un usuario del segmento de producción. Las demás entrevistas de los dos segmentos se registran en la TB2.
+
+**Segmento: Jefe o Supervisor de Producción Farmacéutica**
+
+| Campo | Detalle |
+|---|---|
+| Entrevistado | Jorge Cruz, supervisor de producción |
+| Entrevistador | Zavaleta Gutierrez, Rodolfo Martin |
+| Fecha y modalidad | 15/11/2026, videollamada con pantalla compartida |
+| Duración | 9 min 31 s (inicio de la entrevista: 0:00) |
+| Video | https://youtu.be/inIPauYigW0 |
+
+![Entrevista de validación con Jorge Cruz](../assets/img/chapter5/validation/entrevista-jorge-cruz.jpg)
+
+En la sesión se recorrió la Web Application publicada en el entorno de Producción, entre otras pantallas la recepción de materias primas y el monitoreo IoT. Las cámaras de los participantes solo se ven al inicio del video; el resto muestra la pantalla compartida.
+
 ### 5.3.3. Evaluaciones según heurísticas
 
 Para el AV2 el equipo hizo una primera evaluación heurística interna sobre los productos publicados, con el formato del curso (Anexo D). Las sesiones de validación con usuarios de los segmentos objetivo (5.3.1 y 5.3.2) se hacen en la TB2, y esta evaluación se repetirá sobre ellas.
