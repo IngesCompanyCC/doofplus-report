@@ -25,11 +25,11 @@ erDiagram
   invitations {
     int id PK
     int organization_id "ref organizations.organizations"
-    int facility_id "ref organizations.facilities"
-    int role_id FK
+    varchar(100) facility "facility name"
+    varchar(40) role "RoleQaSpecialist, RoleInternalAuditor, ..."
     varchar(150) full_name
     varchar(255) email
-    varchar(500) note "nullable"
+    varchar(500) note
     varchar(20) status "Pending, Accepted, Expired"
     datetime sent_at
   }
@@ -43,5 +43,4 @@ erDiagram
   }
   users ||--o{ user_roles : "has"
   roles ||--o{ user_roles : "grants"
-  roles ||--o{ invitations : "offered in"
   users ||--o{ electronic_signatures : "signs"
