@@ -1900,4 +1900,6 @@ Vernon, V. (2013). <em>Implementing Domain-Driven Design</em>. Addison-Wesley Pr
 
 En este anexo se incluyen los hipervínculos a los videos de exposición de cada entrega:
 
-* **Entrega TB1 (Sprints 1 y 2):** Video de exposición upc-pre-202620-1asi0730-8130-IngesCompanyCC-exposition-tb1, *pendiente de registrar el enlace de Microsoft Stream.*
+| Entrega | Título del video | Enlace |
+|---|---|---|
+| TB1 (Sprints 1 y 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-exposition-tb1 | https://youtu.be/HXeTNUu6BIY |
