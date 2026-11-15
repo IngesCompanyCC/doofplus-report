@@ -201,6 +201,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.21 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: la entrevista de 5.3.2 con el formato del Registro de Entrevistas y su resumen; problema 4 de 5.3.3 a partir de esa entrevista. |
 | 4.8.22 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: edad, distrito y enlace de Microsoft Stream de la entrevista de validación en 5.3.2. |
 | 4.8.23 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Anexo A: tabla de videos de exposición con el enlace del video de la TB1. |
+| 4.8.24 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Anexo A: enlace correcto del video de exposición de la TB1. |
 
 ---
 
