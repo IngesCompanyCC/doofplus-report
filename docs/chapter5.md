@@ -725,8 +725,8 @@ En este Sprint se completó el Website, publicada en GitHub Pages, y se implemen
 
 Videos de navegación del producto (upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2):
 
-- **Website:** *pendiente de publicar en Microsoft Stream.*
-- **Web Application:** *pendiente de publicar en Microsoft Stream.*
+- **Website:** https://shorturl.at/Ba8hC
+- **Web Application:** https://shorturl.at/NVztq
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
