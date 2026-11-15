@@ -1528,6 +1528,9 @@ Durante estas actividades se observará la facilidad con la que los participante
 ### 5.3.3. Evaluaciones según heurísticas
 
 ## 5.4. Video About-the-Product
+(![Video About-the-Product](../assets/img/chapter5/screenshots/about-the-product.png))
+Enlace del video en Microsoft Stream: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231h117_upc_edu_pe/IQD67i89t5nPQbnN8YPxIrulAX0VVWMwZsYa9bOdPo2Yu3o?e=3U79az
+Enlace del video en Youtube: https://youtu.be/m5nkEdCl6PY
 
 # Conclusiones
 
@@ -1543,7 +1546,42 @@ Durante estas actividades se observará la facilidad con la que los participante
 
 1. **Roadmap - Desarrollo Backend y Seguridad:** En relación al *Roadmap* de los productos digitales, se recomienda priorizar para el siguiente sprint o hito (AV2) la construcción de la arquitectura Backend y la base de datos relacional. Es imperativo consolidar el *Bounded Context* de IAM (Identity and Access Management) antes de avanzar, ya que el valor del sistema depende de las firmas electrónicas y la seguridad de los roles.
 2. **Roadmap - Integración de Telemetría (IoT):** Como siguiente paso en el alcance del modelo de negocio digital, se sugiere que el equipo investigue e integre simuladores de *WebSockets* o APIs en tiempo real. Esto permitirá validar técnicamente el módulo de monitoreo IoT (temperatura y humedad) establecido en el *Roadmap* sin necesidad de depender de hardware físico inmediato.
-## Video About-the-Team
+
+## Video About-The-Team
+
+### Resumen del video
+
+El video About-The-Team presenta una síntesis del proceso de trabajo desarrollado por el equipo a lo largo del proyecto. Combina imágenes y video de sesiones reales de trabajo con una narración en voz en off que guía al espectador por las etapas principales: la organización del equipo, la distribución de roles, el desarrollo de las actividades y los resultados obtenidos. De este modo muestra la dinámica colaborativa y la manera en que se abordaron los desafíos del proyecto.
+
+Además, el video incluye el testimonio ante cámara de cada participante, quien describe las actividades que realizó, el logro de los outcomes planteados y las competencias que desarrolló durante la experiencia. Estos testimonios aportan una mirada personal y complementan la visión global del trabajo en equipo, y muestran el aprendizaje alcanzado de forma individual y colectiva.
+
+**Duración total:** [00:10:04]
+
+### Cuadro de video representativo
+
+[![About-The-Team](https://img.youtube.com/vi/pE0AvoDX4XY/maxresdefault.jpg)](https://www.youtube.com/watch?v=pE0AvoDX4XY)
+
+*Cuadro representativo del video About-The-Team.*
+
+### Pauta de secuencias de contenido
+
+| N.º | Sección / Secuencia                        | Tiempo de inicio (hh:mm:ss) | Descripción breve                                                                                                                                                                                                      |
+|:---:|--------------------------------------------|:---------------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | Introducción / Presentación del equipo     |          00:00:00           | Startup IngesCompanyCC, desarrolladora de Doofplus, empezamos escuchando a los usuarios, haciendo entrevistas, oyendo sus problemas, gracias a esto se pudo hacer el needfinding, para luego pasar a DDD               |
+| 2 | Proceso de trabajo del equipo (voz en off) |          00:00:21           | Una explicación del trabajo realizado a lo largo del curso, se menciona lo desarrollado en el sprint 1, sprint 2 y el sprint 3. Además, de mencionar brevemente de lo que desarrollará en el sprint 4                  |
+| 3 | Testimonio de Marcelo Angulo               |          00:05:13           | Trabajó en las entrevistas con los segmentos objetivos. Además, se encargó de la programación del bounded context Monitoring. <br> Para el outcome: trabajó comunicandose de forma clara tanto en oral como en escrito |
+| 4 | Testimonio de Yhoshua Cobades              |          00:06:11           | Trabajó en los aspectos de Domain Driven Design (Lenguaje Ubicuo), se encargó de los bounded context Quality y Manufacturing. <br> Para el outcome: expuso en el diseño del dominio                                    |
+| 5 | Testimonio de Daniel Rojas                    |          00:07:24           | Diseñó la arquitectura C4, diagramas c4, se encargó del bounded context Subscriptions. <br> Para el outcome: se encargó de explicar a sus compañeros sobre el código que implementaba.                                 |
+| 6 | Testimonio de Cristina Yarleque            |          00:07:14           | [Actividades, outcomes y competencias]                                                                                                                                                                                 |
+| 7 | Testimonio de Rodolfo Zavaleta             |          00:09:11           | [Actividades, outcomes y competencias]                                                                                                                                                                                 |
+
+### Enlaces del video
+
+| Plataforma | URL                                                                                                                                                                                                                                                                                                                   | Uso |
+|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
+| Microsoft Stream |                                                                                                                                                                                                                                                                                                                  | Versión publicada |
+| YouTube | https://www.youtube.com/watch?v=pE0AvoDX4XY                                                                                                                                                                                                                                                                                          | Versión incrustada en el Landing Page |
+
 
 # Bibliografía
 
