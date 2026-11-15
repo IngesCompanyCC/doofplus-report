@@ -891,7 +891,7 @@ En el Sprint 3 se consideraron el Website y la Web Application y, en los RESTful
 
 #### 5.2.3.3. Sprint Backlog 3
 
-El objetivo del Sprint fue entregar la primera versión desplegada de los RESTful Web Services. El Sprint Backlog 3 junta tres bloques: las mejoras del Website y de la Web Application hechas desde el 18/10 (T184 a T198), las tareas de los Web Services por Technical Story (T137 a T165) y la autenticación con JWT (TS02, T199 a T201). Una tarea está en *Done* solo cuando su rama se unió a `develop`; lo que no se termine pasa al Sprint 4. Al cierre del Sprint hay 31 tareas en *Done*, 5 en *In-Process* y 11 en *To-do*, con 177 horas estimadas en total.
+El objetivo del Sprint fue entregar la primera versión desplegada de los RESTful Web Services. El Sprint Backlog 3 junta tres bloques: las mejoras del Website y de la Web Application hechas desde el 18/10 (T184 a T198), las tareas de los Web Services por Technical Story (T137 a T165) y la autenticación con JWT (TS02, T199 a T201). Una tarea está en *Done* solo cuando su rama se unió a `develop`; lo que no se termine pasa al Sprint 4. Al cierre del Sprint hay 42 tareas en *Done*, 2 en *In-Process* y 3 en *To-do*, con 177 horas estimadas en total.
 
 ![Sprint 3 en Jira Software: 20 actividades, 16 finalizadas y 4 en curso, con sus responsables](../assets/img/chapter5/evidencia/jira-sprint3.png)
 
