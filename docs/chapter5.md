@@ -1909,3 +1909,4 @@ En este anexo se incluyen los hipervínculos a los videos de exposición de cada
 | Entrega | Título del video | Enlace |
 |---|---|---|
 | TB1 (Sprints 1 y 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-exposition-tb1 | https://youtu.be/IZhr9hEQGEw |
+| AV2 (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-exposition-av2 | https://upcedupe-my.sharepoint.com/:f:/g/personal/u20231h117_upc_edu_pe/IgAw6R_u3wAiQZk52crHELbWAeW4M-xmwp9n2g19W_2QKFs |
