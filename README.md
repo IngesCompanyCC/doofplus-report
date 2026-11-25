@@ -210,6 +210,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.30 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo III: las Technical Stories (TS01–TS12) se redactan desde el rol de quien consume el servicio (Frontend Developer de la Web Application, Developer del Website y Developer de la integración IoT), con escenarios de request y response verificados contra el RESTful API; se actualizan el Product Backlog y la introducción de 3.1. |
 | 4.8.31 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo III: los criterios de aceptación de US03 ya no fijan los precios de los planes, para que un cambio de precio no requiera otra User Story. |
 | 4.8.32 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Bibliografía: referencias en APA de las tecnologías, técnicas y servicios usados después de la TB1 (ASP.NET Core, Entity Framework Core, Vue Router, Pinia, Vue I18n, PrimeVue, Material Design, OpenAPI, Scalar, REST, JWT, GitFlow, Conventional Commits, Semantic Versioning, C4, EventStorming, Impact Mapping, heurísticas de Nielsen, WAI-ARIA, ThingsBoard, Niubiz, MySQL, Render, Railway y Firebase), en orden alfabético. |
+| 4.8.33 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexos: los títulos del Anexo A siguen la nomenclatura del enunciado (`expo`); se agregan el Anexo B con los videos de evidencia y el Anexo C con los repositorios y productos desplegados, cada anexo en una página nueva. |
 
 ---
 
@@ -419,6 +420,8 @@ La cantidad de commits cuenta los commits de `main` sin merges desde el 10/10/20
 - [Bibliografía](docs/chapter5.md#bibliografía)
 - [Anexos](docs/chapter5.md#anexos)
   - [Anexo A. Videos de Exposiciones](docs/chapter5.md#anexo-a-videos-de-exposiciones)
+  - [Anexo B. Videos de evidencia](docs/chapter5.md#anexo-b-videos-de-evidencia)
+  - [Anexo C. Repositorios y productos desplegados](docs/chapter5.md#anexo-c-repositorios-y-productos-desplegados)
 
 ---
 
