@@ -206,6 +206,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.26 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: descripción y duración del video About-the-Product en 5.4. |
 | 4.8.27 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Project Report Collaboration Insights: commits del AV2 actualizados y captura de Contributors. Student Outcome: conclusiones del AV2. |
 | 4.8.28 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Anexo A: enlace del video de exposición del AV2 (Sprint 3) en OneDrive de la UPC. |
+| 4.8.29 | 24/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo IV: los User Flow Diagrams (4.4.4) incluyen el mock-up de cada pantalla del happy path y de cada estado de los unhappy paths, como pide el statement. |
 
 ---
 
