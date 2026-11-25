@@ -208,6 +208,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.28 | 15/11/2026 | Cobades Zamora, Yhoshua Hebert | Anexo A: enlace del video de exposición del AV2 (Sprint 3) en OneDrive de la UPC. |
 | 4.8.29 | 24/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo IV: los User Flow Diagrams (4.4.4) incluyen el mock-up de cada pantalla del happy path y de cada estado de los unhappy paths, como pide el statement. |
 | 4.8.30 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo III: las Technical Stories (TS01–TS12) se redactan desde el rol de quien consume el servicio (Frontend Developer de la Web Application, Developer del Website y Developer de la integración IoT), con escenarios de request y response verificados contra el RESTful API; se actualizan el Product Backlog y la introducción de 3.1. |
+| 4.8.31 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo III: los criterios de aceptación de US03 ya no fijan los precios de los planes, para que un cambio de precio no requiera otra User Story. |
 
 ---
 
