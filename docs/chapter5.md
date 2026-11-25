@@ -2009,5 +2009,34 @@ En este anexo se incluyen los hipervínculos a los videos de exposición de cada
 
 | Entrega | Título del video | Enlace |
 |---|---|---|
-| TB1 (Sprints 1 y 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-exposition-tb1 | https://youtu.be/IZhr9hEQGEw |
-| AV2 (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-exposition-av2 | https://upcedupe-my.sharepoint.com/:f:/g/personal/u20231h117_upc_edu_pe/IgAw6R_u3wAiQZk52crHELbWAeW4M-xmwp9n2g19W_2QKFs |
+| TB1 (Sprints 1 y 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-expo-tb1 | https://youtu.be/IZhr9hEQGEw |
+| AV2 (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-expo-av2 | https://upcedupe-my.sharepoint.com/:f:/g/personal/u20231h117_upc_edu_pe/IgAw6R_u3wAiQZk52crHELbWAeW4M-xmwp9n2g19W_2QKFs |
+
+---
+
+## Anexo B. Videos de evidencia
+
+En este anexo se reúnen los enlaces a los videos de evidencia que se presentan en las secciones del informe, con la nomenclatura del Anexo C del enunciado del trabajo final.
+
+| Video | Nombre según el enunciado | Sección | Enlace |
+|---|---|---|---|
+| Entrevistas de needfinding | upc-pre-202620-1asi0730-8130-IngesCompanyCC-needfinding-sprint-1 | [2.2.2. Registro de entrevistas](chapter2.md#222-registro-de-entrevistas) | https://shorturl.at/c0pBO |
+| Navegación del prototipo | upc-pre-202620-1asi0730-8130-IngesCompanyCC-prototype-navigation-sprint-1 | [4.5. Web Applications Prototyping](chapter4.md#45-web-applications-prototyping) | https://youtu.be/uWBS95rbGdk |
+| Navegación del producto (Sprint 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-product-navigation-sprint-2 | [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review) | Website: https://shorturl.at/Ba8hC<br>Web Application: https://shorturl.at/NVztq |
+| Navegación del producto (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-product-navigation-sprint-3 | [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review) | Website: https://shorturl.at/7EdcN<br>Web Application: https://shorturl.at/MVuYL<br>RESTful Web Services: https://shorturl.at/8YRuB |
+| Entrevistas de validación | upc-pre-202620-1asi0730-8130-IngesCompanyCC-validation-sprint-3 | [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas) | https://youtu.be/inIPauYigW0 |
+| About-the-Product | upc-pre-202620-1asi0730-8130-IngesCompanyCC-about-the-product-sprint-3 | [5.4. Video About-the-Product](#54-video-about-the-product) | https://youtu.be/m5nkEdCl6PY |
+| About-the-Team | upc-pre-202620-1asi0730-8130-IngesCompanyCC-about-the-team-sprint-3 | [Video About-The-Team](#video-about-the-team) | https://www.youtube.com/watch?v=pE0AvoDX4XY |
+
+---
+
+## Anexo C. Repositorios y productos desplegados
+
+En este anexo se reúnen los repositorios de la organización IngesCompanyCC en GitHub y las URL públicas de los productos de la solución.
+
+| Producto | Repositorio | URL pública |
+|---|---|---|
+| Project Report | https://github.com/IngesCompanyCC/doofplus-report | – |
+| Website (Landing Page) | https://github.com/IngesCompanyCC/doofplus-website | https://ingescompanycc.github.io/doofplus-website/ |
+| Web Application | https://github.com/IngesCompanyCC/doofplus-web-application | https://ingescompanycc-frontend.web.app |
+| RESTful Web Services | https://github.com/IngesCompanyCC/doofplus-platform | https://doofplus-platform-aw.onrender.com/scalar |
