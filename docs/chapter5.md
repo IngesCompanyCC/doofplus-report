@@ -1826,11 +1826,31 @@ Además, el video incluye el testimonio ante cámara de cada participante, quien
 # Bibliografía
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Adzic, G. (2012). <em>Impact mapping: Making a big impact with software products and projects</em>. Provoking Thoughts.
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Brandolini, A. (2021). <em>Introducing EventStorming: An act of deliberate collective learning</em>. Leanpub. https://leanpub.com/introducing_eventstorming
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
 Brown, S. (2018). <em>Software Architecture for Developers: Visualise, document and explore your software architecture</em>. Leanpub.
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Brown, S. (s. f.). <em>The C4 model for visualising software architecture</em>. https://c4model.com/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
 Brown, T. (2009). <em>Change by design: How design thinking transforms organizations and inspires innovation</em>. HarperBusiness.
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Conventional Commits. (s. f.). <em>Conventional Commits 1.0.0</em>. https://www.conventionalcommits.org/en/v1.0.0/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Driessen, V. (2010, 5 de enero). <em>A successful Git branching model</em>. https://nvie.com/posts/a-successful-git-branching-model/
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
@@ -1842,7 +1862,23 @@ Evans, E. (2004). <em>Domain-driven design: Tackling complexity in the heart of 
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Fielding, R. T. (2000). <em>Architectural styles and the design of network-based software architectures</em> [Tesis doctoral, University of California, Irvine]. https://ics.uci.edu/~fielding/pubs/dissertation/top.htm
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Google. (s. f.). <em>Firebase Hosting documentation</em>. https://firebase.google.com/docs/hosting
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Google. (s. f.). <em>Material Design 3</em>. https://m3.material.io/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
 Gothelf, J., & Seiden, J. (2021). <em>Lean UX: Designing great products with agile teams</em> (3rd ed.). O'Reilly Media.
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Jones, M., Bradley, J., & Sakimura, N. (2015). <em>JSON Web Token (JWT)</em> (RFC 7519). Internet Engineering Task Force. https://doi.org/10.17487/RFC7519
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
@@ -1858,6 +1894,30 @@ MasterControl. (2024). <em>Quality Management System (QMS) Software for Life Sci
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Microsoft. (s. f.). <em>ASP.NET Core documentation</em>. https://learn.microsoft.com/en-us/aspnet/core/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Microsoft. (s. f.). <em>Entity Framework Core documentation</em>. https://learn.microsoft.com/en-us/ef/core/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Nielsen, J. (2024, 30 de enero). <em>10 usability heuristics for user interface design</em>. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Niubiz. (s. f.). <em>Niubiz: soluciones de pago</em>. https://www.niubiz.com.pe/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+OpenAPI Initiative. (2021). <em>OpenAPI Specification v3.1.0</em>. https://spec.openapis.org/oas/v3.1.0
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Oracle. (s. f.). <em>MySQL 8.0 reference manual</em>. https://dev.mysql.com/doc/refman/8.0/en/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
 Organización Mundial de la Salud. (2014). Annex 2: WHO good manufacturing practices for pharmaceutical products: Main principles. En <em>WHO Expert Committee on Specifications for Pharmaceutical Preparations: Forty-eighth report</em> (WHO Technical Report Series, n.º 986). https://www.who.int/publications/m/item/trs986-annex2
 </div>
 
@@ -1870,11 +1930,39 @@ Patton, J. (2014). <em>User story mapping: Discover the whole story, build the r
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Pinia. (s. f.). <em>Pinia: The intuitive store for Vue.js</em>. https://pinia.vuejs.org/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Preston-Werner, T. (s. f.). <em>Semantic Versioning 2.0.0</em>. https://semver.org/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+PrimeTek. (s. f.). <em>PrimeVue: The next-generation Vue UI component library</em>. https://primevue.org/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Railway. (s. f.). <em>Railway documentation</em>. https://docs.railway.com/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Render. (s. f.). <em>Render documentation</em>. https://render.com/docs
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
 Ries, E. (2011). <em>The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses</em>. Crown Business.
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Scalar. (s. f.). <em>Scalar API Reference for ASP.NET Core</em>. https://scalar.com/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
 Schwaber, K., & Sutherland, J. (2020). <em>The Scrum Guide</em>. Scrum.org.
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+ThingsBoard. (s. f.). <em>ThingsBoard documentation</em>. https://thingsboard.io/docs/
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
@@ -1894,12 +1982,25 @@ Veeva Systems. (2024). <em>Veeva Vault Quality: Modernizing Quality Management</
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Vernon, V. (2013). <em>Implementing Domain-Driven Design</em>. Addison-Wesley Professional.
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Vue I18n. (s. f.). <em>Vue I18n: Internationalization plugin for Vue.js</em>. https://vue-i18n.intlify.dev/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
+Vue Router. (s. f.). <em>Vue Router: The official router for Vue.js</em>. https://router.vuejs.org/
+</div>
+
+<div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
 Vue.js. (2024). <em>Vue.js: The Progressive JavaScript Framework</em>. https://vuejs.org/
 </div>
 
 <div style="padding-left: 40px; text-indent: -40px; margin-bottom: 15px;">
-Vernon, V. (2013). <em>Implementing Domain-Driven Design</em>. Addison-Wesley Professional.
+World Wide Web Consortium. (2023). <em>Accessible Rich Internet Applications (WAI-ARIA) 1.2</em>. https://www.w3.org/TR/wai-aria-1.2/
 </div>
+
 # Anexos
 
 ## Anexo A. Videos de Exposiciones
