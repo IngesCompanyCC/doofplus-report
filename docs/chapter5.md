@@ -727,7 +727,11 @@ Videos de navegación del producto (upc-pre-202620-1asi0730-8130-IngesCompanyCC-
 - **Website:** https://shorturl.at/Ba8hC
 - **Web Application:** https://shorturl.at/NVztq
 
-Video completo de navegación del producto (un solo video que une los anteriores): upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2, ver en Microsoft Stream: https://shorturl.at/0Cnai. Muestra primero la navegación del Website y después la de la Web Application del Sprint 2.
+Video completo de navegación del producto (un solo video que une los anteriores): upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2, ver en Microsoft Stream: https://shorturl.at/0Cnai. Duración: 11:30. Muestra primero la navegación del Website y después la de la Web Application del Sprint 2.
+
+[![Video de navegación del producto del Sprint 2](../assets/img/chapter5/sprint2/product-navigation-sprint-2.jpg)](https://shorturl.at/0Cnai)
+
+*Figura: Cuadro del video de navegación del producto del Sprint 2 (Website).*
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
