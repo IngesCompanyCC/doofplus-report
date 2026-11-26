@@ -727,6 +727,8 @@ Videos de navegación del producto (upc-pre-202620-1asi0730-8130-IngesCompanyCC-
 - **Website:** https://shorturl.at/Ba8hC
 - **Web Application:** https://shorturl.at/NVztq
 
+Video completo de navegación del producto (un solo video que une los anteriores): upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2, ver en Microsoft Stream: *enlace por publicar*. Muestra la navegación del Website y de la Web Application del Sprint 2.
+
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
 En el Sprint 2 todavía no se implementaron los RESTful Web Services, por lo que no hay documentación OpenAPI. Mientras tanto, la Web Application consume una Fake API con json-server (`server/db.json`), cuyas rutas se exponen bajo el prefijo `/api/v1` mediante `server/routes.json`, el mismo que tendrán los Web Services. La siguiente tabla documenta los endpoints que usa la Web Application; la URL base local es `http://localhost:3000/api/v1` y la publicada en Render es `https://ingescompanycc-api.onrender.com/api/v1` (por ejemplo, `/plans` (https://ingescompanycc-api.onrender.com/api/v1/plans)).
@@ -1391,7 +1393,13 @@ En este Sprint el Website lleva a cada segmento a su entorno con un call to acti
 - **Web Application:** https://ingescompanycc-frontend.web.app
 - **RESTful Web Services (Scalar):** https://doofplus-platform-aw.onrender.com/scalar
 
-Video de navegación del producto: upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3, ver en Microsoft Stream: *enlace por publicar*. Muestra en un solo video la navegación del Website, de la Web Application conectada al API y de los RESTful Web Services en Scalar.
+Videos de navegación del Sprint 3 (Microsoft Stream), uno por producto:
+
+- **Website:** https://shorturl.at/7EdcN
+- **Web Application:** https://shorturl.at/MVuYL
+- **RESTful Web Services:** https://shorturl.at/8YRuB
+
+Video completo de navegación del producto (un solo video que une los anteriores): upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3, ver en Microsoft Stream: *enlace por publicar*. Muestra la navegación del Website, de la Web Application conectada al API y de los RESTful Web Services en Scalar.
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
