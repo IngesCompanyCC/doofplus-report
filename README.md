@@ -217,6 +217,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.37 | 26/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexo B: se quitan de la fila del Sprint 3 los enlaces de los videos de navegación de otro curso; queda pendiente el video completo del Sprint 3 de DoofPlus. |
 | 4.8.38 | 26/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo V: captura y duración del video de navegación del producto del Sprint 2 en 5.2.2.5. |
 | 4.8.39 | 26/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: 5.2.3.5 con un solo video de navegación del producto del Sprint 3 (`productnavigation-sprint-3`, 14:58), los minutos de cada producto y una captura, en lugar de los videos de Open; Anexo B con su enlace. |
+| 4.8.40 | 26/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V y Anexo B: un solo video de navegación del producto del Sprint 2 (`productnavigation-sprint-2`, 11:30), sin los enlaces por producto. |
 
 ---
 
