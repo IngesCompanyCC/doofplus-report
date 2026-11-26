@@ -868,7 +868,7 @@ El diseño del prototipo se guió por cuatro criterios:
 
 Prototipo navegable en Figma (página "Prototype", que une los mock-ups del Website y de la Web Application para navegar entre ambas): abrir el prototipo: https://www.figma.com/proto/YYtMivGL4tZEsLacA8HQmN/Aplicaciones-Web?page-id=1%3A1117&node-id=191-3378&starting-point-node-id=191%3A3378. Desde el selector de flujos del visor se accede a los puntos de inicio de cada user goal.
 
-Video de navegación del prototipo (Sprint 1): ver en Microsoft Stream: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQB6KXl0Q3rpS73VQX4ZXL-IAdP6slQTYltOl3rXLg04FwE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=BPBEqj (copia en YouTube: https://youtu.be/uWBS95rbGdk). Inicio: 00:00. Duración: 17:09.
+Video de navegación del prototipo: upc-pre-202620-1asi0730-8130-IngesCompanyCC-prototypenavigation-sprint-3, ver en Microsoft Stream: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQB6KXl0Q3rpS73VQX4ZXL-IAdP6slQTYltOl3rXLg04FwE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=BPBEqj (copia en YouTube: https://youtu.be/uWBS95rbGdk). Inicio: 00:00. Duración: 17:09.
 
 **Website** (desde 00:00 hasta 01:05)
 
