@@ -722,12 +722,7 @@ En este Sprint se completó el Website, publicada en GitHub Pages, y se implemen
 
 *Figura: Inicio de sesión en mobile.*
 
-Videos de navegación del producto (upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2):
-
-- **Website:** https://shorturl.at/Ba8hC
-- **Web Application:** https://shorturl.at/NVztq
-
-Video completo de navegación del producto (un solo video que une los anteriores): upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2, ver en Microsoft Stream: https://shorturl.at/0Cnai. Duración: 11:30. Muestra primero la navegación del Website y después la de la Web Application del Sprint 2.
+Video de navegación del producto: upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2 (duración: 11:30), ver en Microsoft Stream: https://shorturl.at/0Cnai. Muestra la navegación del Website y de la Web Application implementados en el Sprint 2.
 
 [![Video de navegación del producto del Sprint 2](../assets/img/chapter5/sprint2/product-navigation-sprint-2.jpg)](https://shorturl.at/0Cnai)
 
@@ -1397,7 +1392,7 @@ En este Sprint el Website lleva a cada segmento a su entorno con un call to acti
 - **Web Application:** https://ingescompanycc-frontend.web.app
 - **RESTful Web Services (Scalar):** https://doofplus-platform-aw.onrender.com/scalar
 
-Video de navegación del producto: upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3 (duración: 14:58), ver en Microsoft Stream: https://shorturl.at/ct3fQ. Un solo video muestra la navegación de los tres productos, en este orden:
+Video de navegación del producto: upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3 (duración: 14:58), ver en Microsoft Stream: https://shorturl.at/ct3fQ. Muestra la navegación de los tres productos en este orden:
 
 - **Website:** 0:00 - 5:00.
 - **Web Application:** 5:01 - 10:00.
@@ -2032,7 +2027,7 @@ En este anexo se reúnen los enlaces a los videos de evidencia que se presentan 
 |---|---|---|---|
 | Entrevistas de needfinding | upc-pre-202620-1asi0730-8130-IngesCompanyCC-needfinding-sprint-1 | [2.2.2. Registro de entrevistas](chapter2.md#222-registro-de-entrevistas) | https://shorturl.at/c0pBO |
 | Navegación del prototipo | upc-pre-202620-1asi0730-8130-IngesCompanyCC-prototypenavigation-sprint-3 | [4.5. Web Applications Prototyping](chapter4.md#45-web-applications-prototyping) | https://youtu.be/uWBS95rbGdk |
-| Navegación del producto (Sprint 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2 | [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review) | Video completo (Website y Web Application): https://shorturl.at/0Cnai<br>Website: https://shorturl.at/Ba8hC<br>Web Application: https://shorturl.at/NVztq |
+| Navegación del producto (Sprint 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2 | [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review) | https://shorturl.at/0Cnai |
 | Navegación del producto (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3 | [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review) | https://shorturl.at/ct3fQ (Website 0:00 - 5:00, Web Application 5:01 - 10:00, RESTful Web Services 10:01 - 14:58) |
 | Entrevistas de validación | upc-pre-202620-1asi0730-8130-IngesCompanyCC-validation-sprint-3 | [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas) | https://youtu.be/inIPauYigW0 |
 | About-the-Product | upc-pre-202620-1asi0730-8130-IngesCompanyCC-about-the-product-sprint-3 | [5.4. Video About-the-Product](#54-video-about-the-product) | https://youtu.be/m5nkEdCl6PY |
