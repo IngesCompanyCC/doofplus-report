@@ -1397,13 +1397,15 @@ En este Sprint el Website lleva a cada segmento a su entorno con un call to acti
 - **Web Application:** https://ingescompanycc-frontend.web.app
 - **RESTful Web Services (Scalar):** https://doofplus-platform-aw.onrender.com/scalar
 
-Videos de navegación del Sprint 3 (Microsoft Stream), uno por producto:
+Video de navegación del producto: upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3 (duración: 14:58), ver en Microsoft Stream: https://shorturl.at/ct3fQ. Un solo video muestra la navegación de los tres productos, en este orden:
 
-- **Website:** https://shorturl.at/7EdcN
-- **Web Application:** https://shorturl.at/MVuYL
-- **RESTful Web Services:** https://shorturl.at/8YRuB
+- **Website:** 0:00 - 5:00.
+- **Web Application:** 5:01 - 10:00.
+- **RESTful Web Services (Scalar):** 10:01 - 14:58.
 
-Video completo de navegación del producto (un solo video que une los anteriores): upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3, ver en Microsoft Stream: *enlace por publicar*. Muestra la navegación del Website, de la Web Application conectada al API y de los RESTful Web Services en Scalar.
+[![Video de navegación del producto del Sprint 3](../assets/img/chapter5/sprint3/product-navigation-sprint-3.jpg)](https://shorturl.at/ct3fQ)
+
+*Figura: Cuadro del video de navegación del producto del Sprint 3 (minuto 7:30, documentos de calidad en la Web Application conectada al API).*
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
@@ -2031,7 +2033,7 @@ En este anexo se reúnen los enlaces a los videos de evidencia que se presentan 
 | Entrevistas de needfinding | upc-pre-202620-1asi0730-8130-IngesCompanyCC-needfinding-sprint-1 | [2.2.2. Registro de entrevistas](chapter2.md#222-registro-de-entrevistas) | https://shorturl.at/c0pBO |
 | Navegación del prototipo | upc-pre-202620-1asi0730-8130-IngesCompanyCC-prototypenavigation-sprint-3 | [4.5. Web Applications Prototyping](chapter4.md#45-web-applications-prototyping) | https://youtu.be/uWBS95rbGdk |
 | Navegación del producto (Sprint 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2 | [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review) | Video completo (Website y Web Application): https://shorturl.at/0Cnai<br>Website: https://shorturl.at/Ba8hC<br>Web Application: https://shorturl.at/NVztq |
-| Navegación del producto (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3 | [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review) | Video completo: por publicar |
+| Navegación del producto (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3 | [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review) | https://shorturl.at/ct3fQ (Website 0:00 - 5:00, Web Application 5:01 - 10:00, RESTful Web Services 10:01 - 14:58) |
 | Entrevistas de validación | upc-pre-202620-1asi0730-8130-IngesCompanyCC-validation-sprint-3 | [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas) | https://youtu.be/inIPauYigW0 |
 | About-the-Product | upc-pre-202620-1asi0730-8130-IngesCompanyCC-about-the-product-sprint-3 | [5.4. Video About-the-Product](#54-video-about-the-product) | https://youtu.be/m5nkEdCl6PY |
 | About-the-Team | upc-pre-202620-1asi0730-8130-IngesCompanyCC-about-the-team-sprint-3 | [Video About-The-Team](#video-about-the-team) | https://www.youtube.com/watch?v=pE0AvoDX4XY |

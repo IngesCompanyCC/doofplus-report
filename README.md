@@ -211,11 +211,12 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.31 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo III: los criterios de aceptación de US03 ya no fijan los precios de los planes, para que un cambio de precio no requiera otra User Story. |
 | 4.8.32 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Bibliografía: referencias en APA de las tecnologías, técnicas y servicios usados después de la TB1 (ASP.NET Core, Entity Framework Core, Vue Router, Pinia, Vue I18n, PrimeVue, Material Design, OpenAPI, Scalar, REST, JWT, GitFlow, Conventional Commits, Semantic Versioning, C4, EventStorming, Impact Mapping, heurísticas de Nielsen, WAI-ARIA, ThingsBoard, Niubiz, MySQL, Render, Railway y Firebase), en orden alfabético. |
 | 4.8.33 | 25/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexos: los títulos del Anexo A siguen la nomenclatura del enunciado (`expo`); se agregan el Anexo B con los videos de evidencia y el Anexo C con los repositorios y productos desplegados, cada anexo en una página nueva. |
-| 4.8.34 | 26/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo V: enlace del video completo de navegación del producto del Sprint 2 (Website y Web Application) en 5.2.2.5 y en el Anexo B; los nombres de los videos de navegación del Anexo B coinciden con los de los capítulos IV y V. |
-| 4.8.35 | 26/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexo B: se quitan de la fila del Sprint 3 los enlaces de los videos de navegación de otro curso; queda pendiente el video completo del Sprint 3 de DoofPlus. |
-| 4.8.36 | 26/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo V: captura y duración del video de navegación del producto del Sprint 2 en 5.2.2.5. |
 | 4.8.34 | 25/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo IV: 4.5 nombra el video de navegación del prototipo como se publicó (`prototypenavigation-sprint-3`), en lugar de «Sprint 1». |
 | 4.8.35 | 25/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: en 5.2.2.5 y 5.2.3.5, debajo de los videos de cada producto, un apartado para el video completo de navegación del producto de cada Sprint (`productnavigation-sprint-2` y `productnavigation-sprint-3`). |
+| 4.8.36 | 26/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo V: enlace del video completo de navegación del producto del Sprint 2 (Website y Web Application) en 5.2.2.5 y en el Anexo B; los nombres de los videos de navegación del Anexo B coinciden con los de los capítulos IV y V. |
+| 4.8.37 | 26/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexo B: se quitan de la fila del Sprint 3 los enlaces de los videos de navegación de otro curso; queda pendiente el video completo del Sprint 3 de DoofPlus. |
+| 4.8.38 | 26/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo V: captura y duración del video de navegación del producto del Sprint 2 en 5.2.2.5. |
+| 4.8.39 | 26/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: 5.2.3.5 con un solo video de navegación del producto del Sprint 3 (`productnavigation-sprint-3`, 14:58), los minutos de cada producto y una captura, en lugar de los videos de Open; Anexo B con su enlace. |
 
 ---
 
