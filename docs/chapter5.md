@@ -1391,11 +1391,7 @@ En este Sprint el Website lleva a cada segmento a su entorno con un call to acti
 - **Web Application:** https://ingescompanycc-frontend.web.app
 - **RESTful Web Services (Scalar):** https://doofplus-platform-aw.onrender.com/scalar
 
-Videos de navegación del Sprint 3 (Microsoft Stream), uno por producto:
-
-- **Website:** https://shorturl.at/7EdcN
-- **Web Application:** https://shorturl.at/MVuYL
-- **RESTful Web Services:** https://shorturl.at/8YRuB
+Video de navegación del producto: upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3, ver en Microsoft Stream: *enlace por publicar*. Muestra en un solo video la navegación del Website, de la Web Application conectada al API y de los RESTful Web Services en Scalar.
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
