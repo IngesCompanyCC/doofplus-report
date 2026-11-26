@@ -727,7 +727,7 @@ Videos de navegación del producto (upc-pre-202620-1asi0730-8130-IngesCompanyCC-
 - **Website:** https://shorturl.at/Ba8hC
 - **Web Application:** https://shorturl.at/NVztq
 
-Video completo de navegación del producto (un solo video que une los anteriores): upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2, ver en Microsoft Stream: *enlace por publicar*. Muestra la navegación del Website y de la Web Application del Sprint 2.
+Video completo de navegación del producto (un solo video que une los anteriores): upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2, ver en Microsoft Stream: https://shorturl.at/0Cnai. Muestra primero la navegación del Website y después la de la Web Application del Sprint 2.
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
@@ -2025,9 +2025,9 @@ En este anexo se reúnen los enlaces a los videos de evidencia que se presentan 
 | Video | Nombre según el enunciado | Sección | Enlace |
 |---|---|---|---|
 | Entrevistas de needfinding | upc-pre-202620-1asi0730-8130-IngesCompanyCC-needfinding-sprint-1 | [2.2.2. Registro de entrevistas](chapter2.md#222-registro-de-entrevistas) | https://shorturl.at/c0pBO |
-| Navegación del prototipo | upc-pre-202620-1asi0730-8130-IngesCompanyCC-prototype-navigation-sprint-1 | [4.5. Web Applications Prototyping](chapter4.md#45-web-applications-prototyping) | https://youtu.be/uWBS95rbGdk |
-| Navegación del producto (Sprint 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-product-navigation-sprint-2 | [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review) | Website: https://shorturl.at/Ba8hC<br>Web Application: https://shorturl.at/NVztq |
-| Navegación del producto (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-product-navigation-sprint-3 | [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review) | Website: https://shorturl.at/7EdcN<br>Web Application: https://shorturl.at/MVuYL<br>RESTful Web Services: https://shorturl.at/8YRuB |
+| Navegación del prototipo | upc-pre-202620-1asi0730-8130-IngesCompanyCC-prototypenavigation-sprint-3 | [4.5. Web Applications Prototyping](chapter4.md#45-web-applications-prototyping) | https://youtu.be/uWBS95rbGdk |
+| Navegación del producto (Sprint 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-2 | [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review) | Video completo (Website y Web Application): https://shorturl.at/0Cnai<br>Website: https://shorturl.at/Ba8hC<br>Web Application: https://shorturl.at/NVztq |
+| Navegación del producto (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-productnavigation-sprint-3 | [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review) | Website: https://shorturl.at/7EdcN<br>Web Application: https://shorturl.at/MVuYL<br>RESTful Web Services: https://shorturl.at/8YRuB |
 | Entrevistas de validación | upc-pre-202620-1asi0730-8130-IngesCompanyCC-validation-sprint-3 | [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas) | https://youtu.be/inIPauYigW0 |
 | About-the-Product | upc-pre-202620-1asi0730-8130-IngesCompanyCC-about-the-product-sprint-3 | [5.4. Video About-the-Product](#54-video-about-the-product) | https://youtu.be/m5nkEdCl6PY |
 | About-the-Team | upc-pre-202620-1asi0730-8130-IngesCompanyCC-about-the-team-sprint-3 | [Video About-The-Team](#video-about-the-team) | https://www.youtube.com/watch?v=pE0AvoDX4XY |
