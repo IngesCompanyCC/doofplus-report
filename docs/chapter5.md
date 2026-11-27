@@ -1684,7 +1684,7 @@ Primera sesión de validación del Sprint 3, con un usuario del segmento de prod
 | Evidencia | ![Entrevista 1 - Segmento 2](../assets/img/chapter5/validation/entrevista-alberto-vega.jpg) |
 | Link | https://shorturl.at/Udk8P|
 | Inicio | 05:01 min |
-| Duración | 10:00 min |
+| Duración | 04:59 min |
 | Resumen | Alberto Valle es químico farmacéutico con cerca de cuarenta años de experiencia en producción farmacéutica. La entrevista la realizó Angulo Ramírez el 11/11/2026 por videollamada, con la Web Application en pantalla compartida. Se recorrió el entorno de las Ordenes de Producción, Productos y Formulas, a la vez que se muestra brevemente los Lotes. Alberto consideró que la aplicación  mostraba detalles interesantes como la parte del chat entre equipos, aunque señaló que en la parte de lotes falta más información clave en el desarrollo de los lotes. |
 
 | Numero | 2|
@@ -1697,7 +1697,7 @@ Primera sesión de validación del Sprint 3, con un usuario del segmento de prod
 | Evidencia | ![Entrevista 2 - Segmento 2](../assets/img/chapter5/validation/entrevista-mariela-mercado.jpg) |
 | Link | https://shorturl.at/Udk8P|
 | Inicio | 10:01 min |
-| Duración | 15:00 min |
+| Duración | 04:59 min |
 | Resumen | Mariela Alanya es química farmacéutica y responsable del laboratorio de Control de Calidad. La entrevista la realizó Angulo Ramírez el 12/11/2026 por videollamada, con la Web Application en pantalla compartida. Se exploraron pantallas como Materia primas, Resumen IoT y revisión breve de Equipos y Sensores. Mariela valoró el chat en la misma pagina junto con el formato de información, pero indicó que los datos deben de estar mejor agrupados al ejecutar los comandos de la plataforma. |
 
 | Numero | 3|
@@ -1710,7 +1710,7 @@ Primera sesión de validación del Sprint 3, con un usuario del segmento de prod
 | Evidencia | ![Entrevista 3 - Segmento 2](../assets/img/chapter5/validation/entrevista-jorge-cruz.jpg) |
 | Link | https://shorturl.at/Udk8P|
 | Inicio | 15:01 min |
-| Duración | 20:00 min |
+| Duración | 04:59 min |
 | Resumen | Jorge Cruz es supervisor de producción. La entrevista la realizó Zavaleta Gutierrez, Rodolfo Martin el 15/11/2026 por videollamada, con la Web Application publicada en pantalla compartida; las cámaras solo se ven al inicio del video. Se recorrió el entorno de Producción, entre otras pantallas la recepción de materias primas y el monitoreo IoT. Jorge consideró que DoofPlus es muy útil para su trabajo y que lo empezará a utilizar, pero sintió la interfaz saturada: cada pantalla muestra mucha información a la vez. |
 
 ### 5.3.3. Evaluaciones según heurísticas
