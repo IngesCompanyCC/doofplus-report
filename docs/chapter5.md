@@ -2053,8 +2053,8 @@ En este anexo se incluyen los hipervínculos a los videos de exposición de cada
 
 | Entrega | Título del video | Enlace |
 |---|---|---|
-| AV1 (Sprint 1) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-expo-av1 | https://shorturl.at/03BUc |
-| TB1 (Sprints 1 y 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-expo-tb1 | https://youtu.be/IZhr9hEQGEw |
+| AV1 (Sprint 1) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-expo-av1 | https://shorturl.at/03BUc (16:30) |
+| TB1 (Sprints 1 y 2) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-expo-tb1 | https://shorturl.at/BltNr (21:11) |
 | AV2 (Sprint 3) | upc-pre-202620-1asi0730-8130-IngesCompanyCC-expo-av2 | https://shorturl.at/orqYI (17:32) |
 
 ---
