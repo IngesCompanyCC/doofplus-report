@@ -223,6 +223,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.42 | 27/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: tabla de 5.2.3.6 con las rutas en sustantivos plurales de la API (88 rutas y 132 operaciones), sin verbos como `/approve` o `/renewal`. |
 | 4.8.43 | 27/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo V: la duración de cada entrevista de validación en 5.3.2 es la de su tramo del video, no la hora en que termina. |
 | 4.8.44 | 27/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexo A: enlace del video de exposición del AV1 (Sprint 1). |
+| 4.8.45 | 27/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexo A: el video de exposición de la TB1 enlaza a Microsoft Stream, como pide el enunciado, y cada video muestra su duración. |
 
 ---
 
