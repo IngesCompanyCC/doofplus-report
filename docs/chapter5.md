@@ -1565,6 +1565,75 @@ Los cinco integrantes participaron en el Sprint. La siguiente tabla resume los c
 - **Web Application:** https://github.com/IngesCompanyCC/doofplus-web-application/graphs/contributors y https://github.com/IngesCompanyCC/doofplus-web-application/network
 - **RESTful Web Services:** https://github.com/IngesCompanyCC/doofplus-platform/graphs/contributors y https://github.com/IngesCompanyCC/doofplus-platform/network
 
+### 5.2.4. Sprint 4
+
+En esta sección se registra y explica el avance en términos de producto y trabajo colaborativo para el **Sprint 4** (del 15/11/2026 al 29/11/2026), cuyo enfoque fue completar, asegurar y probar los RESTful Web Services, conectarlos con la versión final de la Web Application y del Website, y validar el producto con usuarios de los dos segmentos objetivo.
+
+#### 5.2.4.1. Sprint Planning 4
+
+El Sprint Planning Meeting sirvió para revisar lo que quedó pendiente del Sprint 3, atender las observaciones de la revisión del AV2 y repartir las tareas de cierre de los RESTful Web Services, la Web Application y el Website. A continuación, se presenta el resumen de la reunión de planificación:
+
+| Sprint # | Sprint 4 |
+|----------|----------|
+| **Sprint Planning Background** | |
+| **Date** | 2026-11-15 |
+| **Time** | 10:00 AM |
+| **Location** | Reunión virtual vía Discord |
+| **Prepared By** | Zavaleta Gutierrez, Rodolfo Martin |
+| **Attendees (to planning meeting)** | Angulo Ramírez, Marcelo Martín / Cobades Zamora, Yhoshua Hebert / Rojas Ambicho, Nestor Daniel / Yarleque Ruiz, Cristina Marcela / Zavaleta Gutierrez, Rodolfo Martin |
+| **Sprint 3 Review Summary** | Se publicó la primera versión de los RESTful Web Services (`v1.0.0`) en Render, con su base de datos MySQL en Railway y su documentación en Scalar, y el Website y la Web Application llegaron a `v1.1.0`. La Web Application `v1.2.0` ya usa el API en lugar de la Fake API. Quedaron pendientes las fachadas ACL de Organizations y Manufacturing, el evento que lleva una incidencia de Producción a Calidad y las calibraciones y mantenimientos de los equipos. En la revisión del AV2 se observó que algunos endpoints usaban verbos, que no todas las tareas estaban estimadas entre 4 y 8 horas y que faltaba validar el producto con usuarios de los dos segmentos. |
+| **Sprint 3 Retrospective Summary** | Como acierto, el API quedó publicado y la Web Application pasó a usarlo en sus módulos. Como oportunidades de mejora, se acordó estimar cada tarea entre 4 y 8 horas, cerrar primero lo que quedó del Sprint 3, acompañar cada cambio del API con pruebas y coordinar las entrevistas de validación desde el inicio del Sprint. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 4 Goal** | **Our focus is on** completing, securing and testing the DoofPlus RESTful Web Services, connecting them to the final Web Application and Website, and validating the product with users of both segments.<br>**We believe it delivers** a deployed, documented and tested platform that QA/QC specialists and production supervisors can use end to end.<br>**This will be confirmed when** users of both segments complete their core user flows on the deployed product during the validation interviews. |
+| **Sprint 4 Velocity** | 36 Story Points |
+| **Sum of Story Points** | 36 Story Points (TS12: 3, TS03: 5, TS07: 5, TS11: 5, TS04: 5, TS05: 3, TS06: 5, TS08: 5) |
+
+#### 5.2.4.2. Aspect Leaders and Collaborators
+
+En el Sprint 4 se consideraron el Website y la Web Application y, en los RESTful Web Services, los bounded contexts (Shared & IAM, Organizations, Subscriptions, Manufacturing, IoT Monitoring y Quality & Compliance), las releases y el despliegue, y la documentación. El líder (L) de cada aspecto es el integrante con más tareas y commits en él durante el Sprint, según el Sprint Backlog 4 y el historial de los repositorios de la organización IngesCompanyCC.
+
+| Team Member (Last Name, First Name) | GitHub Username | Website | Web Application | Shared & IAM | Organizations | Subscriptions | Manufacturing | IoT Monitoring | Quality & Compliance | Releases & Deployment | Documentation |
+|-------------------------------------|-----------------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Angulo Ramírez, Marcelo Martín | Zock2005 | | | | | | | L | | | C |
+| Cobades Zamora, Yhoshua Hebert | YhoshuaCZ | | | | | | C | | L | | C |
+| Rojas Ambicho, Nestor Daniel | danRO-20 | L | L | C | | | | C | | L | C |
+| Yarleque Ruiz, Cristina Marcela | Cris06luna | | C | C | L | L | C | C | | | |
+| Zavaleta Gutierrez, Rodolfo Martin | gutierrezrodolfo360-bit | | | L | | | L | | | C | L |
+
+#### 5.2.4.3. Sprint Backlog 4
+
+El objetivo del Sprint es completar, asegurar y probar los RESTful Web Services y conectarlos con la versión final de los productos. El Sprint Backlog 4 junta tres bloques: lo que quedó pendiente del Sprint 3 (T140, T149, T155, T156 y T163), las Technical Stories TS04, TS05, TS06 y TS08, que entran en este Sprint (T214 a T217), y las tareas técnicas de seguridad, rutas, pruebas, documentación y release (T202 a T213, T218 y T219). Las tareas de TS12, TS03, TS07 y TS11 terminadas en el Sprint 3 están en 5.2.3.3. Todas las tareas se estimaron entre 4 y 8 horas, y una tarea está en *Done* solo cuando su rama se unió a `develop`. Hay 23 tareas, con 109 horas estimadas en total: 16 en *Done*, 1 en *In-Process* y 6 en *To-do*.
+
+**Enlace al board en Jira:** https://inges-company-cc.atlassian.net/jira/software/projects/UPC/boards/1
+
+| Sprint # | Sprint 4 | | | | | | |
+|----------|----------|---|---|---|---|---|---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
+| TS12 | API de organizaciones y consultas de contacto | T140 | Organizations: fachada ACL y consulta desde Subscriptions | Exponer la fachada `IOrganizationsContextFacade` y usarla desde Subscriptions, mediante un servicio externo, para comprobar que la organización existe antes de crear su suscripción (404 si no existe), con pruebas. | 4 | Yarleque Ruiz, Cristina Marcela | To-do |
+| TS07 | API de operaciones de laboratorio | T149 | IoT Monitoring: calibraciones y mantenimientos | Registrar y consultar las calibraciones y los mantenimientos de cada equipo en /api/v1/equipment/{equipmentId}/calibrations y /maintenances (US38, US39). | 5 | Angulo Ramírez, Marcelo Martín | In-Process |
+| TS03 | API de trazabilidad de lotes | T155 | Manufacturing: incidencias y escalamiento a Calidad | Publicar un domain event cuando se registra una incidencia en un lote de producción (US56). | 4 | Cobades Zamora, Yhoshua Hebert | Done |
+| TS03 | API de trazabilidad de lotes | T156 | Manufacturing: fachada ACL y consulta desde Quality | Exponer la fachada `IManufacturingContextFacade` para que Quality consulte el lote sin acceder al modelo de Manufacturing. | 4 | Cobades Zamora, Yhoshua Hebert | Done |
+| TS11 | API de desviaciones y CAPA | T163 | Quality: desviación desde incidencia de Producción | Abrir una desviación ligada al lote cuando Manufacturing publica el evento de una incidencia (US56). | 4 | Cobades Zamora, Yhoshua Hebert | Done |
+| TS04 | API de ingesta IoT | T214 | IoT Monitoring: telemetría desde ThingsBoard con API key | Recibir las lecturas de ThingsBoard en POST /api/v1/telemetry con la cabecera X-Api-Key y abrir una alerta cuando una lectura sale de rango. | 6 | Rojas Ambicho, Nestor Daniel | Done |
+| TS05 | API de auditoría | T215 | Quality: eventos de auditoría | Registrar y consultar los eventos del audit trail en /api/v1/audit-events, filtrados por registro. | 5 | Cobades Zamora, Yhoshua Hebert | Done |
+| TS06 | API de KPIs | T216 | Quality: tendencias de desviaciones y brechas de trazabilidad | Exponer los indicadores /api/v1/deviation-trends y /api/v1/traceability-gaps para el dashboard. | 6 | Cobades Zamora, Yhoshua Hebert | Done |
+| TS08 | Servicio de notificaciones en tiempo real | T217 | IoT Monitoring: alertas con severidad y reconocimiento | Consultar las alertas por lote y por sensor, con su severidad, y registrar su reconocimiento en /api/v1/alerts. | 5 | Rojas Ambicho, Nestor Daniel | Done |
+| — | Tareas técnicas | T202 | Platform: hotfix del sign-up sin el rol del cliente | El sign-up deja de tomar el rol y la organización del cliente: el primer usuario de una organización es su administrador y el invitado toma el rol de su invitación. Release `v1.1.1`. | 4 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| — | Tareas técnicas | T203 | Platform: token JWT en todos los endpoints salvo los públicos | Exigir el token en todos los controllers y dejar sin token solo los endpoints públicos (registro, inicio de sesión, planes, consultas de contacto y telemetría), con una prueba que recorre los controllers. | 6 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| — | Tareas técnicas | T204 | Platform: README de la plataforma | Documentar cómo ejecutar, configurar, probar y desplegar los RESTful Web Services. | 4 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| — | Tareas técnicas | T205 | Platform: rutas con sustantivos en plural, sin verbos | Pasar las acciones con verbos a sub-recursos en plural (por ejemplo, /approvals, /rejections y /renewals) y los filtros a query params. | 8 | Rojas Ambicho, Nestor Daniel | Done |
+| — | Tareas técnicas | T206 | Platform: CORS restringido, secreto JWT obligatorio y equipos por código | Aceptar solo los orígenes del Website y de la Web Application, exigir el secreto del JWT al arrancar y consultar un equipo por su código. | 4 | Rojas Ambicho, Nestor Daniel | Done |
+| — | Tareas técnicas | T207 | Platform: OpenAPI con la versión del proyecto y https | Mostrar en la documentación OpenAPI la versión del proyecto y publicar su servidor con `https` detrás del proxy de Render. | 4 | Rojas Ambicho, Nestor Daniel | Done |
+| — | Tareas técnicas | T208 | Web App: rutas en plural del API y limpieza de endpoints sin uso | Llamar a los sub-recursos en plural al liberar un lote e inspeccionar un lote de materia prima, y quitar los endpoints que ya no se usan. | 4 | Rojas Ambicho, Nestor Daniel | Done |
+| — | Tareas técnicas | T209 | Platform: pruebas de integración del API | Pruebas con `WebApplicationFactory` del flujo de autenticación y de los endpoints principales contra una base de datos de prueba. | 6 | Yarleque Ruiz, Cristina Marcela | To-do |
+| — | Tareas técnicas | T210 | Platform: pruebas de Manufacturing, IoT Monitoring y Organizations | Pruebas unitarias con xUnit de los value objects y aggregates de esos bounded contexts. | 4 | Yarleque Ruiz, Cristina Marcela | To-do |
+| — | Tareas técnicas | T211 | Web App: quitar la Fake API y actualizar el README | Quitar json-server, su base de datos de ejemplo y sus scripts, y documentar la conexión con los RESTful Web Services. | 4 | Yarleque Ruiz, Cristina Marcela | To-do |
+| — | Tareas técnicas | T212 | Platform y Web App: release y despliegue final | Publicar las versiones finales de los RESTful Web Services en Render y de la Web Application en Firebase Hosting. | 4 | Rojas Ambicho, Nestor Daniel | To-do |
+| — | Tareas técnicas | T213 | Website: videos finales y release | Incrustar los videos finales About-the-Product y About-the-Team en el Website y publicar su versión final en GitHub Pages. | 4 | Rojas Ambicho, Nestor Daniel | To-do |
+| — | Tareas técnicas | T218 | Platform: rechazo de una orden de producción con su motivo | Rechazar una orden de producción planificada con su motivo en el sub-recurso /rejections. | 4 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| — | Tareas técnicas | T219 | Platform: pruebas unitarias y de integración de Manufacturing | Pruebas de los value objects y del ciclo de vida de lotes y órdenes, y pruebas por HTTP de los endpoints de lotes, órdenes y materias primas; un comando sobre un registro inexistente responde 404. | 6 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+
 ## 5.3. Validation Interviews
 
 ### 5.3.1. Diseño de Entrevistas

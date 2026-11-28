@@ -226,6 +226,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.45 | 27/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexo A: el video de exposición de la TB1 enlaza a Microsoft Stream, como pide el enunciado, y cada video muestra su duración. |
 | 4.8.46 | 27/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: 5.3.3 con las cuatro entrevistas de validación de 5.3.2 como clientes, las tareas recorridas en ellas, los problemas 5 a 8 que señalaron los usuarios y el problema 3 corregido en los RESTful Web Services. |
 | 4.8.47 | 27/11/2026 | Cobades Zamora, Yhoshua Hebert | Student Outcome: acciones del AV1 y de la TB2 de Cobades Zamora, Yhoshua Hebert. |
+| 4.8.48 | 27/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: Sprint 4 en 5.2.4, con el Sprint Planning, los Aspect Leaders and Collaborators y el Sprint Backlog desde Jira (23 tareas de 4 a 8 horas). |
 
 ---
 
@@ -422,6 +423,10 @@ La cantidad de commits cuenta los commits de `main` sin merges desde el 10/10/20
       - [5.2.3.6. Services Documentation Evidence for Sprint Review](docs/chapter5.md#5236-services-documentation-evidence-for-sprint-review)
       - [5.2.3.7. Software Deployment Evidence for Sprint Review](docs/chapter5.md#5237-software-deployment-evidence-for-sprint-review)
       - [5.2.3.8. Team Collaboration Insights during Sprint](docs/chapter5.md#5238-team-collaboration-insights-during-sprint)
+    - [5.2.4. Sprint 4](docs/chapter5.md#524-sprint-4)
+      - [5.2.4.1. Sprint Planning 4](docs/chapter5.md#5241-sprint-planning-4)
+      - [5.2.4.2. Aspect Leaders and Collaborators](docs/chapter5.md#5242-aspect-leaders-and-collaborators)
+      - [5.2.4.3. Sprint Backlog 4](docs/chapter5.md#5243-sprint-backlog-4)
   - [5.3. Validation Interviews](docs/chapter5.md#53-validation-interviews)
     - [5.3.1. Diseño de Entrevistas](docs/chapter5.md#531-diseño-de-entrevistas)
     - [5.3.2. Registro de Entrevistas](docs/chapter5.md#532-registro-de-entrevistas)
