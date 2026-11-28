@@ -1715,7 +1715,7 @@ Primera sesión de validación del Sprint 3, con un usuario del segmento de prod
 
 ### 5.3.3. Evaluaciones según heurísticas
 
-Para el AV2 el equipo hizo una primera evaluación heurística sobre los productos publicados, con el formato del curso (Anexo D): una revisión interna del equipo y la primera entrevista de validación registrada en 5.3.2. Las demás sesiones de validación con usuarios de los dos segmentos se hacen en la TB2, y esta evaluación se actualizará con ellas.
+Para el AV2 el equipo hizo una primera evaluación heurística sobre los productos publicados, con el formato del curso (Anexo D): una revisión interna del equipo y la primera entrevista de validación. En la TB2 la evaluación se actualizó con todas las sesiones de validación de los dos segmentos registradas en 5.3.2: los problemas 5 a 8 salen de lo que los usuarios señalaron en ellas.
 
 **UX Heuristics & Principles Evaluation**
 **Usability – Inclusive Design – Information Architecture**
@@ -1727,7 +1727,7 @@ Para el AV2 el equipo hizo una primera evaluación heurística sobre los product
 | **SECCIÓN** | 8130 |
 | **PROFESORES** | Todos |
 | **AUDITOR** | IngesCompanyCC |
-| **CLIENTE(S)** | Evaluación interna del equipo y entrevista de validación con Jorge Cruz, supervisor de producción (15/11/2026) |
+| **CLIENTE(S)** | Evaluación interna del equipo y entrevistas de validación (5.3.2) con Julia Collasos Zotelo, especialista de Aseguramiento de la Calidad (12/11/2026); Alberto Valle Vega, químico farmacéutico de producción (11/11/2026); Mariela Alanya Mercado, responsable del laboratorio de Control de Calidad (12/11/2026), y Jorge Cruz, supervisor de producción (15/11/2026) |
 
 **SITE o APP A EVALUAR:** DoofPlus: Website (https://ingescompanycc.github.io/doofplus-website/) y Web Application (https://ingescompanycc-frontend.web.app).
 
@@ -1739,13 +1739,15 @@ El alcance de esta evaluación incluye la revisión de la usabilidad de las sigu
 2. Pasar del Website a la Web Application.
 3. Elegir el entorno de trabajo (QA/QC, Producción o Administración).
 4. Iniciar sesión y corregir los datos del formulario.
+5. Consultar los documentos de calidad, las desviaciones y los planes CAPA (QA/QC).
+6. Consultar las órdenes de producción, los productos, las fórmulas maestras y los lotes (Producción).
+7. Revisar las materias primas, el resumen IoT y los equipos y sensores (QA/QC y Producción).
+8. Recibir materias primas y monitorear los equipos de la planta (Producción).
 
-No están incluidas en esta versión de la evaluación las siguientes tareas, porque requieren una sesión con usuarios reales de cada rol:
+No están incluidas en esta versión de la evaluación las siguientes tareas, porque ninguna sesión de validación llegó a ejecutarlas:
 
 1. Liberar un lote con firma electrónica.
-2. Registrar una desviación y su plan CAPA.
-3. Registrar una orden y un lote de producción.
-4. Invitar a un usuario y gestionar la suscripción.
+2. Invitar a un usuario y gestionar la suscripción.
 
 **ESCALA DE SEVERIDAD:**
 
@@ -1764,6 +1766,10 @@ No están incluidas en esta versión de la evaluación las siguientes tareas, po
 | 2 | El Website y la Web Application se abren en inglés aunque el navegador esté en español | 2 | Inclusive Design: Considera la situación |
 | 3 | La documentación en Scalar indica el servidor con `http://` y la versión 1.0.0 | 2 | Usability: Consistencia y estándares |
 | 4 | Las pantallas del entorno de Producción se perciben saturadas de información | 2 | Usability: Estética y diseño minimalista |
+| 5 | El detalle del lote no muestra la información clave de su avance en producción | 2 | Information Architecture: Is it findable? |
+| 6 | Los datos que resultan de cada acción no están bien agrupados | 2 | Information Architecture: Is it usable? |
+| 7 | Al reportar o generar documentos no se especifican sus límites | 2 | Usability: Prevención de errores |
+| 8 | Los proveedores no quedan bien marcados después de registrarse | 2 | Usability: Visibilidad del estado del sistema |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
@@ -1794,16 +1800,54 @@ Problema: la especificación OpenAPI publicada (https://doofplus-platform-aw.onr
 
 Recomendación: declarar el servidor con `https://` (o tomar el esquema de la petición detrás del proxy de Render) y leer la versión del documento OpenAPI desde la versión del proyecto.
 
+Estado en la TB2: corregido en los RESTful Web Services. El documento OpenAPI toma la versión del proyecto y respeta las cabeceras del proxy de Render, así que declara el servidor con `https://`; se publica con el release del Sprint 4.
+
 **PROBLEMA #4: Las pantallas del entorno de Producción se perciben saturadas de información**
 
 Severidad: 2
 Heurística violada: Usability - Estética y diseño minimalista
 
-Problema: en la entrevista de validación (5.3.2), el supervisor de producción consideró útil la Web Application, pero sintió la interfaz saturada, con mucha información a la vez en cada pantalla.
+Problema: en la entrevista de validación (5.3.2), el supervisor de producción consideró útil la Web Application, pero sintió la interfaz saturada, con mucha información a la vez en cada pantalla. En la TB2, la especialista de Aseguramiento de la Calidad también pidió mejorar la forma en que se muestra la información.
 
-Recomendación: dejar en cada pantalla solo lo que el rol necesita para su tarea principal, agrupar el resto en secciones plegables o pestañas y validar el cambio con más usuarios del segmento en la TB2.
+Recomendación: dejar en cada pantalla solo lo que el rol necesita para su tarea principal y agrupar el resto en secciones plegables o pestañas.
 
-**Aspectos que cumplen las heurísticas:** cada entorno de la pantalla de inicio de sesión explica qué módulos tiene antes de elegirlo; el formulario marca cada campo obligatorio vacío con un mensaje claro («Enter a valid work email.», «Enter your password.»), permite mostrar la contraseña, explica antes de empezar que se pedirá un código de dos pasos y desactiva «Verify» hasta que el código tiene 6 dígitos; las dos aplicaciones tienen enlaces a los términos y la privacidad en el pie de página.
+**PROBLEMA #5: El detalle del lote no muestra la información clave de su avance en producción**
+
+Severidad: 2
+Heurística violada: Information Architecture - Is it findable?
+
+Problema: en su sesión (5.3.2), el químico farmacéutico de producción recorrió las órdenes, los productos y las fórmulas, y al ver los lotes señaló que falta información clave del desarrollo de cada lote.
+
+Recomendación: mostrar en el detalle del lote, en un solo lugar, la orden y la fórmula de origen, la operación en curso, el avance, los materiales consumidos y las incidencias, con la línea de tiempo de sus eventos.
+
+**PROBLEMA #6: Los datos que resultan de cada acción no están bien agrupados**
+
+Severidad: 2
+Heurística violada: Information Architecture - Is it usable?
+
+Problema: la responsable del laboratorio de Control de Calidad revisó las materias primas, el resumen IoT y los equipos y sensores (5.3.2). Valoró el formato de la información, pero indicó que, al ejecutar las acciones de la plataforma, los datos que resultan deberían estar mejor agrupados.
+
+Recomendación: mostrar los resultados de cada acción dentro del registro al que pertenecen (por ejemplo, las lecturas y alertas dentro del equipo y su sensor, o la inspección dentro del lote de materia prima) y agrupar las listas por ese registro.
+
+**PROBLEMA #7: Al reportar o generar documentos no se especifican sus límites**
+
+Severidad: 2
+Heurística violada: Usability - Prevención de errores
+
+Problema: la especialista de Aseguramiento de la Calidad recorrió los documentos, las desviaciones y los planes CAPA (5.3.2) y señaló que, al reportar o generar documentos, la aplicación no especifica sus límites.
+
+Recomendación: indicar en cada formulario de Quality, antes de enviarlo, qué campos son obligatorios, sus rangos o formatos permitidos y su largo máximo, y validar cada campo al completarlo.
+
+**PROBLEMA #8: Los proveedores no quedan bien marcados después de registrarse**
+
+Severidad: 2
+Heurística violada: Usability - Visibilidad del estado del sistema
+
+Problema: en la misma sesión, la especialista de Aseguramiento de la Calidad indicó que los proveedores deberían quedar mejor marcados después de registrarse.
+
+Recomendación: confirmar el registro con un mensaje y resaltar el proveedor nuevo en la lista (o abrir su detalle) justo después de guardarlo.
+
+**Aspectos que cumplen las heurísticas:** los usuarios de los dos segmentos valoraron el chat entre equipos en la misma página y el formato con que se presenta la información; cada entorno de la pantalla de inicio de sesión explica qué módulos tiene antes de elegirlo; el formulario marca cada campo obligatorio vacío con un mensaje claro («Enter a valid work email.», «Enter your password.»), permite mostrar la contraseña, explica antes de empezar que se pedirá un código de dos pasos y desactiva «Verify» hasta que el código tiene 6 dígitos; las dos aplicaciones tienen enlaces a los términos y la privacidad en el pie de página.
 
 ## 5.4. Video About-the-Product
 
