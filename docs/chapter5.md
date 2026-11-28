@@ -524,7 +524,7 @@ En el Sprint 2 se trabajó en dos repositorios siguiendo GitFlow: una feature br
 | IngesCompanyCC/doofplus-web-application | feature/organizations | `fe01a88` | feat(subscriptions): manage the plan change and the payment retry in a Pinia store | The store loads the public plans, the subscription of an organization and its invoices, creates the pending subscription of a new organization, changes the plan or billing cycle, and retries a declined charge by issuing an approved invoice and activating the subscription. | 09/10/2026 |
 | IngesCompanyCC/doofplus-web-application | feature/organizations | `0b5589c` | feat(subscriptions): model plans, subscriptions and invoices and read them through the fake API | Adds the JavaScript entities, the assemblers and SubscriptionsApi over BaseApi, the plans, the subscription of Laboratorios Andinos and its invoices to the fake API, and the endpoint paths. | 09/10/2026 |
 | IngesCompanyCC/doofplus-web-application | feature/manufacturing | `86168aa` | refactor(routing): open the production orders as the production home until the overview arrives with IoT monitoring | The production overview shows the open IoT incidents, so its placeholder leaves the routes and the sidebar; Alberto Valle now lands on the production orders after signing in. | 09/10/2026 |
-| IngesCompanyCC/doofplus-web-application | feature/manufacturing | `b657401` | feat(product-view): add the product catalog with master formulas and the raw-material receipt with quarantine inspection | The catalog registers products with a unique code and shows the components of the effective master formula. The receipt validates the internal lot, attaches the certificate of analysis, moves the new lot to sampling and requests the QC inspection. Alerts and form fields move to the global styles. | 09/10/2026 |
+| IngesCompanyCC/doofplus-web-application | feature/manufacturing | `b657401` | feat(product-view): add the product catalog with master frmulas and the raw-material receipt with quarantine inspection | The catalog registers products with a unique code and shows the components of the effective master formula. The receipt validates the internal lot, attaches the certificate of analysis, moves the new lot to sampling and requests the QC inspection. Alerts and form fields move to the global styles. | 09/10/2026 |
 | IngesCompanyCC/doofplus-web-application | feature/manufacturing | `dfd11eb` | feat(order-view): add the production orders and the order execution against the master formula | The order list links each order to its detail. The detail records the next operation in sequence, blocks recording while an operation is on hold, and shows the effective master formula and the order context. | 09/10/2026 |
 | IngesCompanyCC/doofplus-web-application | feature/manufacturing | `ca9fc44` | feat(batch-view): add the batch list, the create batch dialog and the batch genealogy with PrimeVue | The batch list shows the status counts, the filters, the selected batch and the lookup; the dialog rejects duplicate batch numbers and products without an approved master formula; the detail shows the input lots, the production order, the operations and the status history. Adds the shared page header, the number and UTC date formats, the workspace table and chip styles, and the Manufacturing translations. The sidebar keeps a page selected on its detail pages. | 09/10/2026 |
 | IngesCompanyCC/doofplus-web-application | feature/manufacturing | `34ff6a7` | fix(manufacturing): restore the store and API built on the assemblers after the merge with develop | The merge of origin/develop kept a second store and API that call the endpoints without the assemblers or the env paths, and a production overview written in TypeScript with PrimeFlex 2 classes that do not exist in PrimeFlex 4. Restores the Pinia store and the ManufacturingApi of the Manufacturing rewrite; the production overview returns to a placeholder until IoT Monitoring is in place. | 09/10/2026 |
@@ -1708,27 +1708,33 @@ Las actividades se diferenciarán según el segmento objetivo:
 
 **Especialista de Aseguramiento y Control de Calidad (QA/QC)**
 
+- Visitar el Website (https://ingescompanycc.github.io/doofplus-website/), explorar la propuesta de valor de DoofPlus y cambiar el idioma.
 - Consultar el historial y los estados de un lote farmacéutico.
 - Localizar un procedimiento operativo estándar (SOP) y revisar su versión vigente.
 - Consultar el registro de una desviación y revisar el seguimiento de las acciones CAPA.
 - Revisar las evidencias y registros asociados a la trazabilidad de un lote.
 
+User flows validados: QA-1 (inicio de sesión con segundo factor), QA-2 (gestión documental y aprobación), QA-3 (registro de desviación y evaluación de riesgo) y QA-6 (audit trail y reportes regulatorios).
+
 **Jefe o Supervisor de Producción Farmacéutica**
 
+- Visitar el Website (https://ingescompanycc.github.io/doofplus-website/), eexplorar la propuesta de valor de DoofPlus y acceder a la Web Application desde la sección «Choose your workspace».
 - Consultar las órdenes de producción y la información de las fórmulas maestras.
 - Revisar el estado y el historial de un lote de producción.
 - Consultar la información relacionada con la recepción y asignación de materias primas.
 - Revisar los datos de monitoreo IoT y las incidencias asociadas a los equipos y procesos productivos.
 
+User flows validados: PR-1 (inicio de sesión con segundo factor), PR-2 (órdenes de producción, fórmulas y lotes), PR-3 (recepción de materias primas e IoT) y PR-4 (equipos, sensores y calibraciones).
+
 Durante estas actividades se observará la facilidad con la que los participantes localizan la información, comprenden las opciones disponibles y completan las tareas propuestas. En la exploración libre también se registrarán las funcionalidades que generan mayor interés, las dificultades encontradas y las acciones que los usuarios realizan de manera espontánea.
 
 ### 5.3.2. Registro de Entrevistas
 
-Primera sesión de validación del Sprint 3, con un usuario del segmento de producción. Las demás entrevistas de los dos segmentos se registran en la TB2.
+Se realizó la primera sesión de validación de las funcionalidades implementadas en los Sprint 3 con un usuario perteneciente al segmento de producción.
 
 **Segmento: Especialista de Aseguramiento y Control de Calidad (QA/QC)**
 
-| Numero | 1 |
+| Número | 1 |
 |---------|--------|
 | **Campo** | **Información** |
 | Nombre | Julia    |
@@ -1736,40 +1742,40 @@ Primera sesión de validación del Sprint 3, con un usuario del segmento de prod
 | Edad | 64  |
 | Distrito | San Miguel  |
 | Evidencia | ![Entrevista 1 - Segmento 1](../assets/img/chapter5/validation/entrevista-julia-zotelo.jpg) |
-| Link | https://shorturl.at/Udk8P|
+| Link | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQBk_WpA0qwyS67PzZUGigEUAQ5LXi_PhxghEEe8-3qP7cc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=x96rce|
 | Inicio | 00:00 min |
 | Duración | 05:00 min |
-| Resumen | Julia Collasos es química farmacéutica en el área de Aseguramiento de la Calidad. La entrevista la realizó Angulo Ramírez el 12/11/2026 por videollamada, con la Web Application publicada en pantalla compartida. Se recorrió el entorno de Documentos, las Desviaciones y leyes CAPA. Julia consideró que puede ser una buena opción, pero debe mejorar en el aspecto de mostrar información y especificar limites al tener que reportar / generar documentos, a la vez que los proveedores deben ser mejor marcados después de ser registrados. |
+| Resumen | Julia Collasos es química farmacéutica en el área de Aseguramiento de la Calidad. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 26/11/2026 por videollamada. Julia visitó primero el Website de DoofPlus, donde exploró la propuesta de valor del producto (QA-1). Luego accedió a la Web Application y completó las tareas asignadas: en el flujo QA-2 gestionó documentos de calidad, revisó versiones y ejecutó el flujo de aprobación con firma electrónica; en el flujo QA-3 registró una desviación, realizó su evaluación de riesgo y creó el plan CAPA con sus acciones correctivas. Julia consideró que la plataforma puede ser una buena opción para su área, pero señaló que debe mejorar en la presentación de información al momento de reportar o generar documentos —indicando con mayor claridad los límites y campos requeridos— y que los proveedores deberían quedar mejor diferenciados visualmente una vez registrados. |
 
 **Segmento: Jefe o Supervisor de Producción Farmacéutica**
 
-| Numero | 1 |
+| Número | 1 |
 |---------|--------|
 | **Campo** | **Información** |
 | Nombre | Alberto  |
 | Apellido | Valle Vega |
 | Edad | 68 |
-| Distrito | Arequipa  |
+| Distrito | Cercado de Arequipa  |
 | Evidencia | ![Entrevista 1 - Segmento 2](../assets/img/chapter5/validation/entrevista-alberto-vega.jpg) |
-| Link | https://shorturl.at/Udk8P|
+| Link | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQBk_WpA0qwyS67PzZUGigEUAQ5LXi_PhxghEEe8-3qP7cc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=x96rce|
 | Inicio | 05:01 min |
 | Duración | 04:59 min |
-| Resumen | Alberto Valle es químico farmacéutico con cerca de cuarenta años de experiencia en producción farmacéutica. La entrevista la realizó Angulo Ramírez el 11/11/2026 por videollamada, con la Web Application en pantalla compartida. Se recorrió el entorno de las Ordenes de Producción, Productos y Formulas, a la vez que se muestra brevemente los Lotes. Alberto consideró que la aplicación  mostraba detalles interesantes como la parte del chat entre equipos, aunque señaló que en la parte de lotes falta más información clave en el desarrollo de los lotes. |
+| Resumen | Alberto Valle es químico farmacéutico con cerca de cuarenta años de experiencia en producción farmacéutica. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 25/11/2026 por videollamada. Alberto visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó el flujo PR-2: creó y revisó órdenes de producción, consultó el catálogo de productos con sus fórmulas maestras y realizó el seguimiento de los lotes activos. Alberto destacó como punto positivo el chat integrado entre equipos, que facilita la comunicación sin salir de la plataforma; sin embargo, indicó que la sección de lotes carece de información clave para el seguimiento real del proceso productivo y que ese apartado debería ampliarse. |
 
-| Numero | 2|
+| Número | 2|
 |---------|--------|
 | **Campo** | **Información** |
 | Nombre | Mariela  |
 | Apellido | Alanya Mercado |
 | Edad | 35  |
-| Distrito | Lima  |
+| Distrito | Cercado de Lima  |
 | Evidencia | ![Entrevista 2 - Segmento 2](../assets/img/chapter5/validation/entrevista-mariela-mercado.jpg) |
-| Link | https://shorturl.at/Udk8P|
+| Link | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQBk_WpA0qwyS67PzZUGigEUAQ5LXi_PhxghEEe8-3qP7cc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=x96rce|
 | Inicio | 10:01 min |
 | Duración | 04:59 min |
-| Resumen | Mariela Alanya es química farmacéutica y responsable del laboratorio de Control de Calidad. La entrevista la realizó Angulo Ramírez el 12/11/2026 por videollamada, con la Web Application en pantalla compartida. Se exploraron pantallas como Materia primas, Resumen IoT y revisión breve de Equipos y Sensores. Mariela valoró el chat en la misma pagina junto con el formato de información, pero indicó que los datos deben de estar mejor agrupados al ejecutar los comandos de la plataforma. |
+| Resumen | Mariela Alanya es química farmacéutica y responsable de la Supervisión de Producción. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 26/11/2026 por videollamada. Mariela visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó los flujos PR-2 y PR-3: en PR-2 consultó el inventario de materias primas y verificó su asignación a lotes de producción; en PR-3 revisó el resumen de monitoreo IoT, inspeccionó el estado de los equipos y sensores y consultó las alertas activas. Mariela valoró positivamente el chat integrado en la misma página y el formato general de presentación de datos; no obstante, señaló que la información necesita estar mejor agrupada cuando se ejecutan comandos dentro de la plataforma, para facilitar la lectura e interpretación de los resultados. |
 
-| Numero | 3|
+| Número | 3|
 |---------|--------|
 | **Campo** | **Información** |
 | Nombre | Jorge |
@@ -1777,10 +1783,10 @@ Primera sesión de validación del Sprint 3, con un usuario del segmento de prod
 | Edad | 23 |
 | Distrito | Chorrillos |
 | Evidencia | ![Entrevista 3 - Segmento 2](../assets/img/chapter5/validation/entrevista-jorge-cruz.jpg) |
-| Link | https://shorturl.at/Udk8P|
+| Link | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQBk_WpA0qwyS67PzZUGigEUAQ5LXi_PhxghEEe8-3qP7cc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=x96rce|
 | Inicio | 15:01 min |
 | Duración | 04:59 min |
-| Resumen | Jorge Cruz es supervisor de producción. La entrevista la realizó Zavaleta Gutierrez, Rodolfo Martin el 15/11/2026 por videollamada, con la Web Application publicada en pantalla compartida; las cámaras solo se ven al inicio del video. Se recorrió el entorno de Producción, entre otras pantallas la recepción de materias primas y el monitoreo IoT. Jorge consideró que DoofPlus es muy útil para su trabajo y que lo empezará a utilizar, pero sintió la interfaz saturada: cada pantalla muestra mucha información a la vez. |
+| Resumen | Jorge Cruz es supervisor de producción. La entrevista la realizó Zavaleta Gutierrez, Rodolfo Martin el 15/11/2026 por videollamada; las cámaras de los participantes solo son visibles al inicio del video. Jorge visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó los flujos PR-2 y PR-3: en PR-2 gestionó el flujo de órdenes de producción y revisó el estado de los lotes activos; en PR-3 registró la recepción de materias primas con su inspección y cuarentena, y consultó el resumen de monitoreo IoT de los procesos en curso. Jorge consideró que DoofPlus es muy útil para su trabajo diario y manifestó intención de adoptarlo; sin embargo, señaló que la interfaz le resultó saturada, ya que cada pantalla concentra demasiada información simultánea, lo que dificulta identificar rápidamente los datos relevantes. |
 
 ### 5.3.3. Evaluaciones según heurísticas
 
