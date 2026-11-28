@@ -228,6 +228,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.47 | 27/11/2026 | Cobades Zamora, Yhoshua Hebert | Student Outcome: acciones del AV1 y de la TB2 de Cobades Zamora, Yhoshua Hebert. |
 | 4.8.48 | 27/11/2026 | Rojas Ambicho, Nestor Daniel | Capítulo V: Sprint 4 en 5.2.4, con el Sprint Planning, los Aspect Leaders and Collaborators y el Sprint Backlog desde Jira (23 tareas de 4 a 8 horas). |
 | 4.8.49 | 27/11/2026 | Rojas Ambicho, Nestor Daniel | Student Outcome: acciones del AV1 de Rojas Ambicho, Nestor Daniel. |
+| 4.8.50 | 27/11/2026 | Angulo Ramírez, Marcelo Martín | Capítulo V: 5.3.1 con el Website, los user flows que se validan, el perfil de cada entrevistado y las preguntas de tecnología y de valores. |
 
 ---
 
