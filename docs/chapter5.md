@@ -1742,7 +1742,7 @@ Se realizó la primera sesión de validación de las funcionalidades implementad
 | Edad | 64  |
 | Distrito | San Miguel  |
 | Evidencia | ![Entrevista 1 - Segmento 1](../assets/img/chapter5/validation/entrevista-julia-zotelo.jpg) |
-| Link | https://shorturl.at/Udk8P|
+| Link | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQBk_WpA0qwyS67PzZUGigEUAQ5LXi_PhxghEEe8-3qP7cc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=x96rce|
 | Inicio | 00:00 min |
 | Duración | 05:00 min |
 | Resumen | Julia Collasos es química farmacéutica en el área de Aseguramiento de la Calidad. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 26/11/2026 por videollamada. Julia visitó primero el Website de DoofPlus, donde exploró la propuesta de valor del producto (QA-1). Luego accedió a la Web Application y completó las tareas asignadas: en el flujo QA-2 gestionó documentos de calidad, revisó versiones y ejecutó el flujo de aprobación con firma electrónica; en el flujo QA-3 registró una desviación, realizó su evaluación de riesgo y creó el plan CAPA con sus acciones correctivas. Julia consideró que la plataforma puede ser una buena opción para su área, pero señaló que debe mejorar en la presentación de información al momento de reportar o generar documentos —indicando con mayor claridad los límites y campos requeridos— y que los proveedores deberían quedar mejor diferenciados visualmente una vez registrados. |
@@ -1757,7 +1757,7 @@ Se realizó la primera sesión de validación de las funcionalidades implementad
 | Edad | 68 |
 | Distrito | Cercado de Arequipa  |
 | Evidencia | ![Entrevista 1 - Segmento 2](../assets/img/chapter5/validation/entrevista-alberto-vega.jpg) |
-| Link | https://shorturl.at/Udk8P|
+| Link | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQBk_WpA0qwyS67PzZUGigEUAQ5LXi_PhxghEEe8-3qP7cc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=x96rce|
 | Inicio | 05:01 min |
 | Duración | 04:59 min |
 | Resumen | Alberto Valle es químico farmacéutico con cerca de cuarenta años de experiencia en producción farmacéutica. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 25/11/2026 por videollamada. Alberto visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó el flujo PR-2: creó y revisó órdenes de producción, consultó el catálogo de productos con sus fórmulas maestras y realizó el seguimiento de los lotes activos. Alberto destacó como punto positivo el chat integrado entre equipos, que facilita la comunicación sin salir de la plataforma; sin embargo, indicó que la sección de lotes carece de información clave para el seguimiento real del proceso productivo y que ese apartado debería ampliarse. |
@@ -1770,7 +1770,7 @@ Se realizó la primera sesión de validación de las funcionalidades implementad
 | Edad | 35  |
 | Distrito | Cercado de Lima  |
 | Evidencia | ![Entrevista 2 - Segmento 2](../assets/img/chapter5/validation/entrevista-mariela-mercado.jpg) |
-| Link | https://shorturl.at/Udk8P|
+| Link | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQBk_WpA0qwyS67PzZUGigEUAQ5LXi_PhxghEEe8-3qP7cc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=x96rce|
 | Inicio | 10:01 min |
 | Duración | 04:59 min |
 | Resumen | Mariela Alanya es química farmacéutica y responsable de la Supervisión de Producción. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 26/11/2026 por videollamada. Mariela visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó los flujos PR-2 y PR-3: en PR-2 consultó el inventario de materias primas y verificó su asignación a lotes de producción; en PR-3 revisó el resumen de monitoreo IoT, inspeccionó el estado de los equipos y sensores y consultó las alertas activas. Mariela valoró positivamente el chat integrado en la misma página y el formato general de presentación de datos; no obstante, señaló que la información necesita estar mejor agrupada cuando se ejecutan comandos dentro de la plataforma, para facilitar la lectura e interpretación de los resultados. |
@@ -1783,7 +1783,7 @@ Se realizó la primera sesión de validación de las funcionalidades implementad
 | Edad | 23 |
 | Distrito | Chorrillos |
 | Evidencia | ![Entrevista 3 - Segmento 2](../assets/img/chapter5/validation/entrevista-jorge-cruz.jpg) |
-| Link | https://shorturl.at/Udk8P|
+| Link | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321425_upc_edu_pe/IQBk_WpA0qwyS67PzZUGigEUAQ5LXi_PhxghEEe8-3qP7cc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=x96rce|
 | Inicio | 15:01 min |
 | Duración | 04:59 min |
 | Resumen | Jorge Cruz es supervisor de producción. La entrevista la realizó Zavaleta Gutierrez, Rodolfo Martin el 15/11/2026 por videollamada; las cámaras de los participantes solo son visibles al inicio del video. Jorge visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó los flujos PR-2 y PR-3: en PR-2 gestionó el flujo de órdenes de producción y revisó el estado de los lotes activos; en PR-3 registró la recepción de materias primas con su inspección y cuarentena, y consultó el resumen de monitoreo IoT de los procesos en curso. Jorge consideró que DoofPlus es muy útil para su trabajo diario y manifestó intención de adoptarlo; sin embargo, señaló que la interfaz le resultó saturada, ya que cada pantalla concentra demasiada información simultánea, lo que dificulta identificar rápidamente los datos relevantes. |
