@@ -224,6 +224,7 @@ u20241f733 &nbsp; &nbsp; Zavaleta Gutierrez, Rodolfo Martin
 | 4.8.43 | 27/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Capítulo V: la duración de cada entrevista de validación en 5.3.2 es la de su tramo del video, no la hora en que termina. |
 | 4.8.44 | 27/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexo A: enlace del video de exposición del AV1 (Sprint 1). |
 | 4.8.45 | 27/11/2026 | Zavaleta Gutierrez, Rodolfo Martin | Anexo A: el video de exposición de la TB1 enlaza a Microsoft Stream, como pide el enunciado, y cada video muestra su duración. |
+| 4.8.46 | 27/11/2026 | Cobades Zamora, Yhoshua Hebert | Capítulo V: 5.3.3 con las cuatro entrevistas de validación de 5.3.2 como clientes, las tareas recorridas en ellas, los problemas 5 a 8 que señalaron los usuarios y el problema 3 corregido en los RESTful Web Services. |
 
 ---
 
