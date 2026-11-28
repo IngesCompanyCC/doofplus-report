@@ -1650,7 +1650,7 @@ Las preguntas se organizaron de acuerdo con las responsabilidades y necesidades 
 
 1. ¿Cuál es su cargo actual, qué edad tiene y cuántos años de experiencia posee en el área de aseguramiento o control de calidad farmacéutica?
 2. ¿En qué distrito reside y cuáles son las principales responsabilidades que desempeña dentro de su organización?
-3. ¿Qué herramientas, dispositivos y sistemas digitales utiliza habitualmente para gestionar documentación, registros y procesos de calidad?
+3. ¿Qué dispositivo usa principalmente en el trabajo (laptop, PC, celular, tablet) y con qué sistema operativo? ¿Qué navegador usa? ¿Qué software usa para su trabajo (por ejemplo LIMS, SAP, Excel, un QMS) y por qué canales se comunica con su equipo (correo, Teams, WhatsApp)?
 4. ¿Qué tan familiarizado se encuentra con el uso de plataformas digitales para la gestión de calidad farmacéutica?
 
 **Expectativas del producto**
@@ -1671,6 +1671,7 @@ Las preguntas se organizaron de acuerdo con las responsabilidades y necesidades 
 
 13. En una escala del 1 al 10, ¿qué tan probable sería que recomendara DoofPlus a otros profesionales del área de aseguramiento y control de calidad? ¿Por qué?
 14. ¿Qué funcionalidades o mejoras considera necesarias antes de utilizar la plataforma en su organización?
+15. De acuerdo con lo que vio hoy, ¿con los valores de qué compañía o marca le gustaría identificarse? ¿Por qué?
 
 ### Preguntas para el Segmento: Jefe o Supervisor de Producción Farmacéutica
 
@@ -1678,7 +1679,7 @@ Las preguntas se organizaron de acuerdo con las responsabilidades y necesidades 
 
 1. ¿Cuál es su cargo actual, qué edad tiene y cuántos años de experiencia posee supervisando procesos de producción farmacéutica?
 2. ¿En qué distrito reside y cuáles son las principales responsabilidades que desempeña dentro de los procesos de fabricación?
-3. ¿Qué herramientas, dispositivos y sistemas digitales utiliza habitualmente para supervisar la fabricación y consultar información de los lotes?
+3. ¿Qué dispositivo usa principalmente en el trabajo (laptop, PC, celular, tablet) y con qué sistema operativo? ¿Qué navegador usa? ¿Qué software usa para su trabajo (por ejemplo LIMS, SAP, Excel, un QMS) y por qué canales se comunica con su equipo (correo, Teams, WhatsApp)?
 4. ¿Qué tan familiarizado se encuentra con el uso de plataformas digitales para el seguimiento y control de procesos productivos?
 
 **Expectativas del producto**
@@ -1699,34 +1700,52 @@ Las preguntas se organizaron de acuerdo con las responsabilidades y necesidades 
 
 13. En una escala del 1 al 10, ¿qué tan probable sería que recomendara DoofPlus a otros responsables de producción farmacéutica? ¿Por qué?
 14. ¿Qué funcionalidades o mejoras considera necesarias antes de utilizar la plataforma en su organización?
+15. De acuerdo con lo que vio hoy, ¿con los valores de qué compañía o marca le gustaría identificarse? ¿Por qué?
 
-### Actividades de evaluación del prototipo
+### Perfil de los entrevistados
 
-Además de las preguntas planteadas, se propone realizar una evaluación práctica para observar cómo los participantes interactúan con las funcionalidades de DoofPlus. Para ello, se combinará una demostración guiada de las principales características de la plataforma con un periodo de exploración libre, durante el cual cada entrevistado podrá navegar por las funcionalidades relacionadas con sus responsabilidades.
+Para que la validación represente a las User Personas de la sección 2.3.1, se entrevista de 3 a 5 personas por segmento que cumplan este perfil:
 
-Las actividades se diferenciarán según el segmento objetivo:
+| Segmento | User Persona | Perfil que debe cumplir el entrevistado |
+|---|---|---|
+| Especialista de Aseguramiento y Control de Calidad (QA/QC) | María México | Químico farmacéutico o profesional afín que trabaja (o trabajó) en aseguramiento o control de calidad de un laboratorio farmacéutico, y revisa documentación, desviaciones, CAPA o liberación de lotes. |
+| Jefe o Supervisor de Producción Farmacéutica | Alberto Valle Vega | Jefe, supervisor o coordinador de producción de un laboratorio farmacéutico (o de una planta con procesos regulados), con experiencia supervisando lotes, equipos y personal de planta. |
 
-**Especialista de Aseguramiento y Control de Calidad (QA/QC)**
+### Estructura de la sesión
 
-- Visitar el Website (https://ingescompanycc.github.io/doofplus-website/), explorar la propuesta de valor de DoofPlus y cambiar el idioma.
-- Consultar el historial y los estados de un lote farmacéutico.
-- Localizar un procedimiento operativo estándar (SOP) y revisar su versión vigente.
-- Consultar el registro de una desviación y revisar el seguimiento de las acciones CAPA.
-- Revisar las evidencias y registros asociados a la trazabilidad de un lote.
+Cada sesión dura entre 20 y 30 minutos, se graba y sigue este orden:
 
-User flows validados: QA-1 (inicio de sesión con segundo factor), QA-2 (gestión documental y aprobación), QA-3 (registro de desviación y evaluación de riesgo) y QA-6 (audit trail y reportes regulatorios).
+1. **Propósito (2 min):** el entrevistador explica que se está validando DoofPlus, que se evalúa el producto y no a la persona, y pide permiso para grabar y para usar un fragmento como testimonio.
+2. **Perfil y contexto (3 a 5 min):** preguntas 1 a 4.
+3. **Expectativas (3 min):** preguntas 5 a 7.
+4. **Tareas en el Website y en la Web Application (10 a 15 min):** el entrevistador lee cada tarea y el usuario la realiza solo, pensando en voz alta. No se le indica dónde hacer clic; solo se le ayuda si queda bloqueado más de un minuto, y eso se anota como hallazgo.
+5. **Evaluación y cierre (5 min):** preguntas 8 a 15.
 
-**Jefe o Supervisor de Producción Farmacéutica**
+### Elementos que se validan
 
-- Visitar el Website (https://ingescompanycc.github.io/doofplus-website/), eexplorar la propuesta de valor de DoofPlus y acceder a la Web Application desde la sección «Choose your workspace».
-- Consultar las órdenes de producción y la información de las fórmulas maestras.
-- Revisar el estado y el historial de un lote de producción.
-- Consultar la información relacionada con la recepción y asignación de materias primas.
-- Revisar los datos de monitoreo IoT y las incidencias asociadas a los equipos y procesos productivos.
+**Website (los dos segmentos):** https://ingescompanycc.github.io/doofplus-website/
 
-User flows validados: PR-1 (inicio de sesión con segundo factor), PR-2 (órdenes de producción, fórmulas y lotes), PR-3 (recepción de materias primas e IoT) y PR-4 (equipos, sensores y calibraciones).
+| Tarea | Qué se observa |
+|---|---|
+| W1. Entender qué es DoofPlus y para quién es, desde la página de inicio | Si la propuesta de valor se entiende en menos de un minuto |
+| W2. Encontrar la sección de su segmento y entrar a la Web Application desde su botón | Si el llamado a la acción por segmento es claro |
+| W3. Revisar los planes y las preguntas frecuentes | Si la información de planes responde sus dudas |
 
-Durante estas actividades se observará la facilidad con la que los participantes localizan la información, comprenden las opciones disponibles y completan las tareas propuestas. En la exploración libre también se registrarán las funcionalidades que generan mayor interés, las dificultades encontradas y las acciones que los usuarios realizan de manera espontánea.
+**Web Application:** https://ingescompanycc-frontend.web.app. Los user flows son los de la sección 4.4.4.
+
+| Segmento | User flow (4.4.4) | Tarea que se le da al usuario |
+|---|---|---|
+| QA/QC | QA-1 · Ingresar a DoofPlus y acceder al entorno QA/QC | «Ingrese a DoofPlus con la cuenta de prueba y entre al entorno de Calidad.» |
+| QA/QC | QA-2 · Gestionar la documentación de calidad | «Busque el procedimiento (SOP) de un producto y revise su versión vigente.» |
+| QA/QC | QA-3 · Registrar una desviación y gestionar su CAPA | «Registre una desviación de un lote y revise las acciones CAPA de otra.» |
+| QA/QC | QA-6 · Revisar la trazabilidad de un lote y liberarlo | «Revise la trazabilidad completa de un lote y decida si lo libera.» |
+| Producción | PR-1 · Ingresar a DoofPlus y acceder al entorno de Producción | «Ingrese a DoofPlus con la cuenta de prueba y entre al entorno de Producción.» |
+| Producción | PR-2 · Gestionar la ejecución de un lote y consultar su historial | «Revise el estado y el historial de un lote en fabricación.» |
+| Producción | PR-3 · Monitorear equipos y condiciones ambientales | «Revise los equipos y las lecturas de los sensores de un lote, y si algún equipo tiene la calibración vencida.» |
+| Producción | PR-4 · Reportar una incidencia de producción | «Reporte una incidencia en un lote en curso.» |
+| Visitante | VI-1 · Enviar una consulta al equipo de DoofPlus | «Envíe una consulta desde el formulario Contact us.» (al final, con cualquier segmento) |
+
+Durante las tareas se anota, para cada una: si la completó, cuánto tardó, dónde dudó y qué comentó. Esos datos alimentan el registro (5.3.2) y la evaluación según heurísticas (5.3.3).
 
 ### 5.3.2. Registro de Entrevistas
 
