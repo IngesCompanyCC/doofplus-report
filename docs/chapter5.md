@@ -1708,17 +1708,23 @@ Las actividades se diferenciarán según el segmento objetivo:
 
 **Especialista de Aseguramiento y Control de Calidad (QA/QC)**
 
+- Visitar el Website (https://ingescompanycc.github.io/doofplus-website/), explorar la propuesta de valor de DoofPlus y cambiar el idioma.
 - Consultar el historial y los estados de un lote farmacéutico.
 - Localizar un procedimiento operativo estándar (SOP) y revisar su versión vigente.
 - Consultar el registro de una desviación y revisar el seguimiento de las acciones CAPA.
 - Revisar las evidencias y registros asociados a la trazabilidad de un lote.
 
+User flows validados: QA-1 (inicio de sesión con segundo factor), QA-2 (gestión documental y aprobación), QA-3 (registro de desviación y evaluación de riesgo) y QA-6 (audit trail y reportes regulatorios).
+
 **Jefe o Supervisor de Producción Farmacéutica**
 
+- Visitar el Website (https://ingescompanycc.github.io/doofplus-website/), eexplorar la propuesta de valor de DoofPlus y acceder a la Web Application desde la sección «Choose your workspace».
 - Consultar las órdenes de producción y la información de las fórmulas maestras.
 - Revisar el estado y el historial de un lote de producción.
 - Consultar la información relacionada con la recepción y asignación de materias primas.
 - Revisar los datos de monitoreo IoT y las incidencias asociadas a los equipos y procesos productivos.
+
+User flows validados: PR-1 (inicio de sesión con segundo factor), PR-2 (órdenes de producción, fórmulas y lotes), PR-3 (recepción de materias primas e IoT) y PR-4 (equipos, sensores y calibraciones).
 
 Durante estas actividades se observará la facilidad con la que los participantes localizan la información, comprenden las opciones disponibles y completan las tareas propuestas. En la exploración libre también se registrarán las funcionalidades que generan mayor interés, las dificultades encontradas y las acciones que los usuarios realizan de manera espontánea.
 
@@ -1739,7 +1745,7 @@ Se realizó la primera sesión de validación de las funcionalidades implementad
 | Link | https://shorturl.at/Udk8P|
 | Inicio | 00:00 min |
 | Duración | 05:00 min |
-| Resumen | Julia Collasos es química farmacéutica en el área de Aseguramiento de la Calidad. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 12/11/2026 por videollamada. Con Julia  se visitó primero el landing page de DoofPlus, donde exploró la propuesta de valor del producto; luego accedió a la Web Application para completar las tareas asignadas: registrar y gestionar documentos de calidad, registrar una desviación y crear una acción CAPA asociada. Julia consideró que la plataforma puede ser una buena opción para su área, pero señaló que debe mejorar en la presentación de información al momento de reportar o generar documentos —indicando con mayor claridad los límites y campos requeridos— y que los proveedores deberían quedar mejor diferenciados visualmente una vez registrados. |
+| Resumen | Julia Collasos es química farmacéutica en el área de Aseguramiento de la Calidad. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 26/11/2026 por videollamada. Julia visitó primero el Website de DoofPlus, donde exploró la propuesta de valor del producto (QA-1). Luego accedió a la Web Application y completó las tareas asignadas: en el flujo QA-2 gestionó documentos de calidad, revisó versiones y ejecutó el flujo de aprobación con firma electrónica; en el flujo QA-3 registró una desviación, realizó su evaluación de riesgo y creó el plan CAPA con sus acciones correctivas. Julia consideró que la plataforma puede ser una buena opción para su área, pero señaló que debe mejorar en la presentación de información al momento de reportar o generar documentos —indicando con mayor claridad los límites y campos requeridos— y que los proveedores deberían quedar mejor diferenciados visualmente una vez registrados. |
 
 **Segmento: Jefe o Supervisor de Producción Farmacéutica**
 
@@ -1754,7 +1760,7 @@ Se realizó la primera sesión de validación de las funcionalidades implementad
 | Link | https://shorturl.at/Udk8P|
 | Inicio | 05:01 min |
 | Duración | 04:59 min |
-| Resumen | Alberto Valle es químico farmacéutico con cerca de cuarenta años de experiencia en producción farmacéutica. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 11/11/2026 por videollamada. Con Alberto se recorrió el landing page de DoofPlus para conocer la oferta del sistema; luego, en la Web Application, se completó las tareas asignadas: crear y revisar órdenes de producción, consultar productos y fórmulas, y hacer seguimiento a los lotes activos. Alberto destacó como punto positivo el chat integrado entre equipos, que facilita la comunicación sin salir de la plataforma; sin embargo, indicó que la sección de lotes carece de información clave para el seguimiento real del proceso productivo y que ese apartado debería ampliarse. |
+| Resumen | Alberto Valle es químico farmacéutico con cerca de cuarenta años de experiencia en producción farmacéutica. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 25/11/2026 por videollamada. Alberto visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó el flujo PR-2: creó y revisó órdenes de producción, consultó el catálogo de productos con sus fórmulas maestras y realizó el seguimiento de los lotes activos. Alberto destacó como punto positivo el chat integrado entre equipos, que facilita la comunicación sin salir de la plataforma; sin embargo, indicó que la sección de lotes carece de información clave para el seguimiento real del proceso productivo y que ese apartado debería ampliarse. |
 
 | Número | 2|
 |---------|--------|
@@ -1767,7 +1773,7 @@ Se realizó la primera sesión de validación de las funcionalidades implementad
 | Link | https://shorturl.at/Udk8P|
 | Inicio | 10:01 min |
 | Duración | 04:59 min |
-| Resumen | Mariela Alanya es química farmacéutica y responsable de la Supervisión de Producción. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 12/11/2026 por videollamada. Con Mariela se exploró el landing page de DoofPlus para evaluar la propuesta de la herramienta; posteriormente, en la Web Application, se realizó las tareas asignadas: consultar el inventario de materias primas, revisar el resumen de monitoreo IoT y verificar el estado de equipos y sensores. Mariela valoró positivamente el chat integrado en la misma página y el formato general de presentación de datos; no obstante, señaló que la información necesita estar mejor agrupada cuando se ejecutan comandos dentro de la plataforma, para facilitar la lectura e interpretación de los resultados. |
+| Resumen | Mariela Alanya es química farmacéutica y responsable de la Supervisión de Producción. La entrevista la realizó Angulo Ramírez, Marcelo Martín el 26/11/2026 por videollamada. Mariela visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó los flujos PR-2 y PR-3: en PR-2 consultó el inventario de materias primas y verificó su asignación a lotes de producción; en PR-3 revisó el resumen de monitoreo IoT, inspeccionó el estado de los equipos y sensores y consultó las alertas activas. Mariela valoró positivamente el chat integrado en la misma página y el formato general de presentación de datos; no obstante, señaló que la información necesita estar mejor agrupada cuando se ejecutan comandos dentro de la plataforma, para facilitar la lectura e interpretación de los resultados. |
 
 | Número | 3|
 |---------|--------|
@@ -1780,7 +1786,7 @@ Se realizó la primera sesión de validación de las funcionalidades implementad
 | Link | https://shorturl.at/Udk8P|
 | Inicio | 15:01 min |
 | Duración | 04:59 min |
-| Resumen | Jorge Cruz es supervisor de producción. La entrevista la realizó Zavaleta Gutierrez, Rodolfo Martin el 15/11/2026 por videollamada; las cámaras de los participantes solo son visibles al inicio del video. Con Jorge se revisó el landing page de DoofPlus para conocer el sistema antes de interactuar con él; luego, en la Web Application, completó las tareas asignadas: gestionar el flujo de producción, registrar la recepción de materias primas y consultar el monitoreo IoT de los procesos. Jorge consideró que DoofPlus es muy útil para su trabajo diario y manifestó intención de adoptarlo; sin embargo, señaló que la interfaz le resultó saturada, ya que cada pantalla concentra demasiada información simultánea, lo que dificulta identificar rápidamente los datos relevantes. |
+| Resumen | Jorge Cruz es supervisor de producción. La entrevista la realizó Zavaleta Gutierrez, Rodolfo Martin el 15/11/2026 por videollamada; las cámaras de los participantes solo son visibles al inicio del video. Jorge visitó primero el Website de DoofPlus y accedió a la Web Application desde la sección «Choose your workspace» (PR-1). En la Web Application completó los flujos PR-2 y PR-3: en PR-2 gestionó el flujo de órdenes de producción y revisó el estado de los lotes activos; en PR-3 registró la recepción de materias primas con su inspección y cuarentena, y consultó el resumen de monitoreo IoT de los procesos en curso. Jorge consideró que DoofPlus es muy útil para su trabajo diario y manifestó intención de adoptarlo; sin embargo, señaló que la interfaz le resultó saturada, ya que cada pantalla concentra demasiada información simultánea, lo que dificulta identificar rápidamente los datos relevantes. |
 
 ### 5.3.3. Evaluaciones según heurísticas
 
